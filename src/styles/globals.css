@@ -1,0 +1,747 @@
+@import url('./navigation.css');
+@import url('./responsive-typography.css');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@200;300;400;500;600;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Warning Message Styles */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 4px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.alert i {
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.validation-message {
+  margin-top: 4px;
+  text-align: left;
+}
+
+.message-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@font-face {
+  font-family: "CeraPro";
+  src: url('/assets/font/CeraProBlack.otf');
+  font-weight: 900; /* Black weight */
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "CeraPro";
+  src: url('/assets/font/CeraProBold.otf');
+  font-weight: bold; /* Bold weight */
+  font-style: normal;
+}
+
+
+
+/* @font-face {
+  font-family: "CeraPro";
+  src: url('/assets/font/CeraProMedium.otf');
+  font-weight: 500; 
+  font-style: normal;
+} */
+@font-face {
+  font-family: "CeraPro";
+  src: url('/assets/font/CeraPro-Regular-test.ttf');
+  font-weight: 500; /* Medium weight */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura";
+  src: url('/assets/font/FuturaBold.otf');
+  font-weight: 700; 
+  font-style: normal;
+}
+@font-face {
+  font-family: "KingsCaslon";
+  src: url('/assets/font/KingsCaslon_Trial_Bd.ttf');
+  font-weight: 700; 
+  font-style: normal;
+}
+@font-face {
+  font-family: "Univers";
+  src: url('/assets/font/UniversBold.ttf');
+  font-weight: 700; 
+  font-style: normal;
+}
+@font-face {
+  font-family: "CeraPro";
+  src: url('/assets/font/CeraProLight.otf');
+  font-weight: 300; /* Light weight */
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "CeraPro2";
+  src: url('/assets/font/Cera Pro Regular.otf');
+  
+}
+
+html {
+  @apply antialiased;
+}
+
+html,
+body {
+  @apply h-full;
+  background-color: var(--color-secondary-dark);
+position: relative;
+scroll-behavior: smooth;
+
+}
+body.ReactModal__Body--open, html.ReactModal__Html--open , :is(html , body):has(.modal-scroll-block) {
+  overflow: hidden;
+}
+body:has(.SuccessModal.opacity-1){
+  overflow: hidden;
+}
+/* Base font size now handled in responsive-typography.css */
+* {
+  font-family: "CeraPro", sans-serif;
+}
+
+strong {
+  font-weight: bold !important;
+}
+/* COLORS */
+:root {
+  --color-primary: #ffb900;
+  --color-primary-light: #e9ce5d;
+  --color-primary-dark: #c4981f8e;
+
+  --color-secondary-light: #ffb900;
+  --color-secondary-dark: #ffffff;
+--color-transparent-dark :#0f0f23b3;
+  --color-tertiary-light: #2998ff;
+  --color-tertiary-dark: #5643fa;
+
+  --color-grey-light-1: #f7f7f7;
+  --color-grey-light-2: #eee;
+
+  --color-grey-dark: #777;
+  --color-grey-dark-2: #999;
+  --color-grey-dark-3: #333;
+
+  --color-white: #fff;
+  --color-black: #000;
+  --color-green: rgb(0, 151, 136);
+  --pink: #da3466;
+  --cherry: var(--pink);
+  --purple: #7557fa;
+
+  --base-animation-duration: 500ms;
+  --base-animation-delay: 50ms;
+  --step-animation-delay: 200ms;
+  --animation-delay: 100ms;
+  --padding-inline: 24px;
+}
+
+/* FONT */
+:root {
+  --default-font-size: 1.6rem;
+}
+
+/* GRID */
+:root {
+  --grid-width: 114rem;
+  --gutter-vertical: 8rem;
+  --gutter-horizontal: 6rem;
+}
+
+
+.custom-container {
+  max-width: 1296px;
+  width: 95vw;
+  margin-inline: auto;
+}
+.btn-primary {
+  font-size: var(--text-lg);
+  font-style: normal;
+  font-weight: 600;
+  background: #2ae8d3;
+  border: 1px solid white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #05403a;
+  padding: clamp(8px, 1vw, 15px) clamp(12px, 2vw, 20px);
+  border-radius: 8px;
+  letter-spacing: var(--tracking-wide);
+}
+
+.btn-primary:hover {
+color : #453f0a;
+
+  background-color: #f8e43f;
+}
+
+
+@media (max-width : 968px) {
+  button[data-rcs="handle-container"] {
+    display: block;
+  }
+  .__rcs-handle-line{
+    width : 0px !important;
+    box-shadow: none !important;
+  }
+}
+
+footer  :is(span , input , button ,p){
+  font-family: 'CeraPro2', Courier, monospace;
+}
+footer {
+  
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+ 
+  background-image: url('/assets/images/footer.svg') !important;
+  background-repeat : none ;
+  min-height: 100vh;
+  background-size: cover;
+
+  
+}
+@media screen and (max-width : 600px) {
+  footer {
+    min-height: 500px !important;
+  }
+}
+.card-hover-effect {
+  /* background: linear-gradient(316deg, var(--card-dark-color), var(--card-color) 55%); */
+  background: var(--card-color);
+  transition: none;
+}
+.card-hover-effect:hover {
+  background: linear-gradient(316deg, var(--card-color), var(--card-dark-color) 55%);
+}
+
+
+
+
+
+.lined-text-box {
+  position: relative;
+ 
+}
+
+.lined-text-box img {
+margin: auto;
+  object-fit: contain;
+}
+
+.lined-text-box .top-text {
+  display: block;
+  font-weight: 600;
+  color: white;
+  font-size: var(--text-2xl);
+  position: absolute;
+  top: clamp(-18px, -1.5vw, -12px);
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: var(--leading-tight);
+}
+.lined-text-box .bottom-text {
+  display: block;
+  font-weight: 500;
+  color: #58626c;
+  font-size: var(--text-sm);
+  position: absolute;
+  bottom: clamp(-8px, -0.5vw, -3px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 0 clamp(5px, 1vw, 10px);
+  max-width: 90%;
+  text-align: center;
+  line-height: var(--leading-normal);
+}
+
+@media  (max-width : 768px){
+
+  
+  .top-text  , .bottom-text {
+    transform: translateX(-50%) !important;
+  }
+
+  .hovered-class :nth-child(1)::before, .hovered-class :nth-child(2)::before {
+    left :-0.5px !important;
+  }
+}
+@media  (min-width : 768px){
+  .lined-text-box {
+
+    width: 400px;
+   
+  }
+  
+}
+@media screen and (max-width : 600px) {
+ .top-text {
+  font-size: 16px !important;
+    top: -13px !important;
+ }
+ .bottom-text {
+  font-size: 10px !important;
+  white-space: normal;
+  line-height: 1.2;
+  padding: 0 5px;
+  bottom: 0 !important;
+ }
+}
+@media screen and (max-width : 400px) {
+  .lined-text-box{
+    width: 95vw;
+  }
+}
+
+
+@media (max-height : 650px) and (min-width : 600px){
+  .main-section {
+    height: 130vh !important;
+  }
+}
+@media (min-height : 350px) and (max-width : 768px){
+  .main-section {
+    height: 155vh !important;
+  }
+  html[lang='nl']   .main-section {
+    height:180vh !important ;
+  } html[lang='de']   .main-section {
+    height:180vh !important ;
+  }
+}
+@media (min-height : 600px) and (max-width : 768px){
+  .main-section {
+    height: 130vh !important;
+  }
+  html[lang='nl']   .main-section {
+    height:145vh !important ;
+  } html[lang='de']   .main-section {
+    height:145vh !important ;
+  }
+}
+
+
+
+@media (min-height : 750px){
+  .main-section {
+    height: 110vh !important;
+  }
+  html[lang='nl']   .main-section {
+    height:120vh !important ;
+  } html[lang='de']   .main-section {
+    height:120vh !important ;
+  }
+}
+.modal-text h2{
+@apply text-3xl md:text-5xl  font-bold  mb-5 mt-10;
+color: #090611;
+}
+
+.modal-text {
+  @apply text-text-grey text-2xl md:text-3xl  2xl:text-4xl my-8 ;
+  max-width: 980px;
+  width : 95% ;
+
+}
+.modal-text ul {
+  margin-left: 23px;
+  margin-top: -3px;
+
+}
+.modal-text ul li :is(strong , b){
+  color: black;
+}
+.modal-text ul li::marker{
+  color: black;
+
+}
+.modal-text ul li {
+  list-style: disc;
+  margin-bottom: 20px;
+ 
+
+
+
+  
+}
+.MyModalSpecial .ReactModal__Content.ReactModal__Content--after-open {
+  align-items: unset !important;
+
+  padding-bottom: 40px;
+}
+.MyModalSpecial.ReactModal__Content {
+  max-height: 90vh;
+  overflow: scroll;
+}
+.MyModalSpecial.ReactModal__Content:has(.step2){
+
+  max-height: 90vh !important;
+  max-width: 1000px !important;
+}
+
+/* Target the scrollbar within the modal and set its width to 0 */
+.ReactModal__Content.ReactModal__Content--after-open::-webkit-scrollbar {
+  width: 0px; /* for horizontal scroll */
+  height: 0px; /* for vertical scroll */
+ 
+}
+
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+.custom-video{
+  width : 100%;
+  height: 100%;
+}
+
+
+.btn-primary.secondary {
+  background-color:#f8e43f  ;
+  color : #453f0a;  box-sizing: content-box;
+
+  transition: all 150ms ease;
+  outline: none;
+
+}
+@media screen and (max-width : 768px) {
+  .btn-primary.secondary  {
+    font-size: 17px !important;
+  }
+}
+footer input {
+  box-sizing: content-box;
+  transition: all 150ms ease;
+  box-shadow: none;
+  border: 1px solid white;
+
+}
+footer input:focus {
+  outline : none;
+}
+.btn-primary.secondary:hover {
+  background-color: #f6b9ae ;
+  color : #45312e;
+  border: 2px solid #8250fb;
+}
+footer input:focus{
+  background-color: #f6b9ae ;
+  color : #45312e;
+
+  border: 2px solid #8250fb;
+
+  
+}
+footer:has(input:focus) .btn-primary.secondary {
+  background-color: #f6b9ae ;
+  color : #45312e;
+}
+
+
+.text-data-sizes {
+  font-size: 20px;
+}
+
+.text-data-sizes h1{
+  font-size: 42px;
+}
+.text-data-sizes h2{
+  font-size: 32px;
+}
+
+.MyModalSpecial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background: white;
+  overflow: auto;
+  webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  max-width: 690px;
+  pointer-events: all;
+}
+
+.MyOverLayOfInformation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+}
+
+
+.switch {
+  /* switch */
+  --switch-width: 46px;
+  --switch-height: 24px;
+  --switch-bg: rgb(131, 131, 131);
+  --switch-checked-bg: #2ae8d3;
+  --switch-offset: calc((var(--switch-height) - var(--circle-diameter)) / 2);
+  --switch-transition: all 0.2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+  /* circle */
+  --circle-diameter: 18px;
+  --circle-bg: #fff;
+  --circle-shadow: 1px 1px 2px rgba(146, 146, 146, 0.45);
+  --circle-checked-shadow: -1px 1px 2px rgba(163, 163, 163, 0.45);
+  --circle-transition: var(--switch-transition);
+  /* icon */
+  --icon-transition: all 0.2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+  --icon-cross-color: var(--switch-bg);
+  --icon-cross-size: 6px;
+  --icon-checkmark-color: var(--switch-checked-bg);
+  --icon-checkmark-size: 10px;
+  /* effect line */
+  --effect-width: calc(var(--circle-diameter) / 2);
+  --effect-height: calc(var(--effect-width) / 2 - 1px);
+  --effect-bg: var(--circle-bg);
+  --effect-border-radius: 1px;
+  --effect-transition: all 0.2s ease-in-out;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch {
+  display: inline-block;
+}
+
+.switch svg {
+  -webkit-transition: var(--icon-transition);
+  -o-transition: var(--icon-transition);
+  transition: var(--icon-transition);
+  position: absolute;
+  height: auto;
+}
+
+.switch .checkmark {
+  width: var(--icon-checkmark-size);
+  color: var(--icon-checkmark-color);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.switch .cross {
+  width: var(--icon-cross-size);
+  color: var(--icon-cross-color);
+}
+
+.slider {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--switch-bg);
+  border-radius: 999px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  -webkit-transition: var(--switch-transition);
+  -o-transition: var(--switch-transition);
+  transition: var(--switch-transition);
+  cursor: pointer;
+}
+
+.circle {
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  background: var(--circle-bg);
+  border-radius: inherit;
+  -webkit-box-shadow: var(--circle-shadow);
+  box-shadow: var(--circle-shadow);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: var(--circle-transition);
+  -o-transition: var(--circle-transition);
+  transition: var(--circle-transition);
+  z-index: 1;
+  position: absolute;
+  left: var(--switch-offset);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: var(--effect-width);
+  height: var(--effect-height);
+  left: calc(var(--switch-offset) + (var(--effect-width) / 2));
+  background: var(--effect-bg);
+  border-radius: var(--effect-border-radius);
+  -webkit-transition: var(--effect-transition);
+  -o-transition: var(--effect-transition);
+  transition: var(--effect-transition);
+}
+
+/* actions */
+
+.switch input:checked + .slider {
+  background: var(--switch-checked-bg);
+}
+
+.switch input:checked + .slider .checkmark {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.switch input:checked + .slider .cross {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.switch input:checked + .slider::before {
+  left: calc(
+    100% - var(--effect-width) - (var(--effect-width) / 2) -
+      var(--switch-offset)
+  );
+}
+
+.switch input:checked + .slider .circle {
+  left: calc(100% - var(--circle-diameter) - var(--switch-offset));
+  -webkit-box-shadow: var(--circle-checked-shadow);
+  box-shadow: var(--circle-checked-shadow);
+}
+
+/* Targeting the specific modal content after it opens */
+.ReactModal__Content.ReactModal__Content--after-open {
+  /* Enabling custom scrollbar styling */
+  scrollbar-width: 12px; /* For Firefox */
+  scrollbar-color: #a9a9a9 #f0f0f0; /* For Firefox: thumb and track color */
+  overflow-x: hidden;
+
+  /* For Webkit (Chrome, Edge, Safari) */
+  &::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Color of the track */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #a9a9a9; /* Color of the thumb */
+    border-radius: 4px; /* Roundness of the thumb */
+    border: 2px solid #f0f0f0; /* Creates a little border around the thumb */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #808080; /* Color of the thumb when hovered */
+  }
+}
+.footer-below-sec{
+  position: relative;
+  margin-inline:auto;
+}
+.footer-below-sec::before{
+  content: '';
+  position: absolute;
+  top: -200px;
+  z-index: -1;
+  left: -60px;
+  width: 200vw;
+  height: 400px;
+  display: block;
+  background-color:#2ae8d3;
+
+}
+
+
+.footer-bg-colored {
+  background-color: #2ae8d3;
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+
+}
+
+
+
+/* On mobile screens, make the interaction area more specific */
+@media (max-width: 1000px) {
+  [data-rcs="root"] {
+    touch-action: pan-y !important; /* Force vertical scroll only */
+    pointer-events: none !important; /* Disable all pointer events on container */
+  }
+  
+  /* Only allow interactions on the handle itself */
+  /* [data-rcs="handle-container"] {
+    pointer-events: auto !important;
+    width: 60px !important;
+    margin-left: -30px !important;
+  } */
+  
+  /* Ensure the handle button is clickable */
+  /* .__rcs-handle-button {
+    pointer-events: auto !important;
+    width: 60px !important;
+    height: 60px !important;
+  } */
+  
+  /* Make the handle lines also interactive */
+  /* .__rcs-handle-line {
+    pointer-events: auto !important;
+    width: 4px !important;
+  }
+   */
+  /* Disable interactions on the clip items (the actual content) */
+  /* [data-rcs="clip-item"] {
+    pointer-events: none !important;
+  } */
+}

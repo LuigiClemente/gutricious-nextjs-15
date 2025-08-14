@@ -1,0 +1,126 @@
+/* Language Selector Styles */
+.language-selector-wrapper {
+  position: relative;
+  z-index: 1000;
+}
+
+.lang-btn {
+  border-radius: 3px;
+  padding: 8px;
+  font-size: var(--text-5xl);
+  cursor: pointer;
+  transition: scale 0.1806s cubic-bezier(0.04, 0.04, 0.12, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+
+}
+
+.lang-btn.hovered {
+  scale: 1.15;
+}
+
+.lang-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: white;
+  border: 1px solid #cacaca;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  min-width: 200px;
+  z-index: 10000;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  animation: dropdown-appear 200ms ease-out;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+@keyframes dropdown-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  min-height: 48px;
+  width: 100%;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.lang-option:hover,
+.lang-option:focus {
+  background-color: #f5f5f5;
+  outline: none;
+}
+
+.lang-option:active {
+  background-color: #e5e5e5;
+  transform: scale(0.98);
+}
+
+.lang-option.selected {
+  background-color: #f0f9ff;
+  font-weight: 600;
+}
+
+.lang-option svg {
+  fill: #2ae8d3;
+  flex-shrink: 0;
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+  .lang-dropdown {
+    grid-template-columns: repeat(2, 1fr);
+    right: -10px;
+    min-width: 280px;
+  }
+  
+  .lang-option {
+    padding: 16px 20px;
+    font-size: 16px;
+    min-height: 52px;
+  }
+}
+
+@media (max-width: 500px) {
+  .lang-dropdown {
+    grid-template-columns: 1fr;
+    right: -20px;
+    min-width: 200px;
+  }
+  
+  .lang-btn {
+    font-size: 28px;
+    min-height: 48px;
+    min-width: 48px;
+  }
+}

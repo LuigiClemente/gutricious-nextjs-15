@@ -1,0 +1,256 @@
+/* Mobile fixes for responsiveness and language switching */
+/* Typography is now handled by responsive-typography.css */
+
+/* Additional mobile-specific text optimizations */
+@media (max-width: 480px) {
+  /* Ensure optimal readability on very small screens */
+  .display-xl, .display-lg {
+    line-height: var(--leading-snug);
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  /* Improve text wrapping for longer language content */
+  html[lang='de'], html[lang='nl'] {
+    word-spacing: -0.05em;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Direct window.location language buttons - absolutely bulletproof */
+.direct-lang-buttons {
+  display: flex;
+  gap: 8px;
+  z-index: 999999;
+  position: relative;
+}
+
+.direct-lang-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 36px;
+  cursor: pointer;
+  pointer-events: auto;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.direct-lang-btn.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Fixed position for guaranteed visibility */
+  .direct-lang-buttons {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 999999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+  }
+
+  .direct-lang-btn {
+    padding: 15px 20px;
+    font-size: 18px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    min-width: 50px;
+    min-height: 50px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .direct-lang-btn.active {
+    background-color: #0b6bcb;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  }
+}
+
+/* Small screen optimizations */
+@media (max-width: 480px) {
+  .direct-lang-buttons {
+    padding: 12px 8px;
+  }
+  
+  .direct-lang-btn {
+    padding: 12px 15px;
+    min-width: 45px;
+    min-height: 45px;
+  }
+}
+
+/* Desktop language selector - keep existing for desktop */
+@media (min-width: 769px) {
+  .languages-box {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    z-index: 10000;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    background-color: white;
+  }
+}
+
+/* Make language links more clickable */
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+  background: none;
+  border: none;
+}
+
+/* Mobile-specific button styling */
+@media (max-width: 768px) {
+  .language {
+    padding: 8px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    height: 40px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .language.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+
+  .language:active {
+    transform: scale(0.98);
+    background-color: #0056b3;
+  }
+
+  /* Hide the SVG checkmark on mobile for cleaner look */
+  .language svg {
+    display: none;
+  }
+}
+
+.language:active {
+  background-color: #e0e0e0;
+}
+
+/* Fix the language button positioning */
+.lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-right: 10px;
+}
+
+/* Fix mobile container width for better layout */
+@media (max-width: 768px) {
+  .custom-container {
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  /* Make text content responsive */
+  h1, h2, h3 {
+    word-break: break-word;
+  }
+
+  /* Adjust main section for mobile */
+  .main-section {
+    height: auto !important;
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+
+  /* Fix split layout for mobile */
+  .split-container {
+    flex-direction: column;
+  }
+
+  /* Improve button sizes */
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+    margin: 10px auto;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Fix navbar for smaller screens */
+@media (max-width: 480px) {
+  .lang-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .lang-selector-container {
+    position: fixed;
+    top: 10px;
+    right: 70px;
+    z-index: 1001234234234!important;
+  }
+
+  .hamburger-container {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  nav {
+    height: 60px;
+    min-height: 60px;
+  }
+
+  /* Logo size fix */
+  .logo img, 
+  img.logo,
+  img[alt="logo"] {
+    height: 80px !important;
+    width: 100px !important;
+  }
+}

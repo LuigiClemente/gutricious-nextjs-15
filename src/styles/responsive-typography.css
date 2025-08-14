@@ -1,0 +1,349 @@
+/* 
+ * Responsive Typography System
+ * Following Google Material Design and modern web standards
+ * Uses fluid typography with clamp() for optimal scaling across all devices
+ */
+
+/* Base font size setup - 62.5% = 10px base for easy rem calculations */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+}
+
+/* Typography Scale Variables */
+:root {
+  /* Fluid typography scale using clamp() */
+  --text-xs: clamp(1.0rem, 0.8rem + 0.5vw, 1.2rem);      /* 10-12px */
+  --text-sm: clamp(1.2rem, 1.0rem + 0.5vw, 1.4rem);      /* 12-14px */
+  --text-base: clamp(1.4rem, 1.2rem + 0.5vw, 1.6rem);    /* 14-16px */
+  --text-lg: clamp(1.6rem, 1.4rem + 0.5vw, 1.8rem);      /* 16-18px */
+  --text-xl: clamp(1.8rem, 1.6rem + 0.5vw, 2.0rem);      /* 18-20px */
+  --text-2xl: clamp(2.0rem, 1.8rem + 0.8vw, 2.4rem);     /* 20-24px */
+  --text-3xl: clamp(2.4rem, 2.0rem + 1.0vw, 3.0rem);     /* 24-30px */
+  --text-4xl: clamp(3.0rem, 2.4rem + 1.5vw, 3.6rem);     /* 30-36px */
+  --text-5xl: clamp(3.6rem, 3.0rem + 2.0vw, 4.8rem);     /* 36-48px */
+  --text-6xl: clamp(4.8rem, 3.6rem + 3.0vw, 6.0rem);     /* 48-60px */
+  --text-7xl: clamp(6.0rem, 4.8rem + 3.5vw, 7.2rem);     /* 60-72px */
+  --text-8xl: clamp(7.2rem, 5.4rem + 4.5vw, 9.6rem);     /* 72-96px */
+  --text-9xl: clamp(9.6rem, 7.2rem + 6.0vw, 12.8rem);    /* 96-128px */
+  
+  /* Line height scale */
+  --leading-tight: 1.1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.4;
+  --leading-relaxed: 1.5;
+  --leading-loose: 1.6;
+  
+  /* Letter spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+}
+
+/* Base Typography Reset and Defaults */
+* {
+  font-family: "CeraPro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+}
+
+/* Heading Styles with Fluid Typography */
+h1, .h1 {
+  font-size: var(--text-6xl);
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: 0.5em;
+}
+
+h2, .h2 {
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: 0.5em;
+}
+
+h3, .h3 {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-snug);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+h4, .h4 {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+h5, .h5 {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-normal);
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+h6, .h6 {
+  font-size: var(--text-xl);
+  line-height: var(--leading-normal);
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+/* Hero/Display Text for Large Sections */
+.display-xl {
+  font-size: var(--text-9xl);
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+
+.display-lg {
+  font-size: var(--text-8xl);
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+
+.display-md {
+  font-size: var(--text-7xl);
+  line-height: var(--leading-tight);
+  font-weight: 600;
+}
+
+/* Responsive main heading for hero sections */
+.main-heading-responsive {
+  /* Scales from 6rem (96px) at 640px to 8rem (128px) at 1536px */
+  font-size: clamp(6rem, 4.22rem + 2.78vw, 8rem);
+}
+
+/* Mobile-specific hero text - much smaller for mobile screens */
+.text-mobile-hero {
+  font-size: clamp(2.8rem, 3.2rem + 2.5vw, 6.0rem); /* 28-60px - smaller mobile base */
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Body Text Variations */
+.text-body-lg {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.text-body {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.text-body-sm {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+/* Conservative scaling for important descriptive text */
+.text-body-description {
+  font-size: clamp(1.6rem, 1.4rem + 0.5vw, 2.2rem); /* 16-22px - more conservative scaling */
+  line-height: var(--leading-relaxed);
+  font-weight: 400;
+}
+
+.text-caption {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  font-weight: 400;
+}
+
+/* Button Text */
+.btn-text-lg {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+}
+
+.btn-text {
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+}
+
+.btn-text-sm {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Navigation Text */
+.nav-link {
+  font-size: var(--text-5xl);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+}
+
+.nav-link-sm {
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+/* Language-specific adjustments for longer text */
+html[lang='de'] h1, 
+html[lang='de'] .h1,
+html[lang='de'] h2, 
+html[lang='de'] .h2,
+html[lang='de'] .display-xl,
+html[lang='de'] .display-lg,
+html[lang='nl'] h1, 
+html[lang='nl'] .h1,
+html[lang='nl'] h2, 
+html[lang='nl'] .h2,
+html[lang='nl'] .display-xl,
+html[lang='nl'] .display-lg,
+html[lang='es'] h1, 
+html[lang='es'] .h1,
+html[lang='es'] h2, 
+html[lang='es'] .h2,
+html[lang='es'] .display-xl,
+html[lang='es'] .display-lg {
+  font-size: clamp(3.2rem, 2.8rem + 2.0vw, 5.6rem); /* Slightly smaller for longer text */
+  line-height: var(--leading-snug);
+  word-spacing: -0.05em;
+}
+
+/* Card and Component Text */
+.card-title {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+}
+
+.card-subtitle {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  line-height: var(--leading-normal);
+}
+
+.card-text {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+/* Footer Text */
+.footer-heading {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+}
+
+.footer-text {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.footer-caption {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+/* Modal Text */
+.modal-title {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+}
+
+.modal-text {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  max-width: 65ch; /* Optimal reading width */
+}
+
+/* Form Text */
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.form-input {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.form-error {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+}
+
+/* Responsive Breakpoint Adjustments */
+@media (max-width: 480px) {
+  :root {
+    /* Slightly more conservative scaling on very small screens */
+    --text-8xl: clamp(5.4rem, 4.8rem + 3.0vw, 7.2rem);
+    --text-9xl: clamp(7.2rem, 6.0rem + 4.0vw, 9.6rem);
+  }
+  
+  /* Ensure readability on small screens */
+  .display-xl, .display-lg {
+    line-height: var(--leading-snug);
+  }
+  
+  /* Adjust hero text for mobile */
+  .hero-text {
+    font-size: clamp(3.6rem, 3.0rem + 2.5vw, 4.8rem);
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    /* Extra small screens - prioritize readability */
+    --text-6xl: clamp(3.6rem, 3.0rem + 2.0vw, 4.8rem);
+    --text-7xl: clamp(4.8rem, 3.6rem + 2.5vw, 6.0rem);
+    --text-8xl: clamp(5.4rem, 4.2rem + 2.8vw, 6.6rem);
+    --text-9xl: clamp(6.0rem, 4.8rem + 3.2vw, 7.8rem);
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1200px) {
+  :root {
+    /* Allow slightly larger text on big screens */
+    --text-8xl: clamp(7.2rem, 5.4rem + 4.5vw, 10.8rem);
+    --text-9xl: clamp(9.6rem, 7.2rem + 6.0vw, 14.4rem);
+  }
+}
+
+/* Ultra-wide screen handling */
+@media (min-width: 1920px) {
+  :root {
+    /* Cap maximum sizes for ultra-wide screens */
+    --text-8xl: clamp(7.2rem, 5.4rem + 2.0vw, 10.8rem);
+    --text-9xl: clamp(9.6rem, 7.2rem + 2.5vw, 12.8rem);
+  }
+}
+
+/* Utility classes for quick adjustments */
+.text-responsive-xs { font-size: var(--text-xs); }
+.text-responsive-sm { font-size: var(--text-sm); }
+.text-responsive-base { font-size: var(--text-base); }
+.text-responsive-lg { font-size: var(--text-lg); }
+.text-responsive-xl { font-size: var(--text-xl); }
+.text-responsive-2xl { font-size: var(--text-2xl); }
+.text-responsive-3xl { font-size: var(--text-3xl); }
+.text-responsive-4xl { font-size: var(--text-4xl); }
+.text-responsive-5xl { font-size: var(--text-5xl); }
+.text-responsive-6xl { font-size: var(--text-6xl); }
+.text-responsive-7xl { font-size: var(--text-7xl); }
+.text-responsive-8xl { font-size: var(--text-8xl); }
+.text-responsive-9xl { font-size: var(--text-9xl); }
+
+/* Line height utilities */
+.leading-responsive-tight { line-height: var(--leading-tight); }
+.leading-responsive-snug { line-height: var(--leading-snug); }
+.leading-responsive-normal { line-height: var(--leading-normal); }
+.leading-responsive-relaxed { line-height: var(--leading-relaxed); }
+.leading-responsive-loose { line-height: var(--leading-loose); }

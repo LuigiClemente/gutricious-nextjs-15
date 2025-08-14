@@ -1,0 +1,58 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+"preview": "opennextjs-cloudflare build && wrangler dev",
+"deploy": "opennextjs-cloudflare build && wrangler deploy",
+"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "date-fns": "^3.6.0",
+    "gray-matter": "^4.0.3",
+    "next": "15.0.2",
+    "react": "19.0.0-rc-02c0e824-20241028",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+
+
+     "@hookform/resolvers": "^3.3.4",
+    "@types/styled-components": "^5.1.34",
+    "@uiw/react-textarea-code-editor": "^3.0.2",
+    "axios": "^1.6.8",
+    
+    "i18next": "^23.10.1",
+    "js-cookie": "^3.0.5",
+    "lodash": "^4.17.21",
+   
+    "next-intl": "^3.9.4",
+   
+    "react-compare-slider": "^3.0.1",
+    "react-hook-form": "^7.51.4",
+    "react-i18next": "^14.1.0",
+    "react-icons": "^5.0.1",
+    "react-modal": "^3.16.1",
+    "react-simple-modal-provider": "^1.9.0",
+    "react-tiny-popover": "^8.0.4",
+    "reactjs-popup": "^2.0.6",
+    "styled-components": "^6.1.19",
+    "tailwind-merge": "^2.2.2",
+    "uuid": "^9.0.1",
+    "zod": "^3.23.8"
+
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "^1.6.5",
+    "@types/node": "^20.14.8",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.2"
+  }
+}

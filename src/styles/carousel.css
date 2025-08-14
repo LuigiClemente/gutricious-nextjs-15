@@ -1,0 +1,29 @@
+/* Infinite carousel animation */
+.loop-slider {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: carousel var(--duration, 130000ms) linear infinite;
+  animation-direction: var(--direction, normal);
+}
+
+@keyframes carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Ensure images don't have gaps between them */
+.loop-slider img {
+  display: inline-block;
+  margin-right: 0;
+}
+
+/* Make sure we have enough content duplicated for seamless looping */
+.tag-list {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-block: 1rem;
+  position: relative;
+  /* Removed mask/shade effect as requested */
+}

@@ -90,6 +90,9 @@
     "button_text": "Enlist",
     "footer_notice_heading": "NOTICE",
     "footer_notice_text": "This service provides personalized wellness insights and is not intended to diagnose or treat medical conditions.",
+    "server_connection_error": "Unable to connect to the server. Please try again later.",
+    "form_submission_error": "Error submitting the form. Please try again.",
+    "request_timeout_error": "Request timed out. Please check your internet connection.",
 
     "cookie_preference_heading": "YOUR COOKIE PREFERENCES",
     "continue_without_accepting": "Continue without accepting",

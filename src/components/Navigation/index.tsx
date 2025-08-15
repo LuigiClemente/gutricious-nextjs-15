@@ -148,25 +148,25 @@ export const Navigation = ({
               </div>
               <ul className="navigation__list flex flex-col">
                 <Link
-                  href={routes[selectedLanguage]["home"]}
+                  href={routes[selectedLanguage]?.home || "/"}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">{t("Home")}</span>
                 </Link>
                 <Link
-                  href={routes[selectedLanguage]["about-us"]}
+                  href={routes[selectedLanguage]?.['about-us'] || "/about-us"}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">{t("About_Us")}</span>
                 </Link>
                 <Link
-                  href={routes[selectedLanguage]["our-studies"]}
+                  href={routes[selectedLanguage]?.['our-studies'] || "/our-studies"}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">{t("Our_Studies")}</span>
                 </Link>
                 <Link
-                  href={routes[selectedLanguage]["terms-of-use"]}
+                  href={routes[selectedLanguage]?.['terms-of-use'] || "/terms-of-use"}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">
@@ -174,7 +174,7 @@ export const Navigation = ({
                   </span>
                 </Link>
                 <Link
-                  href={routes[selectedLanguage]["cookies"] as any}
+                  href={routes[selectedLanguage]?.cookies || "/cookies"}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">
@@ -182,7 +182,7 @@ export const Navigation = ({
                   </span>
                 </Link>
                 <Link
-                  href={routes[selectedLanguage]["privacy"]}
+                  href={routes[selectedLanguage]?.privacy || "/privacy"}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">

@@ -33,15 +33,24 @@ const Footer: React.FC<{ footerBg: string, selectCard: any }> = ({ selectCard })
 
   type FormData = z.infer<typeof schema>;
 
-  const { register, handleSubmit, formState: { errors, isSubmitted, isSubmitting, isSubmitSuccessful }, reset, control } = useForm<FormData>({
+  const { register, handleSubmit, formState: { errors, isSubmitted, isSubmitSuccessful }, reset, control } = useForm<FormData>({
     resolver: zodResolver(schema)
   });
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
-    // const username = 'pdelaen@gmail.com';
-    // const password = '1EE2C5E57B79F6C3914116545FDC9a';
-    // const auth = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    setSubmitError(null);
+    setIsFormSubmitting(true);
+    
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      setSubmitError(t('errored_message') || 'Please enter a valid email address');
+      setIsFormSubmitting(false);
+      return;
+    }
 
     const formData = new FormData();
     formData.append('mauticform[email]', data.email);
@@ -50,24 +59,57 @@ const Footer: React.FC<{ footerBg: string, selectCard: any }> = ({ selectCard })
     formData.append('mauticform[return]', data.return);
     formData.append('mauticform[formName]', data.formName);
 
+    let timeoutId: NodeJS.Timeout | null = null;
+    const controller = new AbortController();
+    
     try {
-      const res = await axios.post("https://mautic.gutricious.com/form/submit?formId=1", formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          // 'Authorization': auth,
-        },
-
-      })
-      console.log(res)
-
-    } catch (error) {
-      console.error("Error:", error);
+      timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+      
+      const res = await axios.post(
+        "https://mautic.gutricious.com/form/submit?formId=1", 
+        formData, 
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'Accept': 'application/json',
+          },
+          signal: controller.signal,
+          withCredentials: true
+        }
+      );
+      
+      if (timeoutId) clearTimeout(timeoutId);
+      
+      // Check if the response indicates success
+      if (res.status >= 200 && res.status < 300) {
+        reset();
+        // Only scroll and show success modal on actual success
+        document.querySelector('#main-page')?.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          openEmailThanksModal({});
+        }, 1200);
+      } else {
+        throw new Error(`Server responded with status ${res.status}`);
+      }
+      
+    } catch (error: any) {
+      if (timeoutId) clearTimeout(timeoutId);
+      
+      let errorMessage = t('form_submission_error');
+      
+      if (error.code === 'ECONNABORTED' || error.message === 'canceled') {
+        errorMessage = t('request_timeout_error');
+      } else if (error.response) {
+        // The request was made and the server responded with a status code
+        errorMessage = `${t('form_submission_error')} (${error.response.status})`;
+      } else if (error.request) {
+        // The request was made but no response was received
+        errorMessage = t('server_connection_error');
+      }
+      
+      setSubmitError(errorMessage);
     } finally {
-      reset();
-      document.querySelector('#main-page')?.scrollIntoView({ behavior: 'smooth' })
-      setTimeout(() => {
-        openEmailThanksModal({});
-      }, 1200)
+      setIsFormSubmitting(false);
     }
   };
 
@@ -113,11 +155,13 @@ const Footer: React.FC<{ footerBg: string, selectCard: any }> = ({ selectCard })
               {t("button_text")}
             </button>
           </form>
-          {errors.email && (
+          {(errors.email || submitError) && (
             <div className="mx-auto max-w-1xl mt-4">
               <div className="alert alert-warning" role="alert">
                 <i className="fas fa-exclamation-triangle"></i>
-                <span className="message-text">{errors.email.message}</span>
+                <span className="message-text">
+                  {errors.email?.message || submitError}
+                </span>
               </div>
             </div>
           )}

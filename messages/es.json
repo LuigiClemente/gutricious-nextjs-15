@@ -96,6 +96,9 @@
     "button_text": "Regístrate",
     "footer_notice_heading": "AVISO",
     "footer_notice_text": "Este servicio proporciona información personalizada sobre bienestar y no está destinado a diagnosticar o tratar condiciones médicas.",
+    "server_connection_error": "No se puede conectar al servidor. Por favor, inténtalo de nuevo más tarde.",
+    "form_submission_error": "Error al enviar el formulario. Por favor, inténtalo de nuevo.",
+    "request_timeout_error": "Tiempo de espera agotado. Por favor, verifica tu conexión a internet.",
 
     "cookie_preference_heading": "TUS PREFERENCIAS DE COOKIES",
     "continue_without_accepting": "Continuar sin aceptar",

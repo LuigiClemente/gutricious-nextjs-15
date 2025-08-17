@@ -121,7 +121,7 @@ const Footer: React.FC<{ footerBg: string, selectCard: any }> = ({ selectCard })
       {/* <div className='footer-bg-colored md:hidden'>
       </div> */}
       {/* <SuccessFormModal modalIsOpen={successModal} setModalIsOpen={setSuccessModal}/> */}
-      <div className="max-w-[700px] w-full mt-72 px-6 flex flex-col justify-center mx-auto relative">
+      <div className="max-w-[700px] w-full mt-72 px-6 flex flex-col justify-center mx-auto relative bg-[#2ae8d3]">
         <h1 className="font-bold text-[#05403a] text-5xl md:text-7xl text-center mb-10">
           {t("footer_heading")}
         </h1>

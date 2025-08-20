@@ -397,12 +397,12 @@ export const Main = () => {
 />
 
       {/* Video Scrolling Section - Placed after CompareSlider and before Cards */}
-      <div className="min-h-screen">
+      {/* <div className="min-h-screen">
         <ScrollVideoPlayer
           videoSrc="./output_highest_quality.mp4"
           containerHeight="400vh"
         />
-      </div>
+      </div> */}
 
       <Cards
         cards={cards}

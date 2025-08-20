@@ -1,5 +1,5 @@
 // This file is auto-generated. Do not edit manually.
-// Generated on: 2025-08-20T19:25:16.732Z
+// Generated on: 2025-08-20T19:34:23.723Z
 
 import { Term } from '@/types/term';
 

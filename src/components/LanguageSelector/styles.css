@@ -3,6 +3,18 @@
   position: relative;
   z-index: 1000;
 }
+.prose   h1 {
+
+margin-block: 5px;
+
+  font-size: 35px;
+}
+
+.prose   h2 {
+margin-block: 5px;
+
+  font-size: 25px;
+}
 
 .lang-btn {
   border-radius: 3px;

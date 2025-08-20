@@ -10,8 +10,6 @@ import { ModalProvider } from 'react-simple-modal-provider';
 
 export default function Home() {
   return (
-    <ModalProvider value={[EmailFormThanksModal, MarketSuccessForm]}>
       <Main />
-    </ModalProvider>
   );
 }

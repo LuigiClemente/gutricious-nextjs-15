@@ -12,7 +12,7 @@ import { useModal } from 'react-simple-modal-provider';
 import { IMAGE_URL } from '@/utils/image_url';
 import axios from 'axios';
 
-const Footer: React.FC<{ footerBg: string, selectCard: any }> = ({ selectCard }) => {
+const Footer: React.FC<{ footerBg: string, selectCard: any , isOnTerms?:boolean }> = ({ selectCard  , isOnTerms}) => {
   const t = useTranslations("Index");
   const [isButtonHovered, setButtonHovered] = React.useState(false);
   const { locale } = useParams();

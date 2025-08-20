@@ -4,7 +4,7 @@ import { CiGlobe } from "react-icons/ci";
 import { languages } from "@/utils/languages";
 import { LocalActiveType } from "@/utils/routes";
 import { useLocale } from "@/components/SimpleTranslationProvider";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 interface LanguageSelectorProps {
   section: "light" | "dark";
@@ -22,19 +22,10 @@ export const LanguageSelector = ({
     useLocale() as LocalActiveType
   );
   const router = useRouter();
+  const pathname = usePathname();
   
   const containerRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const languageRoutes: Record<string, string> = {
-    en: "/home",
-    de: "/startseite", 
-    nl: "/startpagina",
-    fr: "/accueil",
-    es: "/inicio",
-    pt: "/pagina-inicial",
-    it: "/casa",
-  };
 
   // Handle clicks outside dropdown
   useEffect(() => {
@@ -67,13 +58,28 @@ export const LanguageSelector = ({
   };
 
   const changeLanguage = (langCode: LocalActiveType) => {
-    const route = languageRoutes[langCode];
-    if (route) {
-      setSelectedLanguage(langCode);
-      setIsOpen(false);
-      document.cookie = `NEXT_LOCALE=${langCode}; path=/; max-age=31536000; samesite=lax`;
-      router.push(route);
+    // Get current path segments
+    const pathSegments = pathname.split('/');
+    
+    // Check if first segment is a language code
+    const currentLangIndex = pathSegments.findIndex(segment => 
+      languages.some(lang => lang.code === segment)
+    );
+    
+    if (currentLangIndex !== -1) {
+      // Replace existing language code
+      pathSegments[currentLangIndex] = langCode;
+    } else {
+      // Add language code at the beginning (after empty string from leading slash)
+      pathSegments.splice(1, 0, langCode);
     }
+    
+    const newPath = pathSegments.join('/');
+    
+    setSelectedLanguage(langCode);
+    setIsOpen(false);
+    document.cookie = `NEXT_LOCALE=${langCode}; path=/; max-age=31536000; samesite=lax`;
+    router.push(newPath);
   };
 
   return (

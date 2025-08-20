@@ -26,7 +26,7 @@ export const Navigation = ({
   setIsHovered: any;
   setIsLangBtnHovered: any;
   isLangBtnHovered: any;
-  selectCard: any;
+  selectCard?: any;
 }) => {
   const localActive = useLocale();
   const selectedLanguage = localActive as LocalActiveType;

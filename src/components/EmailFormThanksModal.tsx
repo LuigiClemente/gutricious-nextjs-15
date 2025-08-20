@@ -1,3 +1,4 @@
+"use client"
 
 import { useTranslations } from "@/components/SimpleTranslationProvider";
 import { RxCross1 } from "react-icons/rx";

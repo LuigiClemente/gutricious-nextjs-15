@@ -4,6 +4,9 @@ import "../../styles/carousel.css";
 
 import Script from "next/script";
 import { SimpleTranslationProvider } from "../../components/SimpleTranslationProvider";
+import { ModalProvider } from "react-simple-modal-provider";
+import EmailFormThanksModal from "@/components/EmailFormThanksModal";
+import MarketSuccessForm from "@/components/MarketSuccessForm";
 
 // Next.js 15 typings
 
@@ -43,7 +46,11 @@ export default async function LocaleLayout({
       </head>
       <body suppressHydrationWarning>
         <SimpleTranslationProvider locale={locale} messages={messages}>
+          
+    <ModalProvider value={[EmailFormThanksModal, MarketSuccessForm]}>
+
           {children}
+    </ModalProvider>
         </SimpleTranslationProvider>
         <Script
           src="https://umami.gutricious.com/script.js"

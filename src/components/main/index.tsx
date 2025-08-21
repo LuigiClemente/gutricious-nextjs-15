@@ -13,10 +13,10 @@ import {
   useTranslations,
 } from "@/components/SimpleTranslationProvider";
 import { languages } from "@/utils/languages";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import CookiesModal from "../CookiesModal/CookiesModal";
 import ScrollTopAndComment from "../ScrollTopAndComment";
-import { useSearchParams } from "next/navigation";
+import { LocalActiveType, routes } from "@/utils/routes";
 import { useModal } from "react-simple-modal-provider";
 import { IMAGE_URL } from "@/utils/image_url";
 import dynamic from "next/dynamic";
@@ -49,6 +49,8 @@ export const Main = () => {
     console.log({isMobile})
 
   const t = useTranslations("Index");
+  const localActive = useLocale();
+  const selectedLanguage = localActive as LocalActiveType;
   const searchParams = useSearchParams();
   const [langBtnState, setLangBtnState] = useState(false);
   const { open: openEmailThanksModal } = useModal("EmailFormThanksModal");
@@ -292,7 +294,7 @@ export const Main = () => {
       } `}
     >
       <ScrollTopAndComment></ScrollTopAndComment>
-      <ScrollDownArrow></ScrollDownArrow>
+      <ScrollDownArrow navOpen={navOpen}></ScrollDownArrow>
 
       <div
         className="transparent-lang"
@@ -354,7 +356,8 @@ export const Main = () => {
       <div
         className="transparent-logo"
         onClick={() => {
-          selectCard(1);
+          // Navigate to home page of current language
+          router.push(`/${localActive}${routes[selectedLanguage].home}`);
         }}
       ></div>
       <CookiesModal></CookiesModal>

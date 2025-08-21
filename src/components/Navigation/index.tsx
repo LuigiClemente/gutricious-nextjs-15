@@ -4,6 +4,7 @@ import {
   useTranslations,
 } from "@/components/SimpleTranslationProvider";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { IMAGE_URL } from "@/utils/image_url";
 import { LocalActiveType, routes } from "@/utils/routes";
 import { LanguageSelector } from "@/components/LanguageSelector";
@@ -28,9 +29,15 @@ export const Navigation = ({
   isLangBtnHovered: any;
   selectCard?: any;
 }) => {
+  const router = useRouter();
   const localActive = useLocale();
   const selectedLanguage = localActive as LocalActiveType;
   const t = useTranslations("Index");
+  
+  // Function to navigate to homepage of current language
+  const navigateToHome = () => {
+    router.push(`/${localActive}${routes[selectedLanguage].home}`);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[9999] bg-transparent w-full pointer-events-none">
@@ -47,7 +54,7 @@ export const Navigation = ({
           />
           <div 
             className="absolute top-0 z-[10000] h-full w-full cursor-pointer rounded-full pointer-events-auto"
-            onClick={() => selectCard(1)}
+            onClick={navigateToHome}
           />
         </div>
 

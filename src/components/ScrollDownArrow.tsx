@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from 'react'
 
-const ScrollDownArrow = () => {
+type ScrollDownArrowProps = {
+  navOpen?: boolean;
+}
+
+const ScrollDownArrow = ({ navOpen = false }: ScrollDownArrowProps) => {
   const [showUpArrow, setShowUpArrow] = useState(false)
   
   useEffect(() => {
@@ -24,7 +28,7 @@ const ScrollDownArrow = () => {
   
   return (
     <div
-      className={`fixed z-50 top-8 right-8 flex-col gap-3 ${!showUpArrow ? 'flex': 'hidden'}`}
+      className={`fixed z-50 top-8 right-8 flex-col gap-3 ${!showUpArrow && !navOpen ? 'flex': 'hidden'}`}
     >
       <button
         aria-label="Scroll Down"

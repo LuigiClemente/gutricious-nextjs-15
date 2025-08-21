@@ -1,12 +1,8 @@
 interface LanguageRoutes {
   home: string;
-  "about-us": string;
-  "enlist-form": string;
-  cookies?: string;
+  cookies: string;
   privacy: string;
-  "terms-of-use": string;
-  "enlist-form-path"?: string;
-  "our-studies" : string;
+  "legal-notices": string;
 }
 
 interface Routes {
@@ -19,76 +15,48 @@ interface Routes {
   it: LanguageRoutes;
 }
 
-// Assuming your routes object is defined like this:
-export const routes: any = {
+export const routes: Routes = {
   "en": {
     "home": "/home",
-    "about-us": "/about-us",
-    "enlist-form": "/enlist-form",
-    "enlist-form-path": "/enlist-form/:path*",
-    "cookies": "/cookies",
-    "privacy": "/privacy",
-    "terms-of-use": "/terms-of-use",
-    "our-studies":"/our-studies"
+    "cookies": "/CookiePolicy",
+    "privacy": "/PrivacyPolicy",
+    "legal-notices":"/terms"
   },
   "de": {
-    "home": "/startseite",
-    "about-us": "/ueber-uns",
-    "enlist-form": "/registrierungsformular",
-    "cookies": "/datenschutzbestimmungen",
-    "privacy": "/datenschutz",
-    "terms-of-use": "/nutzungsbedingungen",
-    "our-studies":"/unsere-studien"
+    "home": "/home",
+    "cookies": "/Cookie-Richtlinie",
+    "privacy": "/Datenschutzrichtlinie",
+    "legal-notices":"/terms"
   },
   "nl": {
-    "home": "/startpagina",
-    "about-us": "/over-ons",
-    "enlist-form": "/inschrijfformulier",
-    "cookies": "/cookiebeleid",
-    "privacy": "/privacybeleid",
-    "terms-of-use": "/gebruiksvoorwaarden",
-    "our-studies":"/onze-studies"
-
+    "home": "/home",
+    "cookies": "/Cookiebeleid",
+    "privacy": "/Privacybeleid",
+    "legal-notices":"/terms"
   },
   "fr": {
-    "home": "/accueil",
-    "about-us": "/a-propos",
-    "enlist-form": "/formulaire-d-inscription",
-    "cookies": "/politique-de-cookies",
-    "privacy": "/confidentialite",
-    "terms-of-use": "/conditions-d-utilisation",
-    "our-studies":"/nos-etudes"
-
+    "home": "/home",
+    "cookies": "/PolitiqueCookies",
+    "privacy": "/PolitiqueConfidentialite",
+    "legal-notices":"/terms"
   },
   "es": {
-    "home": "/inicio",
-    "about-us": "/sobre-nosotros",
-    "enlist-form": "/formulario-de-inscripcion",
-    "cookies": "/politica-de-cookies",
-    "privacy": "/privacidad",
-    "terms-of-use": "/terminos-de-uso",
-    "our-studies":"/nuestros-estudios"
-
+    "home": "/home",
+    "cookies": "/PoliticaCookies",
+    "privacy": "/PoliticaPrivacidad",
+    "legal-notices":"/terms"
   },
   "pt": {
-    "home": "/pagina-inicial",
-    "about-us": "/sobre-nos",
-    "enlist-form": "/formulario-de-inscricao",
-    "cookies": "/politica-dos-cookies",
-    "privacy": "/privacidade",
-    "terms-of-use": "/termos-de-uso"
-    ,      "our-studies":"/nossos-estudos"
-
+    "home": "/home",
+    "cookies": "/PoliticaCookiesPT",
+    "privacy": "/PoliticaPrivacidade",
+    "legal-notices":"/terms"
   },
   "it": {
-    "home": "/casa",
-    "about-us": "/chi-siamo",
-    "enlist-form": "/modulo-di-iscrizione",
-    "cookies": "/politica-sui-cookie",
-    "privacy": "/informativa-sulla-privacy",
-    "terms-of-use": "/termini-di-utilizzo"
-    ,      "our-studies":"/nostri-studi"
-
+    "home": "/home",
+    "cookies": "/PoliticaCookie",
+    "privacy": "/PoliticaPrivacy",
+    "legal-notices":"/terms"
   }
 }
 

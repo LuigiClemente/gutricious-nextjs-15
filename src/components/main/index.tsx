@@ -21,6 +21,7 @@ import { useModal } from "react-simple-modal-provider";
 import { IMAGE_URL } from "@/utils/image_url";
 import dynamic from "next/dynamic";
 import { ScrollVideoPlayer } from "../ScrollVideoPlayer";
+import ScrollDownArrow from "../ScrollDownArrow";
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
   
@@ -291,6 +292,7 @@ export const Main = () => {
       } `}
     >
       <ScrollTopAndComment></ScrollTopAndComment>
+      <ScrollDownArrow></ScrollDownArrow>
 
       <div
         className="transparent-lang"

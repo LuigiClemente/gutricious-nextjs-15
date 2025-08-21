@@ -37,31 +37,31 @@ console.log({terms})
           </div>
       <main className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 mt-20">
-          <h1 className="text-3xl font-bold text-gray-900  mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
 {t("legalNoticesTitle")}
           </h1>
-          <p className="text-lg text-gray-600 ">
+          <p className="text-2xl md:text-3xl text-gray-600">
           {t("legalNoticesSubtitle")}
           </p>
         </div>
 
-        <div className="max-w-lg mx-auto">
+        <div className="max-w-2xl mx-auto">
           {terms.map((term) => (
-            <div key={term.id} className="mb-8 text-center">
+            <div key={term.id} className="mb-10 text-center">
               <Link 
                 href={`/${locale}/terms/${term.slug}`} 
                 className="inline-block"
               >
                 <div className="flex items-center justify-center">
-                  <span className="text-2xl font-bold text-gray-900 ">
+                  <span className="text-3xl md:text-4xl font-bold text-gray-900 hover:text-gray-600">
                     {term.title}
                   </span>
-                  <span className="text-xl font-bold text-gray-900  ml-2">
+                  <span className="text-2xl md:text-3xl font-bold text-gray-900 hover:text-gray-600 ml-3">
                     →
                   </span>
                 </div>
               </Link>
-              <div className="border-b border-gray-400  w-full mt-2"></div>
+              <div className="border-b border-gray-400 w-full mt-4"></div>
             </div>
           ))}
         </div>

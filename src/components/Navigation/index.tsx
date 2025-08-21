@@ -148,33 +148,19 @@ export const Navigation = ({
               </div>
               <ul className="navigation__list flex flex-col">
                 <Link
-                  href={`/${localActive}` || "/"}
+                  href={`/${localActive}${routes[selectedLanguage].home}`}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">{t("Home")}</span>
                 </Link>
                 <Link
-                  href={routes[selectedLanguage]?.['about-us'] || "/about-us"}
+                  href={`/${localActive}${routes[selectedLanguage]['legal-notices']}`}
                   className="navigation__item inline-block"
                 >
-                  <span className="navigation__link">{t("About_Us")}</span>
+                  <span className="navigation__link">{t("Legal_Notices")}</span>
                 </Link>
                 <Link
-                  href={routes[selectedLanguage]?.['our-studies'] || "/our-studies"}
-                  className="navigation__item inline-block"
-                >
-                  <span className="navigation__link">{t("Our_Studies")}</span>
-                </Link>
-                <Link
-                  href={routes[selectedLanguage]?.['terms-of-use'] || "/terms-of-use"}
-                  className="navigation__item inline-block"
-                >
-                  <span className="navigation__link">
-                    {t("Terms_of_Service")}
-                  </span>
-                </Link>
-                <Link
-                  href={routes[selectedLanguage]?.cookies || "/cookies"}
+                  href={`/${localActive}${routes[selectedLanguage].cookies}`}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">
@@ -182,7 +168,7 @@ export const Navigation = ({
                   </span>
                 </Link>
                 <Link
-                  href={routes[selectedLanguage]?.privacy || "/privacy"}
+                  href={`/${localActive}${routes[selectedLanguage].privacy}`}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">

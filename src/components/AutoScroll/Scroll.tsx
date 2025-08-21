@@ -17,7 +17,7 @@ interface InfiniteLoopSliderProps {
   }
 
 
-const DURATION: number = 130000;
+const DURATION: number = 150000; // Slightly slower for smoother animation
 
 const InfiniteLoopSlider: React.FC<InfiniteLoopSliderProps> = ({ children, duration, reverse = false }) => {
     return (
@@ -33,7 +33,8 @@ const InfiniteLoopSlider: React.FC<InfiniteLoopSliderProps> = ({ children, durat
 };
 
 export const Scroll: React.FC<ScrollProps> = ({ items }) => {
-    const [displayItems, setDisplayItems] = useState([...items, ...items,...items,...items,...items,...items,...items,...items,...items]);
+    // Reduce the number of duplicated items to improve performance
+    const [displayItems, setDisplayItems] = useState([...items, ...items, ...items, ...items]);
 
    
     return (
@@ -49,6 +50,8 @@ export const Scroll: React.FC<ScrollProps> = ({ items }) => {
                             height={300} 
                             className="object-contain rounded-lg h-[268px] w-[268px] md:h-[238px] md:w-[238px] 2xl:h-[300px] 2xl:w-[300px]" 
                             unoptimized={true}
+                            loading="eager"
+                            priority={index < items.length} // Prioritize loading the first set of images
                         />
                     </React.Fragment>
                 ))}

@@ -5,11 +5,18 @@
   will-change: transform;
   animation: carousel var(--duration, 130000ms) linear infinite;
   animation-direction: var(--direction, normal);
+  /* Hardware acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 
 @keyframes carousel {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translateX(0) translateZ(0); }
+  100% { transform: translateX(-50%) translateZ(0); }
 }
 
 /* Ensure images don't have gaps between them */

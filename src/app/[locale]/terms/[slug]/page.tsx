@@ -6,39 +6,60 @@ import { getTermBySlug, getAllTerms } from '@/lib/terms'
 import ReactMarkdown from 'react-markdown'
 import { useLocale } from '@/components/SimpleTranslationProvider'
 import FloatingCloseButton from '@/components/FloatingCloseButton'
+import React from 'react'
 
-export default async function TermPage({ params }: any) {
+interface TermPageParams {
+  slug: string;
+  locale: string;
+}
+
+export default function TermPage({ params }: { params: Promise<TermPageParams> }) {
   // Ensure we have the slug before proceeding
   const locale = useLocale();
-  const { slug } = params
-  const term =  getTermBySlug(slug ,locale as any)
+  const resolvedParams = React.use(params);
+  const { slug } = resolvedParams;
+  const term = getTermBySlug(slug, locale as any)
 
   if (!term) {
     notFound()
   }
 
   return (
-    <div className="fixed inset-0 bg-white  z-50 overflow-hidden flex justify-center items-center markdown">
-      <div className="w-full h-full max-w-7xl max-h-screen overflow-auto p-4 sm:p-6 md:p-8">
-        <div className="bg-white  rounded-lg shadow-2xl w-full h-full overflow-hidden">
+    <div className="relative min-h-screen bg-white">
       <FloatingCloseButton locale={locale} />
             
-          <div className="p-6 sm:p-8 h-full flex flex-col">
-            <h1 className="!text-5xl sm:text-3xl font-bold text-gray-900  mb-2">
-              {term.title}
-            </h1>
-            <div className="text-sm text-gray-500  mb-6">
-              Last updated: {format(new Date(term.date), 'MMMM d, yyyy')}
-            </div>
-            
-            <div className="prose  max-w-none flex-grow overflow-y-auto text-gray-700 ">
-              <ReactMarkdown>
-                {term.content}
-              </ReactMarkdown>
-            </div>
-
-          
-          </div>
+      <div className="container mx-auto px-6 py-16 max-w-5xl">
+        <div className="text-2xl md:text-3xl text-gray-700 font-normal mb-8">
+          Last updated: {format(new Date(term.date), 'MMMM d, yyyy')}
+        </div>
+        
+        <div className="prose prose-3xl max-w-none mx-auto text-gray-700">
+          <ReactMarkdown
+            components={{
+              a: ({node, ...props}) => {
+                const href = props.href || '';
+                
+                // Handle internal links to other terms
+                if (href.startsWith('#') && href.length > 1) {
+                  // Extract the slug from the href (remove the # symbol)
+                  const linkedSlug = href.substring(1);
+                  return (
+                    <Link 
+                      href={`/${locale}/terms/${linkedSlug}`} 
+                      className="text-[#2ae8d3] hover:text-yellow-400 transition-colors duration-200"
+                    >
+                      {props.children}
+                    </Link>
+                  );
+                }
+                
+                // External links or other internal links
+                return <a {...props} className="text-[#2ae8d3] hover:text-yellow-400 transition-colors duration-200" />;
+              }
+            }}
+          >
+            {term.content}
+          </ReactMarkdown>
         </div>
       </div>
     </div>

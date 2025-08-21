@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useRef } from "react";
-import CodeEditor from "@uiw/react-textarea-code-editor";
 import classNames from "classnames";
 import { FaArrowRight } from "react-icons/fa";
 import BriefCards from "../BriefCards/Card";
@@ -11,17 +10,6 @@ import { url } from "inspector";
 import { IMAGE_URL } from "@/utils/image_url";
 
 const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
-  const [code, setCode] = useState(`function add(a, b) {\n  return a + b;\n} 
-let data = {
-  name:"Brendan Eich",
-  inventor :"Javascrpt"
-}
-const numbers = [45, 4, 9, 16, 25];
-const over18 = numbers.filter(myFunction);
-
-document.getElementById("demo").innerHTML = over18;
-
-`);
   const t = useTranslations("Index");
   return (
     <div

@@ -53,6 +53,18 @@ export default function TermPage({ params }: { params: Promise<TermPageParams> }
                   );
                 }
                 
+                // Handle absolute internal links (like /PrivacyPolicy)
+                if (href.startsWith('/') && !href.startsWith('//') && !href.startsWith('http')) {
+                  return (
+                    <Link 
+                      href={`/${locale}${href}`} 
+                      className="text-[#2ae8d3] hover:text-yellow-400 transition-colors duration-200"
+                    >
+                      {props.children}
+                    </Link>
+                  );
+                }
+                
                 // External links or other internal links
                 return <a {...props} className="text-[#2ae8d3] hover:text-yellow-400 transition-colors duration-200" />;
               }

@@ -78,6 +78,7 @@ const Footer: React.FC<{ footerBg: string, selectCard: any , isOnTerms?:boolean 
         }
       );
       
+      console.log(res,'resresresresresres');
       if (timeoutId) clearTimeout(timeoutId);
       
       // Check if the response indicates success
@@ -93,6 +94,8 @@ const Footer: React.FC<{ footerBg: string, selectCard: any , isOnTerms?:boolean 
       }
       
     } catch (error: any) {
+      console.log(error,'errorerrorerrorerror');
+      
       if (timeoutId) clearTimeout(timeoutId);
       
       let errorMessage = t('form_submission_error');

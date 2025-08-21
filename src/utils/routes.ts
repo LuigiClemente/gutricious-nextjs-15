@@ -17,43 +17,43 @@ interface Routes {
 
 export const routes: Routes = {
   "en": {
-    "home": "/home",
+    "home": "/",
     "cookies": "/CookiePolicy",
     "privacy": "/PrivacyPolicy",
     "legal-notices":"/terms"
   },
   "de": {
-    "home": "/home",
+    "home": "/",
     "cookies": "/Cookie-Richtlinie",
     "privacy": "/Datenschutzrichtlinie",
     "legal-notices":"/terms"
   },
   "nl": {
-    "home": "/home",
+    "home": "/",
     "cookies": "/Cookiebeleid",
     "privacy": "/Privacybeleid",
     "legal-notices":"/terms"
   },
   "fr": {
-    "home": "/home",
+    "home": "/",
     "cookies": "/PolitiqueCookies",
     "privacy": "/PolitiqueConfidentialite",
     "legal-notices":"/terms"
   },
   "es": {
-    "home": "/home",
+    "home": "/",
     "cookies": "/PoliticaCookies",
     "privacy": "/PoliticaPrivacidad",
     "legal-notices":"/terms"
   },
   "pt": {
-    "home": "/home",
+    "home": "/",
     "cookies": "/PoliticaCookiesPT",
     "privacy": "/PoliticaPrivacidade",
     "legal-notices":"/terms"
   },
   "it": {
-    "home": "/home",
+    "home": "/",
     "cookies": "/PoliticaCookie",
     "privacy": "/PoliticaPrivacy",
     "legal-notices":"/terms"

@@ -148,7 +148,7 @@ export const Navigation = ({
               </div>
               <ul className="navigation__list flex flex-col">
                 <Link
-                  href={routes[selectedLanguage]?.home || "/"}
+                  href={`/${localActive}` || "/"}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">{t("Home")}</span>

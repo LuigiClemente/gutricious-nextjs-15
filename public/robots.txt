@@ -1,0 +1,18 @@
+# Gutricious Website Robots.txt
+# https://home.gutricious.com/
+
+User-agent: *
+Allow: /
+
+# Allow crawling of all content
+Sitemap: https://home.gutricious.com/sitemap.xml
+
+# Disallow crawling of specific routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /*/_next/
+Disallow: /static/
+Disallow: /*.json$
+
+# Optimize crawl budget by setting a crawl-delay
+Crawl-delay: 2

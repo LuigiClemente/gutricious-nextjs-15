@@ -40,7 +40,7 @@ export const Navigation = ({
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[9999] bg-transparent w-full pointer-events-none">
+    <nav className="sticky top-0 left-0 right-0 z-[9999] bg-transparent w-full pointer-events-none">
       <div className="container mx-auto flex items-center justify-between px-4 py-2 sticky top-0">
         <div className="relative font-extrabold text-black pointer-events-auto">
           <img

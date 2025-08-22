@@ -7,16 +7,17 @@ import { SimpleTranslationProvider } from "../../components/SimpleTranslationPro
 import { ModalProvider } from "react-simple-modal-provider";
 import EmailFormThanksModal from "@/components/EmailFormThanksModal";
 import MarketSuccessForm from "@/components/MarketSuccessForm";
+import { generateMetadata as createMetadata } from "@/utils/metadata";
+import { Metadata, ResolvingMetadata } from "next";
 
-// Next.js 15 typings
-
-export const metadata = {
-  title: "Gutricious - Personalized Nutrition Platform",
-  description: "Discover Gutricious' Personalization Engine: Revolutionizing health with accessible innovations. Enhance your well-being with our cutting-edge technology and personalized care.",
-  icons: {
-    icon: "https://res.cloudinary.com/dizm8txou/image/upload/v1715953409/about-us/static/favicons/falvicon.ico",
-  },
-};
+// Metadata generator for each locale
+export async function generateMetadata(
+  { params }: { params: Promise<{ locale: string }> }, 
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { locale } = await params;
+  return createMetadata(locale, '');
+}
 
 export default async function LocaleLayout({
   children,
@@ -44,6 +45,8 @@ export default async function LocaleLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        {/* Add canonical link for SEO */}
+        <link rel="canonical" href={`https://home.gutricious.com/${locale}`} />
       </head>
       <body suppressHydrationWarning>
         <SimpleTranslationProvider locale={locale} messages={messages}>

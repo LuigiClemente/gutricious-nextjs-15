@@ -202,14 +202,12 @@ color : #453f0a;
 }
 
 
-@media (max-width : 968px) {
-  button[data-rcs="handle-container"] {
-    display: block;
-  }
-  .__rcs-handle-line{
-    width : 0px !important;
-    box-shadow: none !important;
-  }
+button[data-rcs="handle-container"] {
+  display: block;
+}
+.__rcs-handle-line{
+  width : 0px !important;
+  box-shadow: none !important;
 }
 
 footer  :is(span , input , button ,p){
@@ -713,37 +711,17 @@ footer:has(input:focus) .btn-primary.secondary {
 
 
 
-/* On mobile screens, make the interaction area more specific */
+/* On mobile screens, ensure proper scrolling behavior */
 @media (max-width: 1000px) {
   [data-rcs="root"] {
     touch-action: pan-y !important; /* Force vertical scroll only */
-    pointer-events: none !important; /* Disable all pointer events on container */
   }
   
-  /* Only allow interactions on the handle itself */
-  /* [data-rcs="handle-container"] {
+  /* Ensure content areas are scrollable */
+  [data-rcs="clip-item"] {
     pointer-events: auto !important;
-    width: 60px !important;
-    margin-left: -30px !important;
-  } */
-  
-  /* Ensure the handle button is clickable */
-  /* .__rcs-handle-button {
-    pointer-events: auto !important;
-    width: 60px !important;
-    height: 60px !important;
-  } */
-  
-  /* Make the handle lines also interactive */
-  /* .__rcs-handle-line {
-    pointer-events: auto !important;
-    width: 4px !important;
+    touch-action: pan-y !important;
   }
-   */
-  /* Disable interactions on the clip items (the actual content) */
-  /* [data-rcs="clip-item"] {
-    pointer-events: none !important;
-  } */
 }
 
 

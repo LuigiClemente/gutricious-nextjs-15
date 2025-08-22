@@ -1,79 +1,103 @@
-"use client"
+import { Suspense } from 'react'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import { format } from 'date-fns'
+import { Metadata } from 'next'
 import { getTermBySlug, getAllTerms } from '@/lib/terms'
-import ReactMarkdown from 'react-markdown'
-import { useLocale } from '@/components/SimpleTranslationProvider'
-import FloatingCloseButton from '@/components/FloatingCloseButton'
-import React from 'react'
+import JsonLd from '@/components/JsonLd'
+import { generateMetadata as createMetadata } from '@/utils/metadata'
+import TermPageClient from './TermPageClient'
 
+// Define types
 interface TermPageParams {
   slug: string;
   locale: string;
 }
 
-export default function TermPage({ params }: { params: Promise<TermPageParams> }) {
-  // Ensure we have the slug before proceeding
-  const locale = useLocale();
-  const resolvedParams = React.use(params);
-  const { slug } = resolvedParams;
-  const term = getTermBySlug(slug, locale as any)
+interface TermPageProps {
+  params: Promise<TermPageParams>;
+}
+
+// Generate static params for all terms
+export async function generateStaticParams() {
+  // Get all terms for all supported locales
+  const supportedLocales = ['en', 'de', 'fr', 'es', 'pt', 'it', 'nl'];
+  const params: Array<{ locale: string; slug: string }> = [];
+  
+  for (const locale of supportedLocales) {
+    const terms = getAllTerms(locale as any);
+    terms.forEach((term) => {
+      params.push({
+        locale,
+        slug: term.slug,
+      });
+    });
+  }
+  
+  return params;
+}
+
+// Generate metadata for each term page
+export async function generateMetadata({ params }: TermPageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const term = getTermBySlug(slug, locale as any);
+  
+  if (!term) {
+    return {};
+  }
+  
+  // Extract first 160 characters for description
+  const description = term.content.slice(0, 300).replace(/[\r\n#*]+/g, ' ').trim();
+  
+  return createMetadata(
+    locale,
+    `terms/${slug}`,
+    `Gutricious - ${term.title}`,
+    description
+  );
+}
+
+// Term Schema for SEO
+function getTermSchema(locale: string, term: any) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    'name': term.title,
+    'description': term.content.slice(0, 300).replace(/[\r\n#*]+/g, ' ').trim(),
+    'inLanguage': locale,
+    'datePublished': term.date,
+    'dateModified': term.date,
+    'mainEntity': {
+      '@type': 'WebContent',
+      'name': term.title,
+      'text': term.content.slice(0, 1000).replace(/[\r\n#*]+/g, ' ').trim(),
+      'datePublished': term.date,
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'Gutricious',
+        'url': `https://home.gutricious.com/${locale}`
+      }
+    }
+  };
+}
+
+export default async function TermPage({ params }: TermPageProps) {
+  const { locale, slug } = await params;
+  const term = getTermBySlug(slug, locale as any);
 
   if (!term) {
-    notFound()
+    notFound();
   }
 
+  const termSchema = getTermSchema(locale, term);
+  
   return (
-    <div className="relative min-h-screen bg-white">
-      <FloatingCloseButton locale={locale} />
-            
-      <div className="container mx-auto px-6 py-16 max-w-5xl">
-        <div className="text-2xl md:text-3xl text-gray-700 font-normal mb-8">
-          Last updated: {format(new Date(term.date), 'MMMM d, yyyy')}
-        </div>
-        
-        <div className="prose prose-3xl max-w-none mx-auto text-gray-700">
-          <ReactMarkdown
-            components={{
-              a: ({node, ...props}) => {
-                const href = props.href || '';
-                
-                // Handle internal links to other terms
-                if (href.startsWith('#') && href.length > 1) {
-                  // Extract the slug from the href (remove the # symbol)
-                  const linkedSlug = href.substring(1);
-                  return (
-                    <Link 
-                      href={`/${locale}/terms/${linkedSlug}`} 
-                      className="text-[#2ae8d3] hover:text-yellow-400 transition-colors duration-200"
-                    >
-                      {props.children}
-                    </Link>
-                  );
-                }
-                
-                // Handle absolute internal links (like /PrivacyPolicy)
-                if (href.startsWith('/') && !href.startsWith('//') && !href.startsWith('http')) {
-                  return (
-                    <Link 
-                      href={`/${locale}${href}`} 
-                      className="text-[#2ae8d3] hover:text-yellow-400 transition-colors duration-200"
-                    >
-                      {props.children}
-                    </Link>
-                  );
-                }
-                
-                // External links or other internal links
-                return <a {...props} className="text-[#2ae8d3] hover:text-yellow-400 transition-colors duration-200" />;
-              }
-            }}
-          >
-            {term.content}
-          </ReactMarkdown>
-        </div>
-      </div>
-    </div>
-  )
+    <>
+      {/* Add structured data for SEO */}
+      <JsonLd data={termSchema} />
+      
+      {/* Client-side interactive content */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <TermPageClient slug={slug} locale={locale} />
+      </Suspense>
+    </>
+  );
 }

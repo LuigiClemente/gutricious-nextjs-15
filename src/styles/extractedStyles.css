@@ -930,7 +930,7 @@
       z-index var(--card-duration) var(--card-easing);
   }
   .__rcs-handle-button {
-    display: none !important;
+    display: grid !important;
   }
   .CubeSchema_CubeSchema__card__dzHa6 .CubeSchema_CubeSchema__card_title__gND6b {
     transform-origin: left;
@@ -1217,12 +1217,6 @@
 
     .CubeSchema_CubeSchema__card_badge__1a_FX {
       justify-self: flex-end;
-    }
-  }
-  @media (max-width: 968px) {
-    .__rcs-handle-button {
-      display: grid !important;
-     
     }
   }
   @media (max-height: 700px) {

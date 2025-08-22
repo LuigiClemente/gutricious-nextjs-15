@@ -6,6 +6,12 @@ const defaultLocale = 'en';
 
 export function middleware(request: NextRequest) {
     const url = request.nextUrl.clone();
+    
+    // Special case for root domain or IP address requests
+    if (url.pathname === '/') {
+        url.pathname = `/${defaultLocale}`;
+        return NextResponse.redirect(url);
+    }
 
     // Check if the pathname already starts with a locale
     const pathnameHasLocale = locales.some(
@@ -23,7 +29,7 @@ export function middleware(request: NextRequest) {
     if (acceptLanguage) {
         // Extract the first preferred language from the header
         const preferredLanguage = acceptLanguage.split(',')[0].split('-')[0];
-        if (preferredLanguage && routes[preferredLanguage]) {
+        if (preferredLanguage && locales.includes(preferredLanguage as any)) {
             browserLocale = preferredLanguage;
         }
     }
@@ -37,12 +43,17 @@ export function middleware(request: NextRequest) {
     // Dynamically handle redirection based on the pathname and detected locale
     let shouldRedirect = false;
 
-    for (const locale in routes) {
-        for (const key in routes[locale]) {
-            if (url.pathname === routes[locale][key]) {
-                url.pathname = `/${locale}`; // Redirect to the root of the locale
-                shouldRedirect = true;
-                break;
+    // Type-safe iteration over routes object
+    for (const locale of locales) {
+        // Check that locale exists in routes
+        if (locale in routes) {
+            const routeObj = routes[locale as keyof typeof routes];
+            for (const key in routeObj) {
+                if (url.pathname === routeObj[key as keyof typeof routeObj]) {
+                    url.pathname = `/${locale}`; // Redirect to the root of the locale
+                    shouldRedirect = true;
+                    break;
+                }
             }
         }
         if (shouldRedirect) break;

@@ -3,86 +3,66 @@ const path = require('path');
 
 function readJsonArticles(locale) {
   const jsonDir = path.join(process.cwd(), 'src/data/json-legal-notices', locale);
+  console.log(`Checking directory: ${jsonDir}`);
   
   if (!fs.existsSync(jsonDir)) {
     console.warn(`No JSON articles directory found for locale: ${locale}`);
     return [];
   }
   
-  const jsonFiles = fs.readdirSync(jsonDir, { withFileTypes: true })
-    .filter(dirent => dirent.isFile() && dirent.name.endsWith('.json'))
-    .map(dirent => dirent.name);
-  
-  const terms = [];
-  
-  jsonFiles.forEach(jsonFile => {
-    try {
-      const filePath = path.join(jsonDir, jsonFile);
-      const fileContent = fs.readFileSync(filePath, 'utf8');
-      const article = JSON.parse(fileContent);
-      
-      terms.push({
-        id: article.id || jsonFile.replace('.json', ''),
-        title: article.title,
-        date: article.date || '2024-04-30',
-        slug: article.slug,
-        summary: article.summary || 'Legal terms and conditions.',
-        content: article.content
-      });
-    } catch (error) {
-      console.error(`Error reading JSON article ${jsonFile} for locale ${locale}:`, error);
-    }
-  });
-  
-  // Custom sorting function
-  return terms.sort((a, b) => {
-    const aIsPolicy = a.slug === 'cookie-policy' || a.slug === 'privacy-policy';
-    const bIsPolicy = b.slug === 'cookie-policy' || b.slug === 'privacy-policy';
-    
-    if (aIsPolicy && bIsPolicy) {
-      return a.slug === 'privacy-policy' ? 1 : -1;
-    }
-    if (aIsPolicy) return 1;
-    if (bIsPolicy) return -1;
-    
-    return a.title.localeCompare(b.title);
-  });
+  try {
+    const files = fs.readdirSync(jsonDir);
+    return files
+      .filter(file => file.endsWith('.json'))
+      .map(file => {
+        try {
+          const filePath = path.join(jsonDir, file);
+          const content = fs.readFileSync(filePath, 'utf8');
+          return JSON.parse(content);
+        } catch (err) {
+          console.error(`Error reading ${file} in ${locale}:`, err);
+          return null;
+        }
+      })
+      .filter(article => article !== null);
+  } catch (err) {
+    console.error(`Error reading directory ${locale}:`, err);
+    return [];
+  }
 }
 
 function generateTermsData() {
-  console.log('🔄 Generating terms data...');
+  // Available locales
+  const locales = ['en', 'es', 'fr', 'de', 'it', 'nl', 'pt'];
   
-  const locales = ['en', 'fr', 'de', 'es', 'it', 'nl', 'pt'];
-  const allTerms = {};
-
-  locales.forEach(locale => {
-    console.log(`📖 Reading terms for locale: ${locale}`);
-    allTerms[locale] = readJsonArticles(locale);
-    console.log(`✅ Found ${allTerms[locale].length} terms for ${locale}`);
-  });
-
-  // Ensure the lib directory exists
-  const libDir = path.join(process.cwd(), 'src/lib');
-  if (!fs.existsSync(libDir)) {
-    fs.mkdirSync(libDir, { recursive: true });
+  // Create the terms data directory if it doesn't exist
+  const termsDataDir = path.join(process.cwd(), 'src/data/terms');
+  if (!fs.existsSync(termsDataDir)) {
+    fs.mkdirSync(termsDataDir, { recursive: true });
   }
-
-  const moduleContent = `// This file is auto-generated. Do not edit manually.
-// Generated on: ${new Date().toISOString()}
-
-import { Term } from '@/types/term';
-
-export const TERMS_DATA: Record<string, Term[]> = ${JSON.stringify(allTerms, null, 2)} as const;
-
-export type SupportedLocale = 'en' | 'fr' | 'de' | 'es' | 'it' | 'nl' | 'pt';
-`;
-
-  const outputPath = path.join(process.cwd(), 'src/lib/generated-terms.ts');
-  fs.writeFileSync(outputPath, moduleContent);
   
-  console.log('✅ Terms data generated successfully!');
-  console.log(`📁 Generated file: ${outputPath}`);
+  // Process each locale
+  locales.forEach(locale => {
+    console.log(`Processing terms for locale: ${locale}`);
+    const articles = readJsonArticles(locale);
+    
+    // Sort articles by date, newest first
+    articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    // Write the compiled data to a JSON file
+    const outputPath = path.join(termsDataDir, `${locale}.json`);
+    fs.writeFileSync(outputPath, JSON.stringify(articles, null, 2));
+    console.log(`Terms data for ${locale} written to ${outputPath}`);
+  });
+  
+  console.log('Terms data generation complete!');
 }
 
-// Run the generation
-generateTermsData();
+try {
+  // Run the generation
+  console.log('Starting terms generation');
+  generateTermsData();
+} catch (error) {
+  console.error('Error generating terms data:', error);
+  process.exit(1);
+}

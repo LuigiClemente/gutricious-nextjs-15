@@ -28,7 +28,7 @@ const ScrollDownArrow = ({ navOpen = false }: ScrollDownArrowProps) => {
   
   return (
     <div
-      className={`fixed z-50 top-8 right-8 flex-col gap-3 ${!showUpArrow && !navOpen ? 'flex': 'hidden'}`}
+      className={`fixed z-50 top-[25vh] right-8 flex-col gap-3 ${!showUpArrow && !navOpen ? 'flex': 'hidden'}`}
     >
       <button
         aria-label="Scroll Down"

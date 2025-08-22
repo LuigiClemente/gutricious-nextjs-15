@@ -1,15 +1,16 @@
-"use client";
-
-// Enable Edge Runtime for this route
-// export const runtime = 'edge';
-
-import EmailFormThanksModal from '@/components/EmailFormThanksModal';
-import MarketSuccessForm from '@/components/MarketSuccessForm';
 import { Main } from '@/components/main'
-import { ModalProvider } from 'react-simple-modal-provider';
+import HomePage from './homepage';
+import { Suspense } from 'react';
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  
   return (
+    <>
+      <Suspense fallback={null}>
+        <HomePage locale={locale} />
+      </Suspense>
       <Main />
+    </>
   );
 }

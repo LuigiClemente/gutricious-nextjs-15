@@ -74,6 +74,21 @@ export const Main = () => {
     }
     console.log({ showMarketForm, showFormSuccess });
   }, [showMarketForm, showFormSuccess]);
+  
+  // Fix initial page scroll freezing
+  useEffect(() => {
+    // Enable scrolling on initial page load
+    document.body.style.overflow = 'auto';
+    document.body.style.height = 'auto';
+    
+    // Force a small scroll to activate scroll listeners
+    setTimeout(() => {
+      window.scrollTo({
+        top: 1,
+        behavior: 'auto'
+      });
+    }, 100);
+  }, []);
 
   const [cards, setCards] = useState<any>([
     {
@@ -363,8 +378,9 @@ export const Main = () => {
       <CookiesModal></CookiesModal>
 
       <ReactCompareSlider
-  changePositionOnHover={!isMobile}
+  changePositionOnHover={false}
   boundsPadding={0}
+  disabled={false}
   itemOne={
     <CompareSliderItem
       theme="dark"
@@ -395,10 +411,12 @@ export const Main = () => {
   }
   keyboardIncrement="5%"
   position={50}
-  // Update className to ensure proper layering
   className="w-full overflow-y-visible min-h-screen relative z-[1]"
-  // Add style to ensure the slider doesn't interfere with navigation
-  style={{ pointerEvents: 'auto', zIndex: 1 }}
+  style={{ 
+    pointerEvents: 'auto', 
+    zIndex: 1,
+    touchAction: 'auto'
+  }}
 />
 
       {/* Video Scrolling Section - Placed after CompareSlider and before Cards */}
@@ -445,6 +463,10 @@ const CompareSliderItem = ({
       className={`${
         theme === "dark" ? "bg-white " : `bg-[#f6b9ae]`
       }  flex flex-col justify-between min-h-screen  w-[100vw] ${theme}-section relative`}
+      style={{ 
+        pointerEvents: 'auto',
+        touchAction: 'auto'
+      }}
     >
       <div className="custom-container">
         <Navigation

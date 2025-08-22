@@ -52,7 +52,7 @@ nav {
 }
 
 .navigation__checkbox:checked + .navigation__button {
-  position: fixed;
+  position: sticky;
 }
 .navigation__button {
   height: 40px;
@@ -90,7 +90,7 @@ nav {
 
 .navigation__nav {
   height: 100vh;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 1500;
@@ -313,7 +313,7 @@ nav {
   z-index: 10000;
 }
 button[data-rcs="handle-container"] {
-  display: none;
+  display: block;
 }
 
 .transparent-lang {
@@ -517,7 +517,7 @@ button[data-rcs="handle-container"] {
 .transparent-lang,
 .transparent-menu,
 .transparent-logo {
-  position: fixed;
+  position: sticky;
   top: 49px;
   height: 30px;
   width: 30px;

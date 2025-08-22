@@ -1,73 +1,68 @@
-"use client"
-import Link from 'next/link';
-import { format } from 'date-fns';
+import { Metadata } from 'next';
+import { Suspense } from 'react';
+import TermsClient from './TermsClient';
 import { getAllTerms } from '@/lib/terms';
-// import { getLocale } from 'next-intl/server';
-// import { SupportedLocale } from '@/lib/generated-terms';
-import { useLocale, useTranslations } from '@/components/SimpleTranslationProvider';
-import { useState } from 'react';
-import { Navigation } from '@/components/Navigation';
-import Footer from '@/components/Footer/Footer';
+import { generateMetadata as createMetadata } from '@/utils/metadata';
+import JsonLd from '@/components/JsonLd';
+import BreadcrumbSchema from '@/components/Breadcrumb/BreadcrumbSchema';
 
-// export const dynamic = 'force-dynamic';
-// export const revalidate = 0;
+// Generate metadata for this page
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  
+  return createMetadata(
+    locale,
+    'terms',
+    `Gutricious - Terms and Legal Notices`,
+    'Legal documents and terms of service for Gutricious, including all policies and agreements governing the use of our services.'
+  );
+}
 
-export default  function Home() {
-   const locale = useLocale();
-  const terms =  getAllTerms(locale as any);
-  const t = useTranslations("Index");
-  const [isHovered, setIsHovered] = useState(false);
-  const [navOpen, setNavOpen] = useState<boolean>(false);
-  const [isLangBtnHovered, setIsLangBtnHovered] = useState(false);
+// Terms of Service Schema for SEO
+function getTermsSchema(locale: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    'name': 'Terms and Legal Notices',
+    'description': 'Legal documents and terms of service for Gutricious, including all policies and agreements governing the use of our services.',
+    'inLanguage': locale,
+    'datePublished': '2023-01-01',
+    'dateModified': new Date().toISOString().split('T')[0], // Today's date in YYYY-MM-DD format
+    'mainEntity': {
+      '@type': 'TermsAndConditions',
+      'name': 'Gutricious Terms and Legal Notices',
+      'offers': {
+        '@type': 'Offer',
+        'seller': {
+          '@type': 'Organization',
+          'name': 'Gutricious',
+          'url': `https://home.gutricious.com/${locale}`
+        }
+      }
+    }
+  };
+}
 
-console.log({terms})
+export default async function Terms({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const termsSchema = getTermsSchema(locale);
+  
+  // Define breadcrumb items for this page
+  const breadcrumbItems = [
+    { name: 'Home', url: `/${locale}` },
+    { name: 'Terms & Legal Notices', url: `/${locale}/terms` }
+  ];
+  
   return (
-    <div className="min-h-screen bg-white ">
-          <div className="custom-container">
-            <Navigation
-              section={"dark"}
-              navOpen={navOpen}
-              setNavOpen={setNavOpen}
-              isHovered={isHovered}
-              setIsHovered={setIsHovered}
-              isLangBtnHovered={isLangBtnHovered}
-              setIsLangBtnHovered={setIsLangBtnHovered}
-              selectCard={()=>{}}
-            />
-          </div>
-      <main className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 mt-20">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-{t("legalNoticesTitle")}
-          </h1>
-          <p className="text-2xl md:text-3xl text-gray-600">
-          {t("legalNoticesSubtitle")}
-          </p>
-        </div>
-
-        <div className="max-w-2xl mx-auto">
-          {terms.map((term) => (
-            <div key={term.id} className="mb-10 text-center">
-              <Link 
-                href={`/${locale}/terms/${term.slug}`} 
-                className="inline-block"
-              >
-                <div className="flex items-center justify-center">
-                  <span className="text-3xl md:text-4xl font-bold text-gray-900 hover:text-gray-600">
-                    {term.title}
-                  </span>
-                  <span className="text-2xl md:text-3xl font-bold text-gray-900 hover:text-gray-600 ml-3">
-                    →
-                  </span>
-                </div>
-              </Link>
-              <div className="border-b border-gray-400 w-full mt-4"></div>
-            </div>
-          ))}
-        </div>
-      </main>
-        <Footer footerBg={"#2ae8d3"} selectCard={()=>{}} isOnTerms={true } />
-
-    </div>
+    <>
+      {/* Add structured data for SEO */}
+      <JsonLd data={termsSchema} />
+      <BreadcrumbSchema items={breadcrumbItems} locale={locale} />
+      
+      {/* Client-side interactive content */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <TermsClient locale={locale} />
+      </Suspense>
+    </>
   );
 }

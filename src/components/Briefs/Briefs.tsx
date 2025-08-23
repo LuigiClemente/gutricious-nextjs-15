@@ -37,7 +37,6 @@ const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
               otherCards={otherCards}
               selectedCard={selectedCard}
             ></BriefCards>
-           
           </div>
         </div>
         <div
@@ -87,7 +86,7 @@ const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
                         height={300}
                         width={300}
                         className="mx-auto object-contain h-full w-full max-h-[390px] max-w-[390px] md:max-h-[390px] md:max-w-[390px]"
-                        unoptimized={process.env.NODE_ENV !== 'production'}
+                        unoptimized={process.env.NODE_ENV !== "production"}
                       />
                     )}
                   </div>
@@ -156,10 +155,10 @@ const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
                               smallSection.logo.includes(
                                 "polyphenol-rich-foods.webp"
                               )
-                                ? `h-[216px] !ml-[78px]`:
-                              smallSection.logo.includes(
-                                "fiber-rich-foods.webp"
-                              )
+                                ? `h-[216px] !ml-[78px]`
+                                : smallSection.logo.includes(
+                                    "fiber-rich-foods.webp"
+                                  )
                                 ? `h-[200px]`
                                 : smallSection.logo.includes(
                                     "prebiotic-foods.webp"
@@ -197,7 +196,7 @@ const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
                   </div>
                   <div className="w-full md:w-1/2  flex justify-center">
                     <Image
-                     loader={({ src }) => src}
+                      loader={({ src }) => src}
                       src={selectedCard?.long2SecImage as string}
                       alt="Feature"
                       height={250}
@@ -217,7 +216,7 @@ const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
             {selectedCard?.subHeading}
           </h3>
           <p
-            className=" text-2xl md:text-3xl 2xl:text-4xl text-center max-w-[650px] mx-auto  "
+            className=" text-2xl md:text-3xl 2xl:text-4xl  text-center max-w-[650px] mx-[10px]  "
             style={{ color: selectedCard.textColor }}
           >
             {selectedCard?.subPara}
@@ -225,7 +224,7 @@ const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
 
           {selectedCard?.secondaryImage && (
             <Image
-            loader={({ src }) => src}
+              loader={({ src }) => src}
               src={selectedCard.secondaryImage}
               alt="secondary Image"
               height={300}
@@ -258,7 +257,7 @@ const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
               ></div>
             </>
           )}
-          <h3 className="text-6xl font-bold mb-16 mt-32  relative ">
+          <h3 className="text-6xl font-bold mb-16 mt-32 mx-[10px]  relative ">
             {t("readMoreDescription")}
           </h3>
 
@@ -307,7 +306,6 @@ const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
             </div>
           </section>
         </div>
-
       </div>
       <Footer footerBg={"#2ae8d3"} selectCard={selectCard} />
     </div>

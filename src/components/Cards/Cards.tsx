@@ -4,7 +4,10 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import ModalComponent from "../Modal/modal";
-import { useLocale, useTranslations } from "@/components/SimpleTranslationProvider";
+import {
+  useLocale,
+  useTranslations,
+} from "@/components/SimpleTranslationProvider";
 import { languages } from "@/utils/languages";
 import { useTranslation } from "react-i18next";
 import { IMAGE_URL } from "@/utils/image_url";
@@ -12,16 +15,16 @@ import { IMAGE_URL } from "@/utils/image_url";
 const Cards = ({ cards, selectCard, executeScroll }: any) => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const localActive = useLocale();
-  const langText = languages.find((lang)=>lang.code === localActive)?.text || "english";
-const t = useTranslations('Index');
-  
+  const langText =
+    languages.find((lang) => lang.code === localActive)?.text || "english";
+  const t = useTranslations("Index");
 
   function openModal() {
     setModalIsOpen(true);
   }
 
   function closeModal() {
-  setModalIsOpen(false);
+    setModalIsOpen(false);
   }
 
   // Extracted Code
@@ -29,24 +32,40 @@ const t = useTranslations('Index');
     <section className=" flex flex-col justify-between items-center pt-16 pb-12 max-w-[100vw] overflow-x-hidden">
       <div className="custom-container">
         <h1 className="text-5xl  xs:text-7xl md:text-8xl 2x:text-9xl  font-bold text-center   ">
-        {t('sectionTwoHeadingPartOne')}
+          {t("sectionTwoHeadingPartOne")}
         </h1>
         <p className="text-text-grey text-2xl  2xl:text-4xl my-10  max-w-[1050px] mx-auto">
-        {t('sectionTwoSubHeading')}
+          {t("sectionTwoSubHeading")}
         </p>
-       <a  href="#footer" className="btn-primary mb-5 mx-auto w-max">
-      
-          
-          {t('getStartedButtonText')}
-  
-          </a>
+        <a href="#footer" className="btn-primary mb-5 mx-auto w-max">
+          {t("getStartedButtonText")}
+        </a>
 
         <div className="mt-10 mb-10 flex  flex-wrap gap-x-16 md:gap-x-32 gap-y-10 justify-center items-center custom-container">
-        <Image  loader={({ src }) => src} height={300} width={1296} className="object-contain w-[95%] max-w-[2000px] h-[40px] mx-auto hidden md:block" src={`${IMAGE_URL}/assets/logos/${localActive}-desktop-logos.webp`} alt="company logo" />
-        <Image  loader={({ src }) => src} height={300} width={1296} className="object-contain h-[37px] max-w-[1296px] mx-auto hidden xs:block md:hidden mb-20 w-[80%] " src={`${IMAGE_URL}/assets/logos/tablet-${localActive}-logos.webp`} alt="company logo" />
-        <Image  loader={({ src }) => src} height={300} width={1296} className="object-contain h-[96px] max-w-[1296px] mx-auto block xs:hidden mb-20 h" src={`${IMAGE_URL}/assets/logos/${langText}-tablet-logos.webp`} alt="company logo" />
-
-
+          <Image
+            loader={({ src }) => src}
+            height={300}
+            width={1296}
+            className="object-contain w-[95%] max-w-[2000px] h-[40px] mx-auto hidden md:block"
+            src={`${IMAGE_URL}/assets/logos/${localActive}-desktop-logos.webp`}
+            alt="company logo"
+          />
+          <Image
+            loader={({ src }) => src}
+            height={300}
+            width={1296}
+            className="object-contain h-[37px] max-w-[1296px] mx-auto hidden xs:block md:hidden mb-20 w-[80%] "
+            src={`${IMAGE_URL}/assets/logos/tablet-${localActive}-logos.webp`}
+            alt="company logo"
+          />
+          <Image
+            loader={({ src }) => src}
+            height={300}
+            width={1296}
+            className="object-contain h-[96px] max-w-[1296px] mx-auto block xs:hidden mb-20 h"
+            src={`${IMAGE_URL}/assets/logos/${langText}-tablet-logos.webp`}
+            alt="company logo"
+          />
         </div>
       </div>
       <div className=" Page_SectionContent__Ztn5n SectionContent--align-none Page_SectionContent--size-l__4MlQw Section--gap-none Home_SectionHero__schema__Ir_9O translate-y-[-44px] md:max-h-[570px] mt-16 md:mt-0 sm:max-h-[1000px] max-h-[700px] ">
@@ -64,67 +83,53 @@ const t = useTranslations('Index');
               <div className="flex sm:flex-col gap-[2.3vw] sm:gap-1.5 md:gap-2">
                 <div className="flex flex-row-reverse w-[27.25vw] 2xl:w-[22rem] h-[7vw] 2xl:h-[5.5rem] pr-1 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white  sm:hidden !pl-1 sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
                   <div className="w-full text-responsive-base flex items-center justify-center">
-                  {t('Wellbeing')}
+                    {t("Wellbeing")}
                   </div>
-                 
                 </div>
                 <div className="   flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-[#878e96]  text-white  sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
                   <div className="w-full text-responsive-base flex items-center justify-center">
-                  {t('Goals')}
+                    {t("Goals")}
                   </div>
-                  
                 </div>
                 <div className="  flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-[#878e96]   text-white  sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
                   <div className="w-full text-responsive-base flex items-center justify-center">
-                  {t('Lipids')}
+                    {t("Lipids")}
                   </div>
-                 
                 </div>
-              
               </div>
               <div className="flex sm:flex-col gap-[2.3vw] sm:gap-1.5 md:gap-2">
-              <div className="  flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white  sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
+                <div className="  flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white  sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
                   <div className="w-full text-responsive-base flex items-center justify-center">
-                  {t('Microbiome')}
-
+                    {t("Microbiome")}
                   </div>
-                  
                 </div>
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white undefined sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
                   <div className="w-full text-[2.75vw] sm:text-[1vw] flex items-center justify-center xl:text-base 2xl:text-2xl ">
-                  {t('Nutrition')}
-
+                    {t("Nutrition")}
                   </div>
-                  
                 </div>
                 <div className=" flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white  sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
                   <div className="w-full text-responsive-base flex items-center justify-center">
-                  {t('Glucose')}
-
+                    {t("Glucose")}
                   </div>
-                 
                 </div>
               </div>
               <div className="flex sm:flex-col gap-[2.3vw] sm:gap-1.5 md:gap-2">
                 <div className=" flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-[#878e96]   text-white   sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
                   <div className="w-full text-responsive-base flex items-center justify-center">
-                  {t('Metabolism')}
-
+                    {t("Metabolism")}
                   </div>
-                
                 </div>
                 <div className=" flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-[#878e96]   text-white  sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
                   <div className="w-full text-responsive-base flex items-center justify-center">
-                  {t('DNA')}
+                    {t("DNA")}
                   </div>
-                 
                 </div>
-              
+
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white  sm:hidden sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
                   <div className="w-full text-responsive-base flex items-center justify-center">
-                  {t('Targeted')}
+                    {t("Targeted")}
                   </div>
-                 
                 </div>
               </div>
             </div>
@@ -132,71 +137,52 @@ const t = useTranslations('Index');
               <div className="flex  gap-[2.3vw] sm:gap-1.5 md:gap-2">
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white   ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-               
-                  {t('Nutrition')}
-
+                    {t("Nutrition")}
                   </div>
-                 
                 </div>
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white   ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-                  {t('Lipids')}
-
+                    {t("Lipids")}
                   </div>
-                  
                 </div>
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white   ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-               
-                  {t('Wellbeing')}
-
+                    {t("Wellbeing")}
                   </div>
-                 
                 </div>
               </div>
               <div className="flex  gap-[2.3vw] sm:gap-1.5 md:gap-2">
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1  sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white  !pl-1  ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-                  {t('DNA')}
-
+                    {t("DNA")}
                   </div>
-                 
                 </div>
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white   ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-                  
-                  {t('Glucose')}
-
+                    {t("Glucose")}
                   </div>
-                  
                 </div>
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white   ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-                  {t('Goals')}
+                    {t("Goals")}
                   </div>
-                  
                 </div>
               </div>
               <div className="flex  gap-[2.3vw] sm:gap-1.5 md:gap-2">
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white     ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-                  {t('Metabolism')}
+                    {t("Metabolism")}
                   </div>
-                 
                 </div>
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white   ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-                  {t('Glucose')}
-
+                    {t("Glucose")}
                   </div>
-                 
                 </div>
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white !pl-1  ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-                  {t('Targeted')}
-
+                    {t("Targeted")}
                   </div>
-                 
                 </div>
               </div>
             </div>
@@ -257,7 +243,6 @@ const t = useTranslations('Index');
               <g
                 className="input-lines-7-mobile_svg__scheme-dash-animated"
                 stroke="#0a5951"
-
                 strokeDasharray="0.24 5.6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -292,43 +277,40 @@ const t = useTranslations('Index');
                 </mask>
               </defs>
             </svg>
-
-           
-         
           </div>
-          <div
-          className="CubeSchema_CubeSchema__cube__aVGJu !w-auto relative md:mt-10 md:mt-0 "
+          <div className="CubeSchema_CubeSchema__cube__aVGJu !w-auto relative md:mt-10 md:mt-0 ">
+            <div className="lined-text-box">
+              <Image
+                loader={({ src }) => src}
+                src={`${IMAGE_URL}/assets/images/lined-box.png`}
+                alt="svg"
+                height={300}
+                width={400}
+                className="md:h-[400px] max-w-[275px] sm:max-w-[380px] w-auto  "
+              />
 
-          >
-          <div className="lined-text-box">
-          <Image   loader={({ src }) => src} src={`${IMAGE_URL}/assets/images/lined-box.png`} alt="svg" height={300} width={400} className="md:h-[400px] max-w-[275px] sm:max-w-[380px] w-auto  "/>
-      
-                <Image
-                 loader={({ src }) => src}
-          alt="logo"
-          height={70}
-          width={120}
-          style={{ objectFit: 'contain' }}
-          className="  top-text w-[92px] sm:w-[120px]"
-          src={`${IMAGE_URL}/assets/day/logo.webp`}
-        ></Image>
-            <span className="bottom-text">
-            {t('cardBottomKey')}
-            </span>
+              <Image
+                loader={({ src }) => src}
+                alt="logo"
+                height={70}
+                width={120}
+                style={{ objectFit: "contain" }}
+                className="  top-text w-[92px] sm:w-[120px]"
+                src={`${IMAGE_URL}/assets/day/logo.webp`}
+              ></Image>
+              <span className="bottom-text">{t("cardBottomKey")}</span>
             </div>
-        
+
             {cards.map((card: any, index: number) => (
               <a
                 key={index}
                 className={`CubeSchema_CubeSchema__card__dzHa6 custom-cube custom-cube-${
                   index + 1
                 }`}
-                id={`custom-cube-${
-                  index + 1
-                }`}
+                id={`custom-cube-${index + 1}`}
                 style={
                   {
-                  "--card-bg": card.color,
+                    "--card-bg": card.color,
                     "--card-border": card.borderColor,
                     "--card-index": index,
                     "--card-offset": `${card.cardOffset}`,
@@ -341,10 +323,32 @@ const t = useTranslations('Index');
                 }
               >
                 <div className="content-box">
-                  <p className="CubeSchema_CubeSchema__card_title__gND6b" style={{color : card.textColor}}>
-                    {card.cardName}
+                  <p
+                    className="CubeSchema_CubeSchema__card_title__gND6b"
+                    style={{ color: card.textColor }}
+                  >
+                    {console.log(
+                      card?.cardName,
+                      "card?.cardNamecard?.cardNamecard?.cardName"
+                    )}
+                    {card?.cardName === "Gestion des Lipides" ? (
+                      <div className="flex flex-col">
+                        <span>Gestion des</span>
+                        <span>Lipides</span>
+                      </div>
+                    ) : card.cardName === "The Resilient Engine" ? (
+                      <div className="flex flex-col">
+                        <span>The Resilient</span>
+                        <span>Engine</span>
+                      </div>
+                    ) : (
+                      card.cardName
+                    )}
                   </p>
-                  <p className="CubeSchema_CubeSchema__card_content__K1bdM" style={{color : card.textColor}}>
+                  <p
+                    className="CubeSchema_CubeSchema__card_content__K1bdM"
+                    style={{ color: card.textColor }}
+                  >
                     {card.cardDescription}
                   </p>
                 </div>
@@ -364,10 +368,10 @@ const t = useTranslations('Index');
                   />
                   <div
                     onClick={() => selectCard(card.id)}
-                    style={{ color : card.textColor}}
+                    style={{ color: card.textColor }}
                     className="CubeSchema_CubeSchema__card_readMore__ovs9v relative z-20 cursor-pointer"
                   >
-{t('readMoreButton')}
+                    {t("readMoreButton")}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 18 18"
@@ -384,51 +388,73 @@ const t = useTranslations('Index');
             ))}
           </div>
           <div className="flex items-center flex-col md:flex-row h-[355px] sm:h-[520px] md:h-auto">
+            <Image
+              loader={({ src }) => src}
+              src={`${IMAGE_URL}/assets/images/desktop_yellow_dots.svg`}
+              alt="svg"
+              height={300}
+              width={400}
+              className="hidden md:block w-[138px] h-[535px] 2xl:h-[672px] 2xl:w-[189px]"
+            />
 
-          <Image  loader={({ src }) => src} src={`${IMAGE_URL}/assets/images/desktop_yellow_dots.svg`} alt="svg" height={300} width={400} className="hidden md:block w-[138px] h-[535px] 2xl:h-[672px] 2xl:w-[189px]"/>
-       
-          <Image   loader={({ src }) => src} src="/assets/images/desktop-boxes.webp" alt="svg" height={300} width={400} className="hidden md:block h-[248px] 2xl:h-[300px] w-auto"/>
-    
-          <Image   loader={({ src }) => src} src={`${IMAGE_URL}/assets/images/desktop_yellow_dots.svg`} alt="svg" height={300} width={400} className="block md:hidden h-[398px] sm:h-[454px]  rotate-90 translate-y-[-151px] "/>
-       
-          <Image  loader={({ src }) => src} src="/assets/images/mobile-boxes.webp" alt="svg" height={300} width={400} className="block md:hidden h-auto  w-[95%] max-w-[253px] sm:max-w-[293px] translate-y-[-307px] md:translate-t-[-313px] md:max-w-[332px]  "/>
-          
+            <Image
+              loader={({ src }) => src}
+              src="/assets/images/desktop-boxes.webp"
+              alt="svg"
+              height={300}
+              width={400}
+              className="hidden md:block h-[248px] 2xl:h-[300px] w-auto"
+            />
+
+            <Image
+              loader={({ src }) => src}
+              src={`${IMAGE_URL}/assets/images/desktop_yellow_dots.svg`}
+              alt="svg"
+              height={300}
+              width={400}
+              className="block md:hidden h-[398px] sm:h-[454px]  rotate-90 translate-y-[-151px] "
+            />
+
+            <Image
+              loader={({ src }) => src}
+              src="/assets/images/mobile-boxes.webp"
+              alt="svg"
+              height={300}
+              width={400}
+              className="block md:hidden h-auto  w-[95%] max-w-[253px] sm:max-w-[293px] translate-y-[-307px] md:translate-t-[-313px] md:max-w-[332px]  "
+            />
           </div>
-
-
-      
         </div>
       </div>
 
       <div id="question-section" className="custom-container !m-0 mt-10">
         <h1 className="text-3xl md:text-5xl  font-bold text-center ">
-        {t('cardQuestion')}
-
+          {t("cardQuestion")}
         </h1>
-        <p className="text-text-grey text-2xl md:text-3xl 2xl:text-4xl my-8  max-w-[900px] 2xl:max-w-[1296px] mx-auto ">
-        {t('cardQuestionAnswer')}
+        <p className="text-text-grey text-2xl md:text-3xl 2xl:text-4xl my-8  max-w-[900px] 2xl:max-w-[1296px] mx-[10px] ">
+          {t("cardQuestionAnswer")}
         </p>
 
         <a
           className="text-2xl font-bold 2xl:text-4xl cursor-pointer inline-flex gap-5 justify-center items-center border-b border-gray-600  mx-auto pb-2"
           onClick={openModal}
         >
-          <span>{t('questionAnswerPitch')}</span>
+          <span>{t("questionAnswerPitch")}</span>
 
           <FaArrowRight />
         </a>
       </div>
       <div className="AnswerModal">
-        <ModalComponent 
-          isOpen={modalIsOpen} 
+        <ModalComponent
+          isOpen={modalIsOpen}
           onRequestClose={() => {
             closeModal();
             // Scroll to the question section after modal closes
-            const questionSection = document.getElementById('question-section');
+            const questionSection = document.getElementById("question-section");
             if (questionSection) {
-              questionSection.scrollIntoView({ behavior: 'smooth' });
+              questionSection.scrollIntoView({ behavior: "smooth" });
             }
-          }} 
+          }}
         />
       </div>
     </section>
@@ -436,4 +462,3 @@ const t = useTranslations('Index');
 };
 
 export default Cards;
-

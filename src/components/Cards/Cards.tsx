@@ -323,7 +323,7 @@ const Cards = ({ cards, selectCard, executeScroll }: any) => {
                 }
               >
                 <div className="content-box">
-                  <p
+                  <div
                     className="CubeSchema_CubeSchema__card_title__gND6b"
                     style={{ color: card.textColor }}
                   >
@@ -344,7 +344,7 @@ const Cards = ({ cards, selectCard, executeScroll }: any) => {
                     ) : (
                       card.cardName
                     )}
-                  </p>
+                  </div>
                   <p
                     className="CubeSchema_CubeSchema__card_content__K1bdM"
                     style={{ color: card.textColor }}

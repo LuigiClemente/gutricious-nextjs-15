@@ -180,7 +180,7 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
       {step === 1 && (
         <div>
           <div className="flex justify-between items-center pb-5 border-b mb-10">
-            <h2 className="text-3xl font-bold ">{t('cookie_preference_heading')} </h2>
+            <h2 className="!text-3xl font-bold ">{t('cookie_preference_heading')} </h2>
             <a
               className=" border-black border-b cursor-pointer"
               onClick={closeModal}

@@ -215,12 +215,14 @@ const Briefs = ({ selectedCard, selectCard, otherCards, reference }: any) => {
           >
             {selectedCard?.subHeading}
           </h3>
-          <p
-            className=" text-2xl md:text-3xl 2xl:text-4xl  text-center max-w-[650px] mx-[10px]  "
-            style={{ color: selectedCard.textColor }}
-          >
-            {selectedCard?.subPara}
-          </p>
+          <div className="flex justify-center items-center">
+            <p
+              className=" text-2xl md:text-3xl 2xl:text-4xl  text-center max-w-[650px] self-center text-center  mx-[10px]  "
+              style={{ color: selectedCard.textColor }}
+            >
+              {selectedCard?.subPara}
+            </p>
+          </div>
 
           {selectedCard?.secondaryImage && (
             <Image

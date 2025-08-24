@@ -1,8 +1,7 @@
 
-// This file is auto-generated. Do not edit directly.
-import { Term } from '@/types/term';
 
-export const TERMS_DATA: Record<string, Term[]> = {
+
+export const TERMS_DATA: Record<string, any[]> = {
   "en": [
     {
       "id": "Arbitration Agreement Overview",

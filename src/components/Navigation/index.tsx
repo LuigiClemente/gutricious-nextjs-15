@@ -31,12 +31,18 @@ export const Navigation = ({
 }) => {
   const router = useRouter();
   const localActive = useLocale();
-  const selectedLanguage = localActive as LocalActiveType;
+  // Ensure we have a valid locale that exists in our routes
+  const validLocales = Object.keys(routes);
+  const defaultLocale = 'en';
+  
+  // Make sure we have a valid locale that exists in our routes
+  const safeLanguage = validLocales.includes(localActive as string) ? localActive as LocalActiveType : defaultLocale;
+  
   const t = useTranslations("Index");
   
   // Function to navigate to homepage of current language
   const navigateToHome = () => {
-    router.push(`/${localActive}${routes[selectedLanguage].home}`);
+    router.push(`/${localActive}${routes[safeLanguage].home}`);
   };
 
   return (
@@ -155,19 +161,19 @@ export const Navigation = ({
               </div>
               <ul className="navigation__list flex flex-col">
                 <Link
-                  href={`/${localActive}${routes[selectedLanguage].home}`}
+                  href={`/${localActive}${routes[safeLanguage].home}`}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">{t("Home")}</span>
                 </Link>
                 <Link
-                  href={`/${localActive}${routes[selectedLanguage]['legal-notices']}`}
+                  href={`/${localActive}${routes[safeLanguage]['legal-notices']}`}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">{t("Legal_Notices")}</span>
                 </Link>
                 <Link
-                  href={`/${localActive}${routes[selectedLanguage].cookies}`}
+                  href={`/${localActive}${routes[safeLanguage].cookies}`}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">
@@ -175,7 +181,7 @@ export const Navigation = ({
                   </span>
                 </Link>
                 <Link
-                  href={`/${localActive}${routes[selectedLanguage].privacy}`}
+                  href={`/${localActive}${routes[safeLanguage].privacy}`}
                   className="navigation__item inline-block"
                 >
                   <span className="navigation__link">

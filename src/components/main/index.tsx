@@ -19,22 +19,31 @@ import ScrollTopAndComment from "../ScrollTopAndComment";
 import { LocalActiveType, routes } from "@/utils/routes";
 import { useModal } from "react-simple-modal-provider";
 import { IMAGE_URL } from "@/utils/image_url";
-import dynamic from "next/dynamic";
 import { ScrollVideoPlayer } from "../ScrollVideoPlayer";
-import ScrollDownArrow from "../ScrollDownArrow";
+import dynamic from "next/dynamic";
+
+// Dynamically import ScrollDownArrow with no SSR to prevent hydration issues
+const ScrollDownArrow = dynamic(() => import("../ScrollDownArrow"), {
+  ssr: false,
+});
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
+      setIsMobile(window.innerWidth < 768);
     };
-    
+
+    // Run check on mount
     checkIsMobile();
+
+    // Add listener for resize
     window.addEventListener('resize', checkIsMobile);
+
+    // Cleanup listener
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
-  
+
   return isMobile;
 };
 
@@ -500,39 +509,39 @@ const CompareSliderItem = ({
             theme === "light"
               ? [
                   // Night theme images
-                  `${scrollItems}/1 Loaded Nachos.jpg`,
-                  `${scrollItems}/2 Double Cheeseburger.jpg`,
-                  `${scrollItems}/3 Deep Dish Pizza.jpg`,
-                  `${scrollItems}/4 Fried Chicken & Waffles.jpg`,
-                  `${scrollItems}/5 Creamy Ramen.jpg`,
-                  `${scrollItems}/6 Mac & Cheese.jpg`,
-                  `${scrollItems}/7 Buffalo Wings.jpg`,
-                  `${scrollItems}/8 Chocolate Cake.jpg`,
-                  `${scrollItems}/9 Loaded Fries.jpg`,
-                  `${scrollItems}/10 BBQ Ribs.jpg`,
-                  `${scrollItems}/11 Donuts.jpg`,
-                  `${scrollItems}/12 Ice Cream Sundae.jpg`,
-                  `${scrollItems}/13 Fried Rice.jpg`,
-                  `${scrollItems}/14 Cheese Quesadilla.jpg`,
-                  `${scrollItems}/15 Milkshake.jpg`,
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/c29f5de4-4584-411b-3b10-db03884afe00/public", // Loaded Nachos
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/c456a722-37c0-436d-7929-1980b13ed500/public", // Double Cheeseburger
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/d3c6bdf1-d961-4b08-a0e1-1c3540cb0f00/public", // Deep Dish Pizza
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/00f97749-86c5-4995-66ca-d4086d505800/public", // Fried Chicken & Waffles
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/4902a3fc-9927-4e61-2a06-95b5984a7100/public", // Creamy Ramen
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/59f6acb6-f3f0-47fb-16e4-8e2b072bb700/public", // Mac & Cheese
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/c9599d37-b551-4080-1f2e-4a48ee38e000/public", // Buffalo Wings
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/743b7d65-cb5d-428a-96d6-3100f48abb00/public", // Chocolate Cake
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/0ce21db3-5332-4991-2dbb-1225122db200/public", // Loaded Fries
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/49c3e7f7-7a86-40f3-6af0-b117dfb8ab00/public", // BBQ Ribs
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/b3215251-8c3d-4455-3e3a-433043fbdf00/public", // Donuts
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/4a90b3a9-3b59-468d-b62d-8e6915279a00/public", // Ice Cream Sundae
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/58366bc9-006e-486b-461a-e9589c9dbb00/public", // Fried Rice
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/9266acc3-9510-499a-2994-15a2ab97db00/public", // Cheese Quesadilla
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/483bae79-ace4-4bc9-38d6-d71646524500/public"  // Milkshake
                 ]
               : [
-                  // Day theme images (original)
-                  `${scrollItems}/1 Acai Bowl.jpg`,
-                  `${scrollItems}/2 Avocado Toast & Egg.jpg`,
-                  `${scrollItems}/3 Green Smoothie Bowl.jpg`,
-                  `${scrollItems}/4 Quinoa Buddha Bowl.jpg`,
-                  `${scrollItems}/5 Greek Yogurt Parfait.jpg`,
-                  `${scrollItems}/6 Grilled Chicken Salad.jpg`,
-                  `${scrollItems}/7 Fresh Poke Bowl.jpg`,
-                  `${scrollItems}/8 Overnight Oats.jpg`,
-                  `${scrollItems}/9 Salmon & Vegetables.jpg`,
-                  `${scrollItems}/10 Veggie Wrap.jpg`,
-                  `${scrollItems}/11 Chia Seed Pudding.jpg`,
-                  `${scrollItems}/12 Lean Turkey Bowl.jpg`,
-                  `${scrollItems}/13 Fresh Fruit Salad.jpg`,
-                  `${scrollItems}/14 Protein Smoothie.jpg`,
-                  `${scrollItems}/15 Grilled Fish Tacos.jpg`,
+                  // Day theme images
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/b636ea18-7580-4d62-306b-9296de4abc00/public", // Acai Bowl
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/e2523576-9cb8-4cd5-d9ef-2a0a23ded800/public", // Avocado Toast & Egg
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/b3d9fcd9-2433-4f89-0211-28c8e1212c00/public", // Green Smoothie Bowl
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/f86fdded-e3f8-4601-69d8-cd9cfcd37f00/public", // Quinoa Buddha Bowl
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/8e8cca2b-0dcc-494b-cbc3-2ed4c7059500/public", // Greek Yogurt Parfait
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/dc195853-88c5-40ca-6f38-b4a79d580400/public", // Grilled Chicken Salad
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/2065a9f3-0044-41ab-f800-30ada7886b00/public", // Fresh Poke Bowl
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/6a9c5e43-6465-4233-18c4-1d8689ceaa00/public", // Overnight Oats
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/d6fe1116-3261-4c30-32f9-34c0e197b200/public", // Salmon & Vegetables
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/01032304-d6e6-4aa1-c43b-57510f0b7800/public", // Veggie Wrap
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/24d3dae3-4bbf-45e7-b538-7aec021e0700/public", // Chia Seed Pudding
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/9dd6da40-b911-4d7a-5726-c040add57000/public", // Lean Turkey Bowl
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/b157f8fc-dcd5-4eda-2080-a330bb6bd000/public", // Fresh Fruit Salad
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/a65aab5c-37cb-4c34-d7be-8eeb3d3bc200/public", // Protein Smoothie
+                  "https://imagedelivery.net/SeMaLpTX-RsMHiKUXQXe3Q/40a09c8b-46c5-4d27-e6d9-9db35ad60c00/public"  // Grilled Fish Tacos
                 ]
           }
         />

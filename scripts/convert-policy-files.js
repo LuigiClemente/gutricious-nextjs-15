@@ -49,9 +49,9 @@ locales.forEach(locale => {
       
       // Write JSON file
       fs.writeFileSync(cookiesDestPath, cookiesJson);
-      console.log(`Converted ${locale} cookies policy to JSON`);
+      console.log(`Converted ${locale} Cookie Policy to JSON`);
     } else {
-      console.log(`Warning: ${locale} cookies policy not found at ${cookiesSourcePath}`);
+      console.log(`Warning: ${locale} Cookie Policy not found at ${cookiesSourcePath}`);
     }
     
     // Process privacy file

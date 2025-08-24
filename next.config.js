@@ -16,6 +16,16 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Add redirects for root path
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/en',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
@@ -26,16 +36,14 @@ const nextConfig = {
     unoptimized: isProduction,
   },
   // Exclude test and example files from production build
-  experimental: {
-    outputFileTracingExcludes: {
-      "*": [
-        "**/test/**",
-        "**/examples/**",
-        "**/__tests__/**",
-        "**/__mocks__/**",
-        "**/test-utils/**",
-      ],
-    },
+  outputFileTracingExcludes: {
+    "*": [
+      "**/test/**",
+      "**/examples/**",
+      "**/__tests__/**",
+      "**/__mocks__/**",
+      "**/test-utils/**",
+    ],
   },
 };
 

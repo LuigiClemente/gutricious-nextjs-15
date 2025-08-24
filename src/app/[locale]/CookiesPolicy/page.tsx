@@ -47,7 +47,7 @@ export default function CookiesPolicy() {
       {/* Content */}
       <div className="container mx-auto px-6 py-16 max-w-5xl">
         <h1 className="text-7xl md:text-8xl font-bold mb-16 text-center text-gray-800">
-          Cookies Policy
+          Cookie Policy
         </h1>
 
         <div className="prose prose-3xl max-w-none mx-auto text-gray-700">

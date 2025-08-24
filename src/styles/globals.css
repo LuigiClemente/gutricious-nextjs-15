@@ -824,7 +824,7 @@ footer:has(input:focus) .btn-primary.secondary {
   transform: scale(0.95) !important;
 }
 
-/* Style all links in privacy policy and cookies policy */
+/* Style all links in privacy policy and Cookie Policy */
 .prose a {
   color: #2ae8d3 !important;
   transition: color 0.2s ease !important;

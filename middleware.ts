@@ -1,74 +1,41 @@
-import { routes } from '@/utils/routes';
 import { NextRequest, NextResponse } from 'next/server';
 import { locales } from '@/utils/languages';
 
-const defaultLocale = 'en';
-
 export function middleware(request: NextRequest) {
-    const url = request.nextUrl.clone();
+    // Get the pathname of the request (e.g. /, /products, /en)
+    const pathname = request.nextUrl.pathname;
     
-    // Special case for root domain or IP address requests
-    if (url.pathname === '/') {
-        url.pathname = `/${defaultLocale}`;
-        return NextResponse.redirect(url);
+    // Skip static assets completely - before any other processing
+    if (pathname.includes('.')) {
+        return NextResponse.next();
     }
-
-    // Check if the pathname already starts with a locale
+    
+    // Check if the pathname already has a locale
     const pathnameHasLocale = locales.some(
-        (locale) => url.pathname.startsWith(`/${locale}/`) || url.pathname === `/${locale}`
+        locale => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
     );
-
+    
+    // If it already has a locale, don't modify the request
     if (pathnameHasLocale) {
         return NextResponse.next();
     }
-
-    // Detect browser locale from the Accept-Language header
-    const acceptLanguage = request.headers.get('accept-language');
-    let browserLocale = defaultLocale;
-
-    if (acceptLanguage) {
-        // Extract the first preferred language from the header
-        const preferredLanguage = acceptLanguage.split(',')[0].split('-')[0];
-        if (preferredLanguage && locales.includes(preferredLanguage as any)) {
-            browserLocale = preferredLanguage;
-        }
-    }
-
-    // Check for locale cookie
-    const localeCookie = request.cookies.get('NEXT_LOCALE');
-    if (localeCookie && locales.includes(localeCookie.value)) {
-        browserLocale = localeCookie.value;
-    }
-
-    // Dynamically handle redirection based on the pathname and detected locale
-    let shouldRedirect = false;
-
-    // Type-safe iteration over routes object
-    for (const locale of locales) {
-        // Check that locale exists in routes
-        if (locale in routes) {
-            const routeObj = routes[locale as keyof typeof routes];
-            for (const key in routeObj) {
-                if (url.pathname === routeObj[key as keyof typeof routeObj]) {
-                    url.pathname = `/${locale}`; // Redirect to the root of the locale
-                    shouldRedirect = true;
-                    break;
-                }
-            }
-        }
-        if (shouldRedirect) break;
-    }
-
-    // If no specific route is matched, set the pathname to the browser's detected locale
-    if (!shouldRedirect) {
-        url.pathname = `/${browserLocale}${url.pathname}`;
-    }
-
-    return NextResponse.redirect(url);
+    
+    // Redirect non-locale paths to English (/en)
+    // For root path '/' → '/en'
+    // For other paths '/products' → '/en/products'
+    const url = request.nextUrl.clone();
+    url.pathname = `/en${pathname === '/' ? '' : pathname}`;
+    
+    // Use 308 permanent redirect for better caching
+    return NextResponse.redirect(url, { status: 308 });
 }
 
 export const config = {
-    matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'] // Ensuring the matcher excludes specific paths
+    matcher: [
+        // Only match routes that need locale prefixes
+        // Explicitly exclude favicon.ico and all static files
+        '/((?!api/|_next/|_vercel/|assets/|favicon\.ico|.*\..*).*)'    
+    ]
 };
 
 export const runtime = 'experimental-edge';

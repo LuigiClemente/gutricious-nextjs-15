@@ -320,70 +320,7 @@ export const Main = () => {
       <ScrollTopAndComment></ScrollTopAndComment>
       <ScrollDownArrow navOpen={navOpen}></ScrollDownArrow>
 
-      <div
-        className="transparent-lang"
-        onClick={() => {
-          console.log(
-            "[DEBUG] Main transparent-lang clicked - langBtnState before:",
-            langBtnState
-          );
-          console.log(
-            "[DEBUG] Main transparent-lang clicked - Current target element:",
-            document.activeElement
-          );
-
-          // Use a consistent toggle approach similar to Navigation
-          const newState = !langBtnState;
-          console.log(
-            "[DEBUG] Main transparent-lang clicked - Setting to:",
-            newState
-          );
-
-          // Update both states atomically to ensure consistency
-          setLangBtnState(newState);
-
-          // Log post-state changes
-          setTimeout(() => {
-            console.log(
-              "[DEBUG] Main transparent-lang clicked - State after update:",
-              newState
-            );
-          }, 0);
-        }}
-        onTouchStart={(e) => {
-          // Prevent default to avoid double triggering with onClick
-          e.preventDefault();
-          console.log("[DEBUG] Main transparent-lang touch detected");
-        }}
-        onTouchEnd={(e) => {
-          // Prevent default to avoid unintended scrolling/zooming
-          e.preventDefault();
-
-          // Use a consistent toggle approach similar to Navigation
-          const newState = !langBtnState;
-          console.log(
-            "[DEBUG] Main transparent-lang touch ended - Setting to:",
-            newState
-          );
-
-          // Update both states atomically to ensure consistency
-          setLangBtnState(newState);
-        }}
-        aria-label="Toggle language selection"
-        role="button"
-        tabIndex={0}
-      ></div>
-      <div
-        className="transparent-menu"
-        onClick={() => setNavOpen(!navOpen)}
-      ></div>
-      <div
-        className="transparent-logo"
-        onClick={() => {
-          // Navigate to home page of current language
-          router.push(`/${localActive}${routes[selectedLanguage].home}`);
-        }}
-      ></div>
+     
       <CookiesModal></CookiesModal>
 
       <ReactCompareSlider

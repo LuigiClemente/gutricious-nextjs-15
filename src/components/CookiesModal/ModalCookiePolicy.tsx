@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { IoMdClose, IoMdArrowBack } from "react-icons/io";
 import { useTranslations } from "@/components/SimpleTranslationProvider";
 import enCookiePolicy from "../../../messages/CookiePolicy/en.json";
 
@@ -12,7 +11,6 @@ interface ModalCookiePolicyProps {
 }
 
 export default function ModalCookiePolicy({ locale, onClose, onNavigateToPrivacy }: ModalCookiePolicyProps) {
-  const [hovered, setHovered] = useState(false);
   const [localizedFallbacks, setLocalizedFallbacks] = useState(enCookiePolicy);
   const t = useTranslations('CookiePolicy');
   
@@ -44,30 +42,6 @@ export default function ModalCookiePolicy({ locale, onClose, onNavigateToPrivacy
 
   return (
     <div className="relative h-full overflow-y-auto">
-      {/* Close Cross Icon - Exact implementation from CookiePolicyClient */}
-      <button
-        onClick={onClose}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="fixed rounded-full border-none text-white cursor-pointer flex items-center justify-center z-[9999] transition-all duration-200"
-        style={{
-          top: '20px',
-          right: '20px',
-          width: '44px',
-          height: '44px',
-          fontSize: '24px',
-          background: hovered ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.7)',
-          transform: hovered ? 'scale(1.1)' : 'scale(1)',
-          boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-        aria-label="Close modal"
-      >
-        <IoMdClose />
-      </button>
-
       {/* Content - using translations based on the current locale */}
       <div className="container mx-auto px-6 py-16 max-w-5xl">
         <h1 className="text-7xl md:text-8xl font-bold mb-16 text-center text-gray-800">

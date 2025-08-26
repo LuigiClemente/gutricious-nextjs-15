@@ -104,7 +104,7 @@ const Cards = ({ cards, selectCard, executeScroll }: any) => {
                   </div>
                 </div>
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 pl-2 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white undefined sm:flex-row sm:w-[140px] sm:h-[2.75vw] ">
-                  <div className="w-full text-[2.75vw] sm:text-[1vw] flex items-center justify-center xl:text-base 2xl:text-2xl ">
+                  <div className="w-full text-responsive-base  flex items-center justify-center  ">
                     {t("Nutrition")}
                   </div>
                 </div>
@@ -327,10 +327,6 @@ const Cards = ({ cards, selectCard, executeScroll }: any) => {
                     className="CubeSchema_CubeSchema__card_title__gND6b"
                     style={{ color: card.textColor }}
                   >
-                    {console.log(
-                      card?.cardName,
-                      "card?.cardNamecard?.cardNamecard?.cardName"
-                    )}
                     {card?.cardName === "Gestion des Lipides" ? (
                       <div className="flex flex-col">
                         <span>Gestion des</span>
@@ -427,7 +423,7 @@ const Cards = ({ cards, selectCard, executeScroll }: any) => {
         </div>
       </div>
 
-      <div id="question-section" className="custom-container !m-0 mt-10">
+      <div id="question-section" className="custom-container flex flex-col items-center justify-center !m-0 mt-10">
         <h1 className="text-3xl md:text-5xl  font-bold text-center ">
           {t("cardQuestion")}
         </h1>

@@ -392,6 +392,10 @@ button[data-rcs="handle-container"] {
   .lined-text-box {
     width: 95vw;
   }
+  
+    .bottom-text {
+    font-size: 8px !important;
+  }
 }
 
 @media (max-height: 650px) and (min-width: 600px) {

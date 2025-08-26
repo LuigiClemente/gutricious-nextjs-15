@@ -9,6 +9,7 @@ import { LanguageSelector } from "../LanguageSelector";
 import "../LanguageSelector/styles.css";
 import ModalCookiePolicy from "./ModalCookiePolicy";
 import ModalPrivacyPolicy from "./ModalPrivacyPolicy";
+import { IoMdClose } from "react-icons/io";
 
 // Make sure to set the app element for accessibility reasons
 Modal.setAppElement("body");
@@ -42,10 +43,24 @@ const CookiesModal = () => {
 
   const showCookiePolicy = () => {
     setCurrentView('cookies');
+    // Reset scroll position when switching to cookie policy
+    setTimeout(() => {
+      const modalElement = document.querySelector('.MyModalSpecial');
+      if (modalElement) {
+        modalElement.scrollTop = 0;
+      }
+    }, 0);
   };
 
   const showPrivacyPolicy = () => {
     setCurrentView('privacy');
+    // Reset scroll position when switching to privacy policy
+    setTimeout(() => {
+      const modalElement = document.querySelector('.MyModalSpecial');
+      if (modalElement) {
+        modalElement.scrollTop = 0;
+      }
+    }, 0);
   };
 
   const returnToMainModal = () => {
@@ -234,6 +249,34 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
       shouldCloseOnOverlayClick={false}
       shouldCloseOnEsc={false}
     >
+      {/* Close button for cookie policy view - using sticky positioning */}
+      {currentView === 'cookies' && (
+        <button
+          onClick={returnToMainModal}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="sticky rounded-full border-none text-white cursor-pointer flex items-center justify-center z-[10000] transition-all duration-200"
+          style={{
+            top: '20px',
+            left: 'calc(100% - 64px)', // 44px width + 20px margin
+            width: '44px',
+            height: '44px',
+            fontSize: '24px',
+            background: isHovered ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.7)',
+            transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            float: 'right',
+            marginBottom: '-44px' // Negative margin to not affect layout
+          }}
+          aria-label="Close modal"
+        >
+          <IoMdClose />
+        </button>
+      )}
+
       {currentView === 'cookies' && (
         <ModalCookiePolicy 
           locale={getLocale()}
@@ -302,7 +345,7 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
       {currentView === 'main' && step === 2 && (
         <div className="step2">
         <div className="flex justify-between items-center pb-5 border-b mb-10">
-            <h2 className="text-3xl font-bold">{t('cookie_preference_heading')}</h2>
+            <h2 className="!text-3xl font-bold">{t('cookie_preference_heading')}</h2>
             <div className="language-selector-container" style={{ position: 'relative', zIndex: 10001, minWidth: '44px', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <LanguageSelector 
                 section="dark" 

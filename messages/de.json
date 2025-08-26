@@ -110,7 +110,7 @@
     "accept_and_continue_cookie": "Sie können diese Cookies akzeptieren, indem Sie auf “Akzeptieren und Fortfahren” klicken, oder klicken Sie auf “Cookie-Einstellungen setzen”, um Ihre Präferenzen festzulegen.",
     "accept_and_continue_button": "Akzeptieren und Fortfahren",
     "set_cookie_preferences": "Cookie-Einstellungen setzen",
-    "change_cookie-preference": "Sie können Ihre Präferenzen jederzeit ändern, indem Sie zum “Cookies”-Modul oder zur “Datenschutzeinstellungen”-Seite gehen. Sie sind über Links am Ende jeder Seite der gutricious.com Webseite zugänglich.",
+    "change_cookie-preference": "Sie können Ihre Browser-Cookies jederzeit aktualisieren, um Ihre Präferenzen zurückzusetzen.",
     "cookie_list": "Siehe die Liste der auf unserer Seite verwendeten Cookies",
 
     "what_is_a_cookie": "Was ist ein Cookie?",
@@ -128,6 +128,65 @@
     "personalization_cookies_define": "Diese Cookies ermöglichen es uns, Ihnen Empfehlungen, Suchergebnisse, Werbeanzeigen, Dienste und Inhalte zu bieten, die Ihren Erwartungen und Vorlieben entsprechen. Durch die Annahme dieser Cookies entscheiden Sie sich für ein bereichertes und personalisiertes Erlebnis.",
     "back-button": "Zurück",
     "save-button": "Speichern",
+
+    "show_details": "Details anzeigen",
+    "hide_details": "Details ausblenden",
+    "cookies_used": "Verwendete Cookies",
+    "name": "Name",
+    "purpose": "Zweck",
+    "duration": "Dauer",
+    
+    "auth_token_name": "auth_token",
+    "auth_token_purpose": "Authentifizierungstoken für sicheren Login",
+    "auth_token_duration": "Sitzung",
+    
+    "sec_validation_name": "sec_validation",
+    "sec_validation_purpose": "Sicherheitsvalidierung für Formularübermittlung",
+    "sec_validation_duration": "1 Stunde",
+    
+    "cookies_name": "cookies",
+    "cookies_purpose": "Speichert, ob der Benutzer das Cookie-Banner gesehen hat",
+    "cookies_duration": "7 Tage",
+    
+    "next_locale_name": "NEXT_LOCALE",
+    "next_locale_purpose": "Speichert die Spracheinstellung des Benutzers",
+    "next_locale_duration": "1 Jahr",
+    
+    "session_name": "__session",
+    "session_purpose": "Behält den Sitzungsstatus des Benutzers bei",
+    "session_duration": "Sitzung",
+    
+    "csrf_token_name": "csrf_token",
+    "csrf_token_purpose": "Schützt vor Cross-Site-Request-Fälschung",
+    "csrf_token_duration": "Sitzung",
+    
+    "umami_name": "umami.*",
+    "umami_purpose": "Anonyme Website-Nutzungsanalyse",
+    "umami_duration": "1 Jahr",
+    
+    "ga_name": "_ga",
+    "ga_purpose": "Google Analytics-Identifikator",
+    "ga_duration": "2 Jahre",
+    
+    "ga_session_name": "_ga_*",
+    "ga_session_purpose": "Google Analytics-Sitzungsdaten",
+    "ga_session_duration": "2 Jahre",
+    
+    "fbp_name": "_fbp",
+    "fbp_purpose": "Facebook-Pixel-Tracking",
+    "fbp_duration": "90 Tage",
+    
+    "gcl_name": "_gcl_au",
+    "gcl_purpose": "Google AdSense-Konversionsverknüpfung",
+    "gcl_duration": "90 Tage",
+    
+    "user_preferences_name": "user_preferences",
+    "user_preferences_purpose": "Speichert die Website-Einstellungen des Benutzers",
+    "user_preferences_duration": "1 Jahr",
+    
+    "recently_viewed_name": "recently_viewed",
+    "recently_viewed_purpose": "Verfolgt kürzlich angesehene Inhalte",
+    "recently_viewed_duration": "30 Tage",
 
     "form-main_heading": "Gutricious",
     "fill_form_to_connect": "Bitte füllen Sie dieses Formular aus, wir möchten wirklich Kontakt zu Ihnen aufnehmen.",

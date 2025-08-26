@@ -105,7 +105,7 @@
     "accept_and_continue_cookie": "You can either accept these cookies by clicking “Accept and Continue”, or click “Set cookie preferences” to set your preferences.",
     "accept_and_continue_button": "Accept and Continue",
     "set_cookie_preferences": "Set cookie preferences",
-    "change_cookie-preference": "You can change your preferences at any time by going to the “cookie” module or to the “Privacy Settings” page. They are accessible through links at the bottom of any gutricious.com website page.",
+    "change_cookie-preference": "You can refresh your browser cookies at any time to reset your preferences.",
     "cookie_list": "See the list of cookies used on our site",
 
     "what_is_a_cookie": "What is a cookie?",
@@ -129,6 +129,58 @@
     "name": "Name",
     "purpose": "Purpose",
     "duration": "Duration",
+    
+    "auth_token_name": "auth_token",
+    "auth_token_purpose": "Authentication token for secure login",
+    "auth_token_duration": "Session",
+    
+    "sec_validation_name": "sec_validation",
+    "sec_validation_purpose": "Security validation for form submission",
+    "sec_validation_duration": "1 hour",
+    
+    "cookies_name": "cookies",
+    "cookies_purpose": "Stores whether user has seen cookie banner",
+    "cookies_duration": "7 days",
+    
+    "next_locale_name": "NEXT_LOCALE",
+    "next_locale_purpose": "Stores user's language preference",
+    "next_locale_duration": "1 year",
+    
+    "session_name": "__session",
+    "session_purpose": "Tracks user's session state",
+    "session_duration": "Session",
+    
+    "csrf_token_name": "csrf_token",
+    "csrf_token_purpose": "Protects against cross-site request forgery",
+    "csrf_token_duration": "Session",
+    
+    "umami_name": "umami.*",
+    "umami_purpose": "Anonymous website usage analytics",
+    "umami_duration": "1 year",
+    
+    "ga_name": "_ga",
+    "ga_purpose": "Google Analytics identifier",
+    "ga_duration": "2 years",
+    
+    "ga_session_name": "_ga_*",
+    "ga_session_purpose": "Google Analytics session data",
+    "ga_session_duration": "2 years",
+    
+    "fbp_name": "_fbp",
+    "fbp_purpose": "Facebook pixel tracking",
+    "fbp_duration": "90 days",
+    
+    "gcl_name": "_gcl_au",
+    "gcl_purpose": "Google AdSense conversion linking",
+    "gcl_duration": "90 days",
+    
+    "user_preferences_name": "user_preferences",
+    "user_preferences_purpose": "Stores user's site preferences",
+    "user_preferences_duration": "1 year",
+    
+    "recently_viewed_name": "recently_viewed",
+    "recently_viewed_purpose": "Tracks recently viewed content",
+    "recently_viewed_duration": "30 days",
 
     "form-main_heading": "Gutricious",
     "fill_form_to_connect": "Fill this form we really want to connect with you.",

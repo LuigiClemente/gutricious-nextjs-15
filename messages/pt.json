@@ -112,7 +112,7 @@
     "accept_and_continue_cookie": "Pode aceitar estes cookies clicando em “Aceitar e Continuar” ou clicar em “Definir preferências de cookies” para estabelecer as suas preferências. ",
     "accept_and_continue_button": "Aceitar e Continuar",
     "set_cookie_preferences": "Definir preferências de cookies",
-    "change_cookie-preference": "Pode alterar as suas preferências a qualquer momento indo ao módulo “Cookies” ou à página “Definições de Privacidade”. Estão acessíveis através de links no fundo de qualquer página do site gutricious.com.",
+    "change_cookie-preference": "Pode atualizar os cookies do seu navegador a qualquer momento para redefinir as suas preferências.",
     "cookie_list": "Veja a lista de cookies utilizados no nosso site",
 
     "what_is_a_cookie": "O que é um cookie?",
@@ -130,6 +130,65 @@
     "personalization_cookies_define": "Estes cookies permitem-nos fornecer-lhe recomendações, resultados de pesquisa, publicidades, serviços e conteúdos que correspondem às suas expectativas e preferências. Ao aceitar estes cookies, está a optar por uma experiência enriquecida e personalizada.",
     "back-button": "Voltar",
     "save-button": "Guardar",
+
+    "show_details": "Mostrar detalhes",
+    "hide_details": "Esconder detalhes",
+    "cookies_used": "Cookies utilizados",
+    "name": "Nome",
+    "purpose": "Propósito",
+    "duration": "Duração",
+    
+    "auth_token_name": "auth_token",
+    "auth_token_purpose": "Token de autenticação para login seguro",
+    "auth_token_duration": "Sessão",
+    
+    "sec_validation_name": "sec_validation",
+    "sec_validation_purpose": "Validação de segurança para envio de formulário",
+    "sec_validation_duration": "1 hora",
+    
+    "cookies_name": "cookies",
+    "cookies_purpose": "Armazena se o usuário viu o banner de cookies",
+    "cookies_duration": "7 dias",
+    
+    "next_locale_name": "NEXT_LOCALE",
+    "next_locale_purpose": "Armazena a preferência de idioma do usuário",
+    "next_locale_duration": "1 ano",
+    
+    "session_name": "__session",
+    "session_purpose": "Mantém o estado da sessão do usuário",
+    "session_duration": "Sessão",
+    
+    "csrf_token_name": "csrf_token",
+    "csrf_token_purpose": "Protege contra falsificação de solicitação entre sites",
+    "csrf_token_duration": "Sessão",
+    
+    "umami_name": "umami.*",
+    "umami_purpose": "Análise anônima de uso do website",
+    "umami_duration": "1 ano",
+    
+    "ga_name": "_ga",
+    "ga_purpose": "Identificador do Google Analytics",
+    "ga_duration": "2 anos",
+    
+    "ga_session_name": "_ga_*",
+    "ga_session_purpose": "Dados da sessão do Google Analytics",
+    "ga_session_duration": "2 anos",
+    
+    "fbp_name": "_fbp",
+    "fbp_purpose": "Rastreamento de pixel do Facebook",
+    "fbp_duration": "90 dias",
+    
+    "gcl_name": "_gcl_au",
+    "gcl_purpose": "Vinculação de conversão do Google AdSense",
+    "gcl_duration": "90 dias",
+    
+    "user_preferences_name": "user_preferences",
+    "user_preferences_purpose": "Armazena as preferências do site do usuário",
+    "user_preferences_duration": "1 ano",
+    
+    "recently_viewed_name": "recently_viewed",
+    "recently_viewed_purpose": "Rastreia conteúdo visualizado recentemente",
+    "recently_viewed_duration": "30 dias",
 
     "form-main_heading": "Gutricious",
     "fill_form_to_connect": "Preencha este formulário, queremos realmente nos conectar com você",

@@ -112,7 +112,7 @@
     "accept_and_continue_cookie": "U kunt deze cookies accepteren door te klikken op “Accepteren en doorgaan” of klik op “Cookievoorkeuren instellen” om uw voorkeuren in te stellen.",
     "accept_and_continue_button": "Accepteren en doorgaan",
     "set_cookie_preferences": "Cookievoorkeuren instellen",
-    "change_cookie-preference": "U kunt uw voorkeuren op elk moment wijzigen door naar het “Cookies” module of naar de “Privacy-instellingen” pagina te gaan. Ze zijn toegankelijk via links onderaan elke pagina van de gutricious.com website. ",
+    "change_cookie-preference": "U kunt de cookies van uw browser op elk moment vernieuwen om uw voorkeuren te resetten.",
     "cookie_list": "Zie de lijst van cookies die op onze site worden gebruikt",
 
     "what_is_a_cookie": "Wat is een cookie?",
@@ -130,6 +130,65 @@
     "personalization_cookies_define": "Deze cookies stellen ons in staat u aanbevelingen, zoekresultaten, advertenties, diensten en inhoud aan te bieden die aansluiten bij uw verwachtingen en voorkeuren. Door deze cookies te accepteren, kiest u voor een verrijkte en gepersonaliseerde ervaring.",
     "back-button": "Terug",
     "save-button": "Opslaan",
+
+    "show_details": "Details tonen",
+    "hide_details": "Details verbergen",
+    "cookies_used": "Gebruikte cookies",
+    "name": "Naam",
+    "purpose": "Doel",
+    "duration": "Duur",
+    
+    "auth_token_name": "auth_token",
+    "auth_token_purpose": "Authenticatietoken voor veilig inloggen",
+    "auth_token_duration": "Sessie",
+    
+    "sec_validation_name": "sec_validation",
+    "sec_validation_purpose": "Beveiligingsvalidatie voor formuliersinzending",
+    "sec_validation_duration": "1 uur",
+    
+    "cookies_name": "cookies",
+    "cookies_purpose": "Slaat op of de gebruiker de cookiebanner heeft gezien",
+    "cookies_duration": "7 dagen",
+    
+    "next_locale_name": "NEXT_LOCALE",
+    "next_locale_purpose": "Slaat de taalvoorkeur van de gebruiker op",
+    "next_locale_duration": "1 jaar",
+    
+    "session_name": "__session",
+    "session_purpose": "Houdt de sessie-status van de gebruiker bij",
+    "session_duration": "Sessie",
+    
+    "csrf_token_name": "csrf_token",
+    "csrf_token_purpose": "Beschermt tegen cross-site request vervalsing",
+    "csrf_token_duration": "Sessie",
+    
+    "umami_name": "umami.*",
+    "umami_purpose": "Anonieme website gebruiksanalyse",
+    "umami_duration": "1 jaar",
+    
+    "ga_name": "_ga",
+    "ga_purpose": "Google Analytics-identificator",
+    "ga_duration": "2 jaar",
+    
+    "ga_session_name": "_ga_*",
+    "ga_session_purpose": "Google Analytics-sessiegegevens",
+    "ga_session_duration": "2 jaar",
+    
+    "fbp_name": "_fbp",
+    "fbp_purpose": "Facebook pixel tracking",
+    "fbp_duration": "90 dagen",
+    
+    "gcl_name": "_gcl_au",
+    "gcl_purpose": "Google AdSense conversiekoppeling",
+    "gcl_duration": "90 dagen",
+    
+    "user_preferences_name": "user_preferences",
+    "user_preferences_purpose": "Slaat de websitevoorkeuren van de gebruiker op",
+    "user_preferences_duration": "1 jaar",
+    
+    "recently_viewed_name": "recently_viewed",
+    "recently_viewed_purpose": "Houdt recent bekeken inhoud bij",
+    "recently_viewed_duration": "30 dagen",
 
     "form-main_heading": "Gutricious",
     "fill_form_to_connect": "Vul dit formulier in, we willen echt contact met u maken",

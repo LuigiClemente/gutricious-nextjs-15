@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import Switch from "../Switch/switch";
 import { useTranslations } from "@/components/SimpleTranslationProvider";
+import { useCallback } from "react";
 import Cookies from "js-cookie";
 import { trackEvent, EventCategory } from "@/utils/analytics";
 import { LanguageSelector } from "../LanguageSelector";
@@ -129,43 +130,43 @@ const CookiesModal = () => {
         "notChoosable": true,
         "description": t('essential_cookies-define'),
         "cookies": [
-          { name: "cookies", purpose: "Stores whether user has seen the cookie banner", duration: "7 days" },
-          { name: "NEXT_LOCALE", purpose: "Stores user's language preference", duration: "1 year" },
-          { name: "__session", purpose: "Maintains user session state", duration: "Session" },
-          { name: "csrf_token", purpose: "Protects against cross-site request forgery", duration: "Session" }
+          { name: t('cookies_name'), purpose: t('cookies_purpose'), duration: t('cookies_duration') },
+          { name: t('next_locale_name'), purpose: t('next_locale_purpose'), duration: t('next_locale_duration') },
+          { name: t('session_name'), purpose: t('session_purpose'), duration: t('session_duration') },
+          { name: t('csrf_token_name'), purpose: t('csrf_token_purpose'), duration: t('csrf_token_duration') }
         ]
     },
     {
         "type": t('security_cookies'),
         "description": t('security_cookies_define'),
         "cookies": [
-          { name: "auth_token", purpose: "Authentication token for secure login", duration: "Session" },
-          { name: "sec_validation", purpose: "Security validation for form submission", duration: "1 hour" }
+          { name: t('auth_token_name'), purpose: t('auth_token_purpose'), duration: t('auth_token_duration') },
+          { name: t('sec_validation_name'), purpose: t('sec_validation_purpose'), duration: t('sec_validation_duration') }
         ]
     },
     {
         "type": t('analytics_cookies'),
         "description": t('analytics_cookies_define'),
         "cookies": [
-          { name: "umami.*", purpose: "Anonymous website usage analytics", duration: "1 year" },
-          { name: "_ga", purpose: "Google Analytics identifier", duration: "2 years" },
-          { name: "_ga_*", purpose: "Google Analytics session data", duration: "2 years" }
+          { name: t('umami_name'), purpose: t('umami_purpose'), duration: t('umami_duration') },
+          { name: t('ga_name'), purpose: t('ga_purpose'), duration: t('ga_duration') },
+          { name: t('ga_session_name'), purpose: t('ga_session_purpose'), duration: t('ga_session_duration') }
         ]
     },
     {
         "type": t('advertising_cookies'),
         "description": t('advertising_cookies_define'),
         "cookies": [
-          { name: "_fbp", purpose: "Facebook pixel tracking", duration: "90 days" },
-          { name: "_gcl_au", purpose: "Google AdSense conversion linking", duration: "90 days" }
+          { name: t('fbp_name'), purpose: t('fbp_purpose'), duration: t('fbp_duration') },
+          { name: t('gcl_name') || "_gcl_au", purpose: t('gcl_purpose') || "Google AdSense conversion linking", duration: t('gcl_duration') || "90 days" }
         ]
     },
     {
       "type": t('personalization_cookies'),
       "description": t('personalization_cookies_define'),
       "cookies": [
-        { name: "user_preferences", purpose: "Stores user's site preferences", duration: "1 year" },
-        { name: "recently_viewed", purpose: "Tracks recently viewed content", duration: "30 days" }
+        { name: t('user_preferences_name') || "user_preferences", purpose: t('user_preferences_purpose') || "Stores user's site preferences", duration: t('user_preferences_duration') || "1 year" },
+        { name: t('recently_viewed_name') || "recently_viewed", purpose: t('recently_viewed_purpose') || "Tracks recently viewed content", duration: t('recently_viewed_duration') || "30 days" }
       ]
   }
 ];

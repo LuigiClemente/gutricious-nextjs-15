@@ -176,6 +176,8 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
       contentLabel="Welcome Modal"
       className="MyModalSpecial"
       overlayClassName="MyOverLayOfInformation"
+      shouldCloseOnOverlayClick={false}
+      shouldCloseOnEsc={false}
     >
       {step === 1 && (
         <div>

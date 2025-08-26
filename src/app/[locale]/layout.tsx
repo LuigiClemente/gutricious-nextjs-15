@@ -46,11 +46,42 @@ export default async function LocaleLayout({
           {children}
     </ModalProvider>
         </SimpleTranslationProvider>
+        {/* Umami Analytics */}
         <Script
+          id="umami-analytics"
           src="https://umami.gutricious.com/script.js"
-          data-website-id="71b7bffd-8400-466d-91cf-16421f0f7cf4"
+          data-website-id="435b949e-c453-4e8b-9f7a-7d8002c37fa1"
           strategy="afterInteractive"
+          data-domains="gutricious.com,www.gutricious.com"
+          data-auto-track="true"
+          data-do-not-track="true"
+          data-cache="true"
+          defer
         />
+        <Script id="umami-init">
+          {`
+            // Track page views on route changes
+            if (window.umami) {
+              umami.trackView();
+            }
+            
+            // Track mobile devices
+            if (typeof window !== 'undefined' && window.innerWidth < 768) {
+              if (window.umami) {
+                umami.track('mobile-view', { type: 'pageview' });
+              }
+            }
+            
+            // Track touch events
+            if (typeof window !== 'undefined' && 'ontouchstart' in window) {
+              document.addEventListener('touchstart', function() {
+                if (window.umami) {
+                  umami.track('touch-event', { type: 'touchstart' });
+                }
+              }, { once: true });
+            }
+          `}
+        </Script>
       </body>
     </html>
   );

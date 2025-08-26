@@ -7,6 +7,8 @@ import Cookies from "js-cookie";
 import { trackEvent, EventCategory } from "@/utils/analytics";
 import { LanguageSelector } from "../LanguageSelector";
 import "../LanguageSelector/styles.css";
+import ModalCookiePolicy from "./ModalCookiePolicy";
+import ModalPrivacyPolicy from "./ModalPrivacyPolicy";
 
 // Make sure to set the app element for accessibility reasons
 Modal.setAppElement("body");
@@ -14,6 +16,7 @@ Modal.setAppElement("body");
 const CookiesModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [step, setStep] = useState(1);
+  const [currentView, setCurrentView] = useState<'main' | 'cookies' | 'privacy'>('main');
   const [isHovered, setIsHovered] = useState(false);
   const t = useTranslations('Index');
 
@@ -35,6 +38,18 @@ const CookiesModal = () => {
   const goToStep1 = () => {
     // Transition back to step 1
     setStep(1);
+  };
+
+  const showCookiePolicy = () => {
+    setCurrentView('cookies');
+  };
+
+  const showPrivacyPolicy = () => {
+    setCurrentView('privacy');
+  };
+
+  const returnToMainModal = () => {
+    setCurrentView('main');
   };
 
   // Close modal and mark that user has made a selection
@@ -219,7 +234,23 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
       shouldCloseOnOverlayClick={false}
       shouldCloseOnEsc={false}
     >
-      {step === 1 && (
+      {currentView === 'cookies' && (
+        <ModalCookiePolicy 
+          locale={getLocale()}
+          onClose={returnToMainModal}
+          onNavigateToPrivacy={showPrivacyPolicy}
+        />
+      )}
+      
+      {currentView === 'privacy' && (
+        <ModalPrivacyPolicy 
+          locale={getLocale()}
+          onClose={returnToMainModal}
+          onNavigateToCookies={showCookiePolicy}
+        />
+      )}
+      
+      {currentView === 'main' && step === 1 && (
         <div>
           <div className="flex justify-between items-center pb-5 border-b mb-10">
             <h2 className="!text-3xl font-bold">{t('cookie_preference_heading')}</h2>
@@ -258,21 +289,17 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
             {t('change_cookie-preference')}
 
             </p>
-            <a 
-              href={getCookiePolicyPath()} 
-              className="border-black border-b cursor-pointer"
-              onClick={() => {
-                // Close modal before navigation to cookie page
-                closeModal();
-              }}
+            <button 
+              onClick={showCookiePolicy}
+              className="border-black border-b cursor-pointer bg-transparent border-0 p-0 text-left"
             >
               {t('cookie_list')}
-            </a>
+            </button>
           </div>
         </div>
       )}
 
-      {step === 2 && (
+      {currentView === 'main' && step === 2 && (
         <div className="step2">
         <div className="flex justify-between items-center pb-5 border-b mb-10">
             <h2 className="text-3xl font-bold">{t('cookie_preference_heading')}</h2>
@@ -357,16 +384,12 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
             <p>
             {t('change_cookie-preference')}
             </p>
-            <a 
-              href={getCookiePolicyPath()} 
-              className="border-black border-b cursor-pointer"
-              onClick={() => {
-                // Close modal before navigation to cookie page
-                closeModal();
-              }}
+            <button 
+              onClick={showCookiePolicy}
+              className="border-black border-b cursor-pointer bg-transparent border-0 p-0 text-left"
             >
               {t('cookie_list')}
-            </a>
+            </button>
           </div>
         </div>
       )}

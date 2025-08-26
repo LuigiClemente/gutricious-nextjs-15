@@ -1,0 +1,107 @@
+{
+  "title": "Datenschutzrichtlinie",
+  "overview_heading": "Überblick",
+  "overview_text": "Diese Datenschutzerklärung erläutert, wie wir Ihre personenbezogenen Daten erfassen, verwenden und schützen, wenn Sie unsere Website und Dienste nutzen.",
+  "introduction": "Ihre Privatsphäre ist uns wichtig. Diese Richtlinie erklärt, wie wir Ihre personenbezogenen Daten sammeln, verwenden und schützen.",
+  
+  "information_collection_heading": "Informationen, die wir sammeln",
+  "personal_data_heading": "Personenbezogene Daten",
+  "types_data_heading": "Arten gesammelter Daten",
+  "types_data_summary": "Wir sammeln verschiedene Arten von Informationen, um unsere Dienste zu erbringen und zu verbessern.",
+  
+  "personal_information_section": {
+    "heading": "Persönliche Informationen",
+    "content": "Wir können Informationen wie Ihren Namen, Ihre E-Mail-Adresse, Postanschrift, Telefonnummer und Zahlungsdaten sammeln, wenn Sie sich registrieren, einen Kauf tätigen oder Formulare auf unserer Website ausfüllen."
+  },
+  
+  "customer_info_heading": "Kundeninformationen",
+  "customer_info_text1": "Wir sammeln Informationen, die Sie uns zur Verfügung stellen, wenn Sie ein Konto erstellen oder einen Kauf tätigen.",
+  "customer_info_text2": "Diese Informationen können Ihren Namen, Ihre E-Mail-Adresse, Lieferadresse und Zahlungsdaten umfassen.",
+  "customer_info_text3": "Wir verwenden diese Informationen, um Ihre Bestellungen zu bearbeiten und Ihnen qualitativ hochwertigen Kundenservice zu bieten.",
+  
+  "usage_information_section": {
+    "heading": "Nutzungsinformationen",
+    "content": "Wir sammeln Informationen darüber, wie Sie mit unserer Website interagieren, einschließlich der von Ihnen besuchten Seiten, der von Ihnen angeklickten Links und der von Ihnen durchgeführten Suchanfragen."
+  },
+  
+  "usage_data_heading": "Nutzungsdaten",
+  "usage_data_text": "Wir erfassen Daten darüber, wie Sie auf unseren Dienst zugreifen und ihn nutzen, einschließlich IP-Adressen, Browsertyp, besuchte Seiten und Zugriffszeiten.",
+  
+  "technical_info_heading": "Technische Informationen",
+  "technical_info_text": "Wir sammeln automatisch technische Informationen über Ihr Gerät, einschließlich IP-Adresse, Browsertyp, Betriebssystem und eindeutiger Gerätekennungen.",
+  
+  "device_information_section": {
+    "heading": "Geräteinformationen",
+    "content": "Wir können Informationen über das von Ihnen verwendete Gerät sammeln, einschließlich Gerätetyp, IP-Adresse, Browser und Betriebssystem."
+  },
+  
+  "how_we_use_heading": "Wie wir Ihre Informationen verwenden",
+  "how_we_use_intro": "Wir verwenden Ihre personenbezogenen Daten für verschiedene Zwecke, darunter:",
+  "purposes_list": [
+    "Verarbeitung und Verwaltung Ihrer Bestellungen",
+    "Verbesserung unserer Produkte und Dienstleistungen",
+    "Personalisierung Ihrer Erfahrung auf unserer Website",
+    "Versand von Aktualisierungen und Angeboten",
+    "Beantwortung Ihrer Fragen und Anfragen zum Kundendienst"
+  ],
+  
+  "use_purpose_1": "Bereitstellung und Aufrechterhaltung unseres Dienstes",
+  "use_purpose_2": "Benachrichtigung über Änderungen an unserem Dienst",
+  "use_purpose_3": "Teilnahme an interaktiven Funktionen unseres Dienstes, wenn Sie sich dafür entscheiden",
+  "use_purpose_4": "Kundendienstleistungen erbringen",
+  "use_purpose_5": "Analyse oder wertvolle Informationen sammeln, um unseren Dienst zu verbessern",
+  "use_purpose_6": "Die Nutzung unseres Dienstes überwachen",
+  
+  "information_sharing_heading": "Weitergabe Ihrer Informationen",
+  "info_sharing_heading": "Informationsweitergabe",
+  "info_sharing_intro": "Wir geben Ihre personenbezogenen Daten in bestimmten Situationen weiter, darunter:",
+  "sharing_parties": [
+    "Dienstleister, die uns bei unseren Geschäftstätigkeiten unterstützen",
+    "Einhaltung rechtlicher oder behördlicher Verpflichtungen",
+    "Schutz unserer Rechte, Privatsphäre, Sicherheit oder unseres Eigentums"
+  ],
+  
+  "sharing_circumstance_1": "An Dienstleister zur Überwachung und Analyse der Nutzung unseres Dienstes",
+  "sharing_circumstance_2": "Bei Unternehmensübertragungen, im Falle einer Fusion, Übernahme oder eines Verkaufs von Vermögenswerten",
+  "sharing_circumstance_3": "Mit Ihrer Zustimmung für jeden anderen von Ihnen angegebenen Zweck",
+  
+  "data_security_heading": "Datensicherheit",
+  "data_security_content": "Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre personenbezogenen Daten vor unbefugtem Zugriff, Änderung, Offenlegung oder Zerstörung zu schützen. Keine Methode der Übertragung über das Internet oder der elektronischen Speicherung ist jedoch zu 100% sicher.",
+  
+  "your_rights_heading": "Ihre Rechte",
+  "your_rights_intro": "Nach den Datenschutzgesetzen haben Sie folgende Rechte:",
+  "rights_list": [
+    "Auskunft über die zu Ihrer Person gespeicherten Daten zu verlangen",
+    "Berichtigung unrichtiger Daten zu verlangen",
+    "Löschung Ihrer personenbezogenen Daten zu verlangen",
+    "Widerspruch gegen die Verarbeitung Ihrer Daten einzulegen",
+    "Einschränkung der Verarbeitung Ihrer Daten zu verlangen"
+  ],
+  
+  "right_1": "Das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten",
+  "right_2": "Das Recht auf Berichtigung",
+  "right_3": "Das Widerspruchsrecht",
+  "right_4": "Das Recht auf Einschränkung der Verarbeitung",
+  "right_5": "Das Recht auf Datenübertragbarkeit",
+  
+  "cookies_heading": "Verwendung von Cookies",
+  "cookies_tracking_heading": "Cookies und Tracking-Technologien",
+  "cookies_content": "Unsere Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Sie können Ihre Cookie-Einstellungen in Ihrem Browser verwalten.",
+  "cookies_tracking_text": "Wir verwenden Cookies und ähnliche Tracking-Technologien, um die Aktivitäten auf unserem Dienst zu verfolgen und bestimmte Informationen zu speichern. Sie können Ihren Browser anweisen, alle Cookies abzulehnen oder anzuzeigen, wann ein Cookie gesendet wird.",
+  
+  "changes_policy_heading": "Änderungen dieser Datenschutzrichtlinie",
+  "changes_policy_text": "Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Wir werden Sie über etwaige Änderungen informieren, indem wir die aktualisierte Datenschutzrichtlinie auf dieser Seite veröffentlichen und das Datum der letzten Aktualisierung aktualisieren.",
+  
+  "contact_us_heading": "Kontaktieren Sie uns",
+  "contact_us_content": "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte unter",
+  
+  "questions_feedback_heading": "Fragen und Feedback",
+  "questions_feedback_text": "Bei Fragen oder Anmerkungen zu unserer Datenschutzrichtlinie wenden Sie sich bitte an unseren Datenschutzbeauftragten unter",
+  "dpo_email": "datenschutz@gutricious.com",
+  
+  "general_inquiries_heading": "Allgemeine Anfragen",
+  "general_inquiries_text": "Für allgemeine Anfragen kontaktieren Sie uns bitte unter",
+  "general_email": "hallo@gutricious.com",
+  
+  "last_updated": "Letzte Aktualisierung: 26. August 2024"
+}

@@ -424,6 +424,13 @@ color: #090611;
   max-width: 1000px !important;
 }
 
+/* Modal policy pages should use full width like step2 */
+.MyModalSpecial:has([class*="ModalCookiePolicy"]),
+.MyModalSpecial:has([class*="ModalPrivacyPolicy"]) {
+  max-width: 1000px !important;
+  max-height: 90vh !important;
+}
+
 /* Target the scrollbar within the modal and set its width to 0 */
 .ReactModal__Content.ReactModal__Content--after-open::-webkit-scrollbar {
   width: 0px; /* for horizontal scroll */
@@ -844,9 +851,12 @@ footer:has(input:focus) .btn-primary.secondary {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10001;
+  z-index: 100000 !important; /* Extremely high z-index to ensure visibility */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
+  /* Ensure button is always visible regardless of scroll position */
+  position: fixed !important;
+  pointer-events: auto !important;
 }
 
 .floating-close-button:active {

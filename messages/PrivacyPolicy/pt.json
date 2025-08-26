@@ -1,0 +1,107 @@
+{
+  "title": "Política de Privacidade",
+  "overview_heading": "Visão Geral",
+  "overview_text": "Esta política de privacidade explica como coletamos, usamos e protegemos suas informações pessoais quando você utiliza nosso site e serviços.",
+  "introduction": "Em nossa empresa, sua privacidade é nossa prioridade. Esta política explica como coletamos, usamos e protegemos suas informações pessoais.",
+  
+  "information_collection_heading": "Informações que Coletamos",
+  "personal_data_heading": "Dados Pessoais",
+  "types_data_heading": "Tipos de Dados Coletados",
+  "types_data_summary": "Coletamos diferentes tipos de informações para fornecer e melhorar nosso serviço.",
+  
+  "personal_information_section": {
+    "heading": "Informações Pessoais",
+    "content": "Podemos coletar informações como seu nome, endereço de e-mail, endereço postal, número de telefone e dados de pagamento quando você se registra, faz uma compra ou preenche formulários em nosso site."
+  },
+  
+  "customer_info_heading": "Informações do Cliente",
+  "customer_info_text1": "Coletamos informações que você nos fornece ao criar uma conta ou realizar uma compra.",
+  "customer_info_text2": "Estas informações podem incluir seu nome, endereço de e-mail, endereço de entrega e informações de pagamento.",
+  "customer_info_text3": "Utilizamos essas informações para processar seus pedidos e fornecer um atendimento de qualidade.",
+  
+  "usage_information_section": {
+    "heading": "Informações de Uso",
+    "content": "Coletamos informações sobre como você interage com nosso site, incluindo as páginas que visita, os links em que clica e as pesquisas que realiza."
+  },
+  
+  "usage_data_heading": "Dados de Uso",
+  "usage_data_text": "Coletamos dados sobre como você acessa e utiliza nosso serviço, incluindo endereços IP, tipo de navegador, páginas visitadas e horários de acesso.",
+  
+  "technical_info_heading": "Informações Técnicas",
+  "technical_info_text": "Coletamos automaticamente informações técnicas sobre seu dispositivo, incluindo endereço IP, tipo de navegador, sistema operacional e identificadores únicos.",
+  
+  "device_information_section": {
+    "heading": "Informações do Dispositivo",
+    "content": "Podemos coletar informações sobre o dispositivo que você usa para acessar nosso site, incluindo o tipo de dispositivo, endereço IP, navegador e sistema operacional."
+  },
+  
+  "how_we_use_heading": "Como Utilizamos Suas Informações",
+  "how_we_use_intro": "Utilizamos suas informações pessoais para várias finalidades, incluindo:",
+  "purposes_list": [
+    "Processar e gerenciar seus pedidos",
+    "Melhorar nossos produtos e serviços",
+    "Personalizar sua experiência em nosso site",
+    "Enviar atualizações e ofertas promocionais",
+    "Responder a suas perguntas e solicitações de atendimento ao cliente"
+  ],
+  
+  "use_purpose_1": "Fornecer e manter nosso serviço",
+  "use_purpose_2": "Notificá-lo sobre alterações em nosso serviço",
+  "use_purpose_3": "Permitir que você participe de recursos interativos do nosso serviço quando desejar",
+  "use_purpose_4": "Fornecer suporte ao cliente",
+  "use_purpose_5": "Coletar análises ou informações valiosas para melhorar nosso serviço",
+  "use_purpose_6": "Monitorar o uso do nosso serviço",
+  
+  "information_sharing_heading": "Compartilhamento de Suas Informações",
+  "info_sharing_heading": "Compartilhamento de Informações",
+  "info_sharing_intro": "Compartilhamos suas informações pessoais em determinadas situações, incluindo:",
+  "sharing_parties": [
+    "Prestadores de serviços que nos auxiliam em nossas operações comerciais",
+    "Conformidade com obrigações legais ou regulatórias",
+    "Proteção de nossos direitos, privacidade, segurança ou propriedade"
+  ],
+  
+  "sharing_circumstance_1": "Com provedores de serviços para monitorar e analisar o uso do nosso serviço",
+  "sharing_circumstance_2": "Para transferência de negócios, em caso de fusão, aquisição ou venda de ativos",
+  "sharing_circumstance_3": "Com seu consentimento para qualquer outra finalidade que você especificar",
+  
+  "data_security_heading": "Segurança dos Dados",
+  "data_security_content": "Implementamos medidas de segurança técnicas e organizacionais para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. No entanto, nenhum método de transmissão pela Internet ou armazenamento eletrônico é 100% seguro.",
+  
+  "your_rights_heading": "Seus Direitos",
+  "your_rights_intro": "De acordo com as leis de proteção de dados, você tem os seguintes direitos:",
+  "rights_list": [
+    "Acessar as informações pessoais que temos sobre você",
+    "Solicitar a correção de informações imprecisas",
+    "Solicitar a exclusão de seus dados pessoais",
+    "Opor-se ao processamento de seus dados pessoais",
+    "Solicitar a limitação do processamento de seus dados"
+  ],
+  
+  "right_1": "O direito de acessar, atualizar ou excluir suas informações",
+  "right_2": "O direito de retificação",
+  "right_3": "O direito de oposição",
+  "right_4": "O direito à limitação do tratamento",
+  "right_5": "O direito à portabilidade dos dados",
+  
+  "cookies_heading": "Uso de Cookies",
+  "cookies_tracking_heading": "Cookies e Tecnologias de Rastreamento",
+  "cookies_content": "Nosso site utiliza cookies para melhorar sua experiência. Você pode gerenciar suas preferências de cookies através das configurações do seu navegador.",
+  "cookies_tracking_text": "Utilizamos cookies e tecnologias de rastreamento semelhantes para rastrear a atividade em nosso serviço e manter determinadas informações. Você pode instruir seu navegador a recusar todos os cookies ou a indicar quando um cookie está sendo enviado.",
+  
+  "changes_policy_heading": "Alterações nesta Política de Privacidade",
+  "changes_policy_text": "Podemos atualizar nossa Política de Privacidade periodicamente. Notificaremos você sobre quaisquer alterações publicando a nova Política de Privacidade nesta página e atualizando a data de revisão no final.",
+  
+  "contact_us_heading": "Entre em Contato Conosco",
+  "contact_us_content": "Se tiver dúvidas sobre esta política de privacidade, entre em contato conosco em",
+  
+  "questions_feedback_heading": "Dúvidas e Comentários",
+  "questions_feedback_text": "Se tiver dúvidas ou comentários sobre nossa Política de Privacidade, entre em contato com nosso Encarregado de Proteção de Dados em",
+  "dpo_email": "dpo@gutricious.com",
+  
+  "general_inquiries_heading": "Informações Gerais",
+  "general_inquiries_text": "Para informações gerais, entre em contato conosco em",
+  "general_email": "ola@gutricious.com",
+  
+  "last_updated": "Última atualização: 26 de Agosto de 2024"
+}

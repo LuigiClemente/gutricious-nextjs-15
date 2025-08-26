@@ -1,0 +1,107 @@
+{
+  "title": "Politique de Confidentialité",
+  "overview_heading": "Aperçu",
+  "overview_text": "Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez notre site web et nos services.",
+  "introduction": "Chez notre entreprise, votre vie privée est notre priorité. Cette politique explique comment nous collectons, utilisons et protégeons vos informations personnelles.",
+  
+  "information_collection_heading": "Informations que nous collectons",
+  "personal_data_heading": "Données Personnelles",
+  "types_data_heading": "Types de Données Collectées",
+  "types_data_summary": "Nous collectons différents types d'informations pour fournir et améliorer notre service.",
+  
+  "personal_information_section": {
+    "heading": "Informations personnelles",
+    "content": "Nous pouvons collecter des informations telles que votre nom, adresse e-mail, adresse postale, numéro de téléphone et coordonnées de paiement lorsque vous vous inscrivez, effectuez un achat ou remplissez des formulaires sur notre site."
+  },
+  
+  "customer_info_heading": "Informations Clients",
+  "customer_info_text1": "Nous collectons les informations que vous nous fournissez lorsque vous créez un compte ou effectuez un achat.",
+  "customer_info_text2": "Ces informations peuvent inclure votre nom, votre adresse e-mail, votre adresse de livraison et vos informations de paiement.",
+  "customer_info_text3": "Nous utilisons ces informations pour traiter vos commandes et vous fournir un service client de qualité.",
+  
+  "usage_information_section": {
+    "heading": "Informations d'utilisation",
+    "content": "Nous recueillons des informations sur votre interaction avec notre site, y compris les pages que vous consultez, les liens sur lesquels vous cliquez et les recherches que vous effectuez."
+  },
+  
+  "usage_data_heading": "Données d'Utilisation",
+  "usage_data_text": "Nous collectons des données sur la façon dont vous accédez à notre service et l'utilisez, y compris les adresses IP, le type de navigateur, les pages consultées et les horaires d'accès.",
+  
+  "technical_info_heading": "Informations Techniques",
+  "technical_info_text": "Nous collectons automatiquement des informations techniques sur votre appareil, y compris l'adresse IP, le type de navigateur, le système d'exploitation et les identifiants uniques.",
+  
+  "device_information_section": {
+    "heading": "Informations sur l'appareil",
+    "content": "Nous pouvons collecter des informations sur l'appareil que vous utilisez pour accéder à notre site, y compris le type d'appareil, l'adresse IP, le navigateur et le système d'exploitation."
+  },
+  
+  "how_we_use_heading": "Comment nous utilisons vos informations",
+  "how_we_use_intro": "Nous utilisons vos informations personnelles à diverses fins, notamment :",
+  "purposes_list": [
+    "Traiter et gérer vos commandes",
+    "Améliorer nos produits et services",
+    "Personnaliser votre expérience sur notre site",
+    "Envoyer des mises à jour et des offres promotionnelles",
+    "Répondre à vos demandes et questions du service client"
+  ],
+  
+  "use_purpose_1": "Fournir et maintenir notre service",
+  "use_purpose_2": "Vous informer des modifications de notre service",
+  "use_purpose_3": "Vous permettre de participer aux fonctionnalités interactives de notre service lorsque vous le souhaitez",
+  "use_purpose_4": "Fournir un support client",
+  "use_purpose_5": "Recueillir des analyses ou des informations précieuses pour améliorer notre service",
+  "use_purpose_6": "Surveiller l'utilisation de notre service",
+  
+  "information_sharing_heading": "Partage de vos informations",
+  "info_sharing_heading": "Partage d'Informations",
+  "info_sharing_intro": "Nous partageons vos informations personnelles dans certaines situations, notamment :",
+  "sharing_parties": [
+    "Prestataires de services qui nous aident dans nos opérations commerciales",
+    "Conformité aux obligations légales ou réglementaires",
+    "Protection de nos droits, vie privée, sécurité ou propriété"
+  ],
+  
+  "sharing_circumstance_1": "Avec des fournisseurs de services pour surveiller et analyser l'utilisation de notre service",
+  "sharing_circumstance_2": "Pour un transfert d'entreprise, en cas de fusion, acquisition ou vente d'actifs",
+  "sharing_circumstance_3": "Avec votre consentement pour toute autre finalité que vous spécifiez",
+  
+  "data_security_heading": "Sécurité des données",
+  "data_security_content": "Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos informations personnelles contre tout accès non autorisé, altération, divulgation ou destruction. Cependant, aucune méthode de transmission sur Internet ou de stockage électronique n'est sécurisée à 100%.",
+  
+  "your_rights_heading": "Vos droits",
+  "your_rights_intro": "Conformément aux lois sur la protection des données, vous disposez des droits suivants :",
+  "rights_list": [
+    "Accéder aux informations personnelles que nous détenons à votre sujet",
+    "Demander la correction d'informations inexactes",
+    "Demander la suppression de vos données personnelles",
+    "Vous opposer au traitement de vos données personnelles",
+    "Demander la limitation du traitement de vos données"
+  ],
+  
+  "right_1": "Le droit d'accès, de mise à jour ou de suppression de vos informations",
+  "right_2": "Le droit de rectification",
+  "right_3": "Le droit d'opposition",
+  "right_4": "Le droit à la limitation du traitement",
+  "right_5": "Le droit à la portabilité des données",
+  
+  "cookies_heading": "Utilisation des cookies",
+  "cookies_tracking_heading": "Cookies et Technologies de Suivi",
+  "cookies_content": "Notre site utilise des cookies pour améliorer votre expérience. Vous pouvez gérer vos préférences en matière de cookies via les paramètres de votre navigateur.",
+  "cookies_tracking_text": "Nous utilisons des cookies et des technologies de suivi similaires pour suivre l'activité sur notre service et conserver certaines informations. Vous pouvez configurer votre navigateur pour refuser tous les cookies ou pour indiquer quand un cookie est envoyé.",
+  
+  "changes_policy_heading": "Modifications de cette Politique de Confidentialité",
+  "changes_policy_text": "Nous pouvons mettre à jour notre Politique de Confidentialité périodiquement. Nous vous informerons de tout changement en publiant la nouvelle Politique de Confidentialité sur cette page et en mettant à jour la date de révision en bas.",
+  
+  "contact_us_heading": "Contactez-nous",
+  "contact_us_content": "Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à l'adresse",
+  
+  "questions_feedback_heading": "Questions et Commentaires",
+  "questions_feedback_text": "Pour toute question ou commentaire concernant notre Politique de Confidentialité, veuillez contacter notre Délégué à la Protection des Données à l'adresse",
+  "dpo_email": "dpo@gutricious.com",
+  
+  "general_inquiries_heading": "Demandes Générales",
+  "general_inquiries_text": "Pour les demandes générales, veuillez nous contacter à l'adresse",
+  "general_email": "bonjour@gutricious.com",
+  
+  "last_updated": "Dernière mise à jour : 26 août 2024"
+}

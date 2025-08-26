@@ -27,21 +27,33 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  let messages;
+  // Load both the requested locale and English fallback messages
+  let messages, fallbackMessages;
   try {
     messages = (await import(`../../../messages/${locale}.json`)).default;
   } catch (error) {
-    // Fallback to English if locale messages are not found
-    messages = (await import(`../../../messages/en.json`)).default;
+    // If the requested locale fails to load, use an empty object
+    messages = {};
+  }
+  
+  // Always load English as fallback
+  try {
+    fallbackMessages = (await import(`../../../messages/en.json`)).default;
+  } catch (error) {
+    // If English fails, use an empty object as last resort
+    fallbackMessages = {};
   }
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <head />
       <body suppressHydrationWarning>
-        <SimpleTranslationProvider locale={locale} messages={messages}>
-          
-    <ModalProvider value={[EmailFormThanksModal, MarketSuccessForm]}>
+        <SimpleTranslationProvider 
+          locale={locale} 
+          messages={messages}
+          fallbackMessages={fallbackMessages}
+        >
+          <ModalProvider value={[EmailFormThanksModal, MarketSuccessForm]}>
 
           {children}
     </ModalProvider>

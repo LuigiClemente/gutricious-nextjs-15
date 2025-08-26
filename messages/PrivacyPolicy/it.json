@@ -1,0 +1,105 @@
+{
+  "title": "Informativa sulla Privacy",
+  "overview_heading": "Panoramica",
+  "overview_text": "Questa informativa sulla privacy spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali quando utilizzi il nostro sito web e i nostri servizi.",
+  "introduction": "Nella nostra azienda, la tua privacy è la nostra massima priorità. Questa informativa spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali.",
+  
+  "information_collection_heading": "Informazioni che Raccogliamo",
+  "personal_data_heading": "Dati Personali",
+  "types_data_heading": "Tipi di Dati Raccolti",
+  "types_data_summary": "Raccogliamo diversi tipi di informazioni per fornire e migliorare il nostro servizio.",
+  
+  "personal_information_section": {
+    "heading": "Informazioni Personali",
+    "content": "Potremmo raccogliere informazioni come il tuo nome, indirizzo email, indirizzo postale, numero di telefono e dati di pagamento quando ti registri, effettui un acquisto o compili moduli sul nostro sito."
+  },
+  
+  "customer_info_heading": "Informazioni sul Cliente",
+  "customer_info_text1": "Raccogliamo informazioni che ci fornisci quando crei un account o effettui un acquisto.",
+  "customer_info_text2": "Queste informazioni possono includere il tuo nome, indirizzo email, indirizzo di spedizione e informazioni di pagamento.",
+  "customer_info_text3": "Utilizziamo queste informazioni per elaborare i tuoi ordini e fornirti un servizio clienti di qualità.",
+  
+  "usage_information_section": {
+    "heading": "Informazioni sull'Utilizzo",
+    "content": "Raccogliamo informazioni su come interagisci con il nostro sito, comprese le pagine che visiti, i link su cui clicchi e le ricerche che effettui."
+  },
+  
+  "usage_data_heading": "Dati di Utilizzo",
+  "usage_data_text": "Raccogliamo dati su come accedi e utilizzi il nostro servizio, inclusi indirizzi IP, tipo di browser, pagine visitate e tempi di accesso.",
+  
+  "technical_info_heading": "Informazioni Tecniche",
+  "technical_info_text": "Raccogliamo automaticamente informazioni tecniche sul tuo dispositivo, inclusi indirizzo IP, tipo di browser, sistema operativo e identificatori univoci.",
+  
+  "device_information_section": {
+    "heading": "Informazioni sul Dispositivo",
+    "content": "Potremmo raccogliere informazioni sul dispositivo che utilizzi per accedere al nostro sito, incluso il tipo di dispositivo, l'indirizzo IP, il browser e il sistema operativo."
+  },
+  
+  "how_we_use_heading": "Come Utilizziamo le Tue Informazioni",
+  "how_we_use_intro": "Utilizziamo le tue informazioni personali per vari scopi, tra cui:",
+  "purposes_list": [
+    "Elaborare e gestire i tuoi ordini",
+    "Migliorare i nostri prodotti e servizi",
+    "Personalizzare la tua esperienza sul nostro sito",
+    "Inviare aggiornamenti e offerte promozionali",
+    "Rispondere alle tue richieste e domande sul servizio clienti"
+  ],
+  
+  "use_purpose_1": "Fornire e mantenere il nostro servizio",
+  "use_purpose_2": "Notificarti modifiche al nostro servizio",
+  "use_purpose_3": "Permetterti di partecipare a funzionalità interattive del nostro servizio quando scegli di farlo",
+  "use_purpose_4": "Fornire supporto ai clienti",
+  "use_purpose_5": "Raccogliere analisi o informazioni preziose per migliorare il nostro servizio",
+  "use_purpose_6": "Monitorare l'utilizzo del nostro servizio",
+  
+  "information_sharing_heading": "Condivisione delle Tue Informazioni",
+  "info_sharing_heading": "Condivisione delle Informazioni",
+  "info_sharing_intro": "Condividiamo le tue informazioni personali in determinate situazioni, tra cui:",
+  "sharing_parties": [
+    "Fornitori di servizi che ci assistono nelle nostre operazioni aziendali",
+    "Aderenza a obblighi legali o normativi",
+    "Tutela dei nostri diritti, privacy, sicurezza o proprietà"
+  ],
+  
+  "sharing_circumstance_1": "Con fornitori di servizi per monitorare e analizzare l'uso del nostro servizio",
+  "sharing_circumstance_2": "A fini di business transfer, in caso di fusione, acquisizione o vendita di attività",
+  "sharing_circumstance_3": "Con i tuoi consensi per qualsiasi altro scopo da te specificato",
+  
+  "data_security_heading": "Sicurezza dei Dati",
+  "data_security_content": "Attuiamo misure di sicurezza tecniche e organizzative per proteggere le tue informazioni personali da accessi non autorizzati, alterazione, divulgazione o distruzione. Tuttavia, nessun metodo di trasmissione su Internet o di archiviazione elettronica è sicuro al 100%.",
+  
+  "your_rights_heading": "I Tuoi Diritti",
+  "your_rights_intro": "In base alle leggi sulla protezione dei dati, hai i seguenti diritti:",
+  "rights_list": [
+    "Accedere alle informazioni personali che ti riguardano in nostro possesso",
+    "Richiedere la correzione di informazioni inesatte",
+    "Richiedere la cancellazione dei tuoi dati personali",
+    "Opporti al trattamento dei tuoi dati personali",
+    "Richiedere la limitazione del trattamento dei tuoi dati"
+  ],
+  
+  "right_1": "Il diritto di accesso, aggiornamento o cancellazione delle tue informazioni",
+  "right_2": "Il diritto di rettifica",
+  "right_3": "Il diritto di opposizione",
+  "right_4": "Il diritto alla limitazione del trattamento",
+  "right_5": "Il diritto alla portabilità dei dati",
+  
+  "cookies_heading": "Utilizzo dei Cookie",
+  "cookies_tracking_heading": "Cookie e Tecnologie di Tracciamento",
+  "cookies_content": "Il nostro sito utilizza i cookie per migliorare la tua esperienza. Puoi gestire le tue preferenze sui cookie attraverso le impostazioni del tuo browser.",
+  "cookies_tracking_text": "Utilizziamo cookie e tecnologie di tracciamento simili per tracciare l'attività sul nostro servizio e conservare determinate informazioni. Puoi istruire il tuo browser a rifiutare tutti i cookie o a indicare quando un cookie viene inviato.",
+  
+  "changes_policy_heading": "Modifiche all'Informativa",
+  "changes_policy_text": "Potremmo aggiornare periodicamente la nostra Informativa sulla Privacy. Ti informeremo di eventuali modifiche pubblicando la nuova Informativa sulla Privacy su questa pagina e aggiornando la data di revisione in calce.",
+  
+  "contact_us_heading": "Contattaci",
+  "contact_us_content": "Se hai domande su questa informativa sulla privacy, contattaci all'indirizzo",
+  
+  "questions_feedback_heading": "Domande e Feedback",
+  "questions_feedback_text": "Per domande o feedback sulla nostra Informativa sulla Privacy, contatta il nostro Responsabile della Protezione dei Dati all'indirizzo",
+  "dpo_email": "dpo@gutricious.com",
+  
+  "general_inquiries_heading": "Informazioni Generali",
+  "general_inquiries_text": "Per domande generali, contattaci all'indirizzo",
+  "general_email": "hello@gutricious.com"
+}

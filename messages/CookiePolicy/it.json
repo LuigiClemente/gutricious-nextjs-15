@@ -1,0 +1,60 @@
+{
+  "title": "Informativa sull'Utilizzo dei Cookie",
+  "introduction": "Questa informativa spiega come utilizziamo i cookie e tecnologie simili sul nostro sito web. Utilizzando il nostro sito, accetti l'uso dei cookie in conformità con la presente informativa.",
+  
+  "types_cookies_heading": "Tipi di Cookie che Utilizziamo",
+  "cookies_definition": "I cookie sono piccoli file di testo che vengono memorizzati sul tuo dispositivo quando visiti il nostro sito web.",
+  
+  "essential_cookies_heading": "Cookie Essenziali",
+  "essential_cookies_text": "Questi cookie sono necessari per il corretto funzionamento del nostro sito. Servono a memorizzare gli articoli nel carrello, ricordare le tue impostazioni di lingua e mantenere l'accesso al tuo account.",
+  
+  "security_cookies_heading": "Cookie di Sicurezza",
+  "security_cookies_text": "Proteggono il tuo account e prevengono le frodi, verificando la tua identità e assicurando che nessun altro possa accedere alle tue informazioni personali.",
+  
+  "analytics_cookies_heading": "Cookie di Analisi",
+  "analytics_cookies_text": "Questi cookie ci aiutano a capire come i visitatori interagiscono con il nostro sito. Analizziamo le pagine più visitate, identifichiamo le aree di miglioramento e lavoriamo per offrirti un'esperienza migliore.",
+  
+  "advertising_cookies_heading": "Cookie Pubblicitari",
+  "advertising_cookies_text": "Questi cookie ci permettono di mostrarti annunci pertinenti in base ai tuoi interessi e di evitare di mostrarti ripetutamente gli stessi annunci. Possono anche essere utilizzati per misurare l'efficacia delle campagne pubblicitarie.",
+  
+  "personalization_cookies_heading": "Cookie di Personalizzazione",
+  "personalization_cookies_text": "Personalizzano la tua esperienza ricordando le tue preferenze per offrirti consigli, risultati di ricerca e annunci più pertinenti. Questi cookie possono anche essere utilizzati per offrirti funzionalità personalizzate.",
+  
+  "third_party_cookies_heading": "Cookie di Terze Parti",
+  "third_party_cookies_text": "Potremmo utilizzare servizi di terze parti che impostano i propri cookie per offrire determinate funzionalità o per pubblicità mirata. Questi cookie sono gestiti dalle rispettive organizzazioni e sono soggetti alle loro politiche sulla privacy.",
+  
+  "your_control_heading": "Il Tuo Controllo sui Cookie",
+  "your_control_text": "Hai il controllo sull'utilizzo dei cookie. Ecco come puoi gestirli:",
+  
+  "browser_settings_label": "Impostazioni del Browser:",
+  "browser_settings_text": "Puoi modificare le impostazioni del tuo browser per bloccare o consentire determinati cookie. La maggior parte dei browser ti consente di rifiutare tutti i cookie o solo quelli di terze parti.",
+  
+  "privacy_settings_label": "Le Nostre Impostazioni sulla Privacy:",
+  "privacy_settings_text": "Visita la nostra pagina delle impostazioni sulla privacy per modificare le tue preferenze riguardo ai cookie e alla privacy.",
+  "privacy_policy_link": "Informativa sulla Privacy Completa",
+  
+  "mobile_devices_label": "Dispositivi Mobili:",
+  "mobile_devices_text": "I controlli dei cookie si trovano solitamente nel menu delle impostazioni del tuo dispositivo. Consulta la guida del tuo dispositivo per ulteriori informazioni.",
+  
+  "cookie_management_tools_heading": "Strumenti di Gestione dei Cookie",
+  "cookie_management_tools_text": "Esistono vari strumenti disponibili online che possono aiutarti a gestire le tue preferenze sui cookie in modo più efficace.",
+  
+  "please_note_text": "Nota importante: il blocco di alcuni cookie potrebbe influire sul funzionamento di alcune parti del nostro sito web e limitare la tua esperienza utente.",
+  
+  "duration_cookies_heading": "Durata dei Cookie",
+  "duration_cookies_text": "Alcuni cookie sono di sessione e scadono quando chiudi il browser, mentre altri possono rimanere sul tuo dispositivo per un periodo più lungo, a seconda della loro durata impostata.",
+  
+  "updates_consent_heading": "Aggiornamenti del Consenso",
+  "updates_consent_text": "Se hai accettato i nostri cookie in precedenza ma desideri modificare la tua scelta, puoi farlo in qualsiasi momento attraverso le impostazioni del tuo browser o contattandoci.",
+  
+  "questions_heading": "Domande o Preoccupazioni?",
+  "questions_text": "Se hai domande sulla nostra informativa sui cookie o desideri maggiori informazioni su come gestiamo i tuoi dati, non esitare a contattarci all'indirizzo",
+  "contact_email": "privacy@gutricious.com",
+  
+  "informed_experience_text": "Il nostro obiettivo è assicurarci che tu sia pienamente informato e abbia il controllo della tua esperienza online. Questa informativa è stata progettata per fornirti tutte le informazioni chiare e trasparenti di cui hai bisogno riguardo all'uso dei cookie sul nostro sito.",
+  
+  "changes_policy_heading": "Modifiche all'Informativa sui Cookie",
+  "changes_policy_text": "Potremmo aggiornare periodicamente questa informativa per riflettere eventuali modifiche nelle nostre pratiche relative ai cookie o per adeguarci a nuovi requisiti normativi. Ti consigliamo di rivedere regolarmente questa pagina per rimanere informato sul nostro utilizzo dei cookie.",
+  
+  "last_updated": "Ultimo aggiornamento: 26 Agosto 2024"
+}

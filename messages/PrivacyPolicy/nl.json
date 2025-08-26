@@ -1,0 +1,107 @@
+{
+  "title": "Privacybeleid",
+  "overview_heading": "Overzicht",
+  "overview_text": "Dit privacybeleid legt uit hoe we uw persoonlijke gegevens verzamelen, gebruiken en beschermen wanneer u onze website en diensten gebruikt.",
+  "introduction": "Bij ons bedrijf staat uw privacy voorop. Dit beleid legt uit hoe we uw persoonlijke gegevens verzamelen, gebruiken en beschermen.",
+  
+  "information_collection_heading": "Informatie die we Verzamelen",
+  "personal_data_heading": "Persoonsgegevens",
+  "types_data_heading": "Soorten Verzamelde Gegevens",
+  "types_data_summary": "We verzamelen verschillende soorten informatie om onze dienst te leveren en te verbeteren.",
+  
+  "personal_information_section": {
+    "heading": "Persoonlijke Gegevens",
+    "content": "We kunnen informatie verzamelen zoals uw naam, e-mailadres, postadres, telefoonnummer en betalingsgegevens wanneer u zich registreert, een aankoop doet of formulieren op onze website invult."
+  },
+  
+  "customer_info_heading": "Klantinformatie",
+  "customer_info_text1": "We verzamelen informatie die u verstrekt wanneer u een account aanmaakt of een aankoop doet.",
+  "customer_info_text2": "Deze informatie kan uw naam, e-mailadres, verzendadres en betalingsgegevens omvatten.",
+  "customer_info_text3": "We gebruiken deze informatie om uw bestellingen te verwerken en u van kwaliteitsklantenservice te voorzien.",
+  
+  "usage_information_section": {
+    "heading": "Gebruiksinformatie",
+    "content": "We verzamelen informatie over hoe u met onze website omgaat, inclusief welke pagina's u bezoekt, op welke links u klikt en welke zoekopdrachten u uitvoert."
+  },
+  
+  "usage_data_heading": "Gebruiksgegevens",
+  "usage_data_text": "We verzamelen gegevens over hoe u toegang krijgt tot en gebruikmaakt van onze dienst, inclusief IP-adressen, browsertype, bezochte pagina's en tijdstippen van toegang.",
+  
+  "technical_info_heading": "Technische Informatie",
+  "technical_info_text": "We verzamelen automatisch technische informatie over uw apparaat, inclusief IP-adres, browsertype, besturingssysteem en unieke identificatoren.",
+  
+  "device_information_section": {
+    "heading": "Apparaatinformatie",
+    "content": "We kunnen informatie verzamelen over het apparaat dat u gebruikt om toegang te krijgen tot onze website, inclusief het apparaattype, IP-adres, browser en besturingssysteem."
+  },
+  
+  "how_we_use_heading": "Hoe we Uw Informatie Gebruiken",
+  "how_we_use_intro": "We gebruiken uw persoonlijke gegevens voor verschillende doeleinden, waaronder:",
+  "purposes_list": [
+    "Uw bestellingen verwerken en beheren",
+    "Onze producten en diensten verbeteren",
+    "Uw ervaring op onze website personaliseren",
+    "Updates en aanbiedingen sturen",
+    "Reageren op uw vragen en klantenserviceverzoeken"
+  ],
+  
+  "use_purpose_1": "Onze dienst leveren en onderhouden",
+  "use_purpose_2": "U op de hoogte stellen van wijzigingen in onze dienst",
+  "use_purpose_3": "U in staat stellen deel te nemen aan interactieve functies van onze dienst wanneer u daarvoor kiest",
+  "use_purpose_4": "Klantenondersteuning bieden",
+  "use_purpose_5": "Analyse of waardevolle informatie verzamelen om onze dienst te verbeteren",
+  "use_purpose_6": "Het gebruik van onze dienst monitoren",
+  
+  "information_sharing_heading": "Delen van Uw Informatie",
+  "info_sharing_heading": "Informatiedeling",
+  "info_sharing_intro": "We delen uw persoonlijke gegevens in bepaalde situaties, waaronder:",
+  "sharing_parties": [
+    "Dienstverleners die ons helpen bij onze bedrijfsactiviteiten",
+    "Naleving van wettelijke of regelgevende verplichtingen",
+    "Bescherming van onze rechten, privacy, veiligheid of eigendom"
+  ],
+  
+  "sharing_circumstance_1": "Met dienstverleners om het gebruik van onze dienst te monitoren en analyseren",
+  "sharing_circumstance_2": "Voor bedrijfsoverdrachten, in geval van een fusie, overname of verkoop van activa",
+  "sharing_circumstance_3": "Met uw toestemming voor elk ander doel dat u specificeert",
+  
+  "data_security_heading": "Gegevensbeveiliging",
+  "data_security_content": "We implementeren technische en organisatorische beveiligingsmaatregelen om uw persoonlijke gegevens te beschermen tegen ongeoorloofde toegang, wijziging, openbaarmaking of vernietiging. Echter, geen enkele methode van verzending via internet of elektronische opslag is 100% veilig.",
+  
+  "your_rights_heading": "Uw Rechten",
+  "your_rights_intro": "Volgens de gegevensbeschermingswetten heeft u de volgende rechten:",
+  "rights_list": [
+    "Inzage vragen in de persoonlijke gegevens die we over u hebben",
+    "Onjuiste informatie laten corrigeren",
+    "Verwijdering van uw persoonlijke gegevens aanvragen",
+    "Bezwaar maken tegen de verwerking van uw gegevens",
+    "Beperking van de verwerking van uw gegevens aanvragen"
+  ],
+  
+  "right_1": "Het recht om toegang te krijgen tot, bij te werken of uw gegevens te verwijderen",
+  "right_2": "Het recht op rectificatie",
+  "right_3": "Het recht van bezwaar",
+  "right_4": "Het recht op beperking van de verwerking",
+  "right_5": "Het recht op gegevensoverdraagbaarheid",
+  
+  "cookies_heading": "Gebruik van Cookies",
+  "cookies_tracking_heading": "Cookies en Volgtechnologieën",
+  "cookies_content": "Onze website gebruikt cookies om uw ervaring te verbeteren. U kunt uw cookievoorkeuren beheren via de instellingen van uw browser.",
+  "cookies_tracking_text": "We gebruiken cookies en vergelijkbare volgtechnologieën om de activiteit op onze dienst te volgen en bepaalde informatie vast te houden. U kunt uw browser instrueren om alle cookies te weigeren of aan te geven wanneer er een cookie wordt verzonden.",
+  
+  "changes_policy_heading": "Wijzigingen in dit Privacybeleid",
+  "changes_policy_text": "We kunnen ons privacybeleid van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van eventuele wijzigingen door het bijgewerkte privacybeleid op deze pagina te publiceren en de datum van de laatste update bij te werken.",
+  
+  "contact_us_heading": "Neem Contact met Ons Op",
+  "contact_us_content": "Als u vragen heeft over dit privacybeleid, neem dan contact met ons op via",
+  
+  "questions_feedback_heading": "Vragen en Feedback",
+  "questions_feedback_text": "Voor vragen of opmerkingen over ons privacybeleid, neem dan contact op met onze Functionaris voor Gegevensbescherming via",
+  "dpo_email": "dpo@gutricious.com",
+  
+  "general_inquiries_heading": "Algemene Vragen",
+  "general_inquiries_text": "Voor algemene vragen, neem contact met ons op via",
+  "general_email": "hallo@gutricious.com",
+  
+  "last_updated": "Laatst bijgewerkt: 26 augustus 2024"
+}

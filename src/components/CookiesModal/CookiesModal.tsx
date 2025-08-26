@@ -3,6 +3,9 @@ import Modal from "react-modal";
 import Switch from "../Switch/switch";
 import { useTranslations } from "@/components/SimpleTranslationProvider";
 import Cookies from "js-cookie";
+import { trackEvent, EventCategory } from "@/utils/analytics";
+import { LanguageSelector } from "../LanguageSelector";
+import "../LanguageSelector/styles.css";
 
 // Make sure to set the app element for accessibility reasons
 Modal.setAppElement("body");
@@ -10,6 +13,7 @@ Modal.setAppElement("body");
 const CookiesModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [step, setStep] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
   const t = useTranslations('Index');
 
   useEffect(() => {
@@ -42,6 +46,13 @@ const CookiesModal = () => {
         Cookies.set(`cookie_pref_${cookie.type}`, 'true', { expires: 365 });
       }
     });
+    
+    // Track the acceptance of all cookies
+    trackEvent('accept_all_cookies', EventCategory.COOKIE, {
+      path: typeof window !== 'undefined' ? window.location.pathname : '',
+      locale: getLocale()
+    });
+    
     setModalIsOpen(false);
   };
   
@@ -49,12 +60,23 @@ const CookiesModal = () => {
   const savePreferences = () => {
     // Set cookie that user has made a selection
     Cookies.set('cookies_selection_made', 'true', { expires: 365 }); // Cookie expires in 1 year
+    
     // Save individual cookie preferences
+    const preferences: Record<string, boolean> = {};
     cookies.forEach((cookie) => {
       if (!cookie.notChoosable) {
         Cookies.set(`cookie_pref_${cookie.type}`, cookie.isChecked ? 'true' : 'false', { expires: 365 });
+        preferences[cookie.type] = cookie.isChecked;
       }
     });
+    
+    // Track custom preferences
+    trackEvent('save_cookie_preferences', EventCategory.COOKIE, {
+      ...preferences,
+      path: typeof window !== 'undefined' ? window.location.pathname : '',
+      locale: getLocale()
+    });
+    
     setModalIsOpen(false);
   };
 
@@ -68,6 +90,12 @@ const CookiesModal = () => {
       if (!cookie.notChoosable) {
         Cookies.set(`cookie_pref_${cookie.type}`, 'false', { expires: 365 });
       }
+    });
+    
+    // Track rejection of optional cookies
+    trackEvent('reject_optional_cookies', EventCategory.COOKIE, {
+      path: typeof window !== 'undefined' ? window.location.pathname : '',
+      locale: getLocale()
     });
     
     setModalIsOpen(false);
@@ -162,7 +190,18 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
   const handleToggle = (index:any) => {
     const newCookies = cookies.map((cookie, i) => {
       if (i === index) {
-        return { ...cookie, isChecked: !cookie.isChecked }; // Toggle the checked state
+        const newValue = !cookie.isChecked;
+        
+        // Track toggle of cookie preferences
+        if (!cookie.notChoosable) {
+          trackEvent('toggle_cookie_preference', EventCategory.COOKIE, {
+            cookie_type: cookie.type,
+            new_value: newValue,
+            locale: getLocale()
+          });
+        }
+        
+        return { ...cookie, isChecked: newValue }; // Toggle the checked state
       }
       return cookie;
     });
@@ -182,14 +221,14 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
       {step === 1 && (
         <div>
           <div className="flex justify-between items-center pb-5 border-b mb-10">
-            <h2 className="!text-3xl font-bold ">{t('cookie_preference_heading')} </h2>
-            <a
-              className=" border-black border-b cursor-pointer"
-              onClick={closeModal}
-            >
-              {" "}
-              {t('continue_without_accepting')} 
-            </a>
+            <h2 className="!text-3xl font-bold">{t('cookie_preference_heading')}</h2>
+            <div className="language-selector-container" style={{ position: 'relative', zIndex: 10001, minWidth: '44px', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <LanguageSelector 
+                section="dark" 
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+            </div>
           </div>
           <div className="text-xl text-black flex flex-col gap-6 items-start">
             <p>  {t('welcome_to_website')} </p>
@@ -234,15 +273,15 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
 
       {step === 2 && (
         <div className="step2">
-        <div className="flex justify-between items-center pb-5 border-b mb-10 ">
-            <h2 className="text-3xl font-bold ">{t('cookie_preference_heading')} </h2>
-            <a
-              className=" border-black border-b cursor-pointer"
-              onClick={closeModal}
-            >
-              {" "}
-              {t('continue_without_accepting')} 
-            </a>
+        <div className="flex justify-between items-center pb-5 border-b mb-10">
+            <h2 className="text-3xl font-bold">{t('cookie_preference_heading')}</h2>
+            <div className="language-selector-container" style={{ position: 'relative', zIndex: 10001, minWidth: '44px', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <LanguageSelector 
+                section="dark" 
+                isHovered={isHovered}
+                setIsHovered={setIsHovered}
+              />
+            </div>
           </div>
           <div className="text-xl text-black flex flex-col gap-4 items-start">
             <p>{t('what_is_a_cookie')}</p>

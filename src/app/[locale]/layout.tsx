@@ -51,35 +51,49 @@ export default async function LocaleLayout({
           id="umami-analytics"
           src="https://umami.gutricious.com/script.js"
           data-website-id="435b949e-c453-4e8b-9f7a-7d8002c37fa1"
-          strategy="afterInteractive"
-          data-domains="gutricious.com,www.gutricious.com"
+          strategy="lazyOnload"
+          data-domains="gutricious.com,www.gutricious.com,blog-starter-app-testing.pauloa.workers.dev"
           data-auto-track="true"
-          data-do-not-track="true"
-          data-cache="true"
-          defer
+          data-do-not-track="false"
+          data-cache="false"
         />
-        <Script id="umami-init">
+        <Script id="umami-init" strategy="afterInteractive">
           {`
-            // Track page views on route changes
-            if (window.umami) {
-              umami.trackView();
-            }
-            
-            // Track mobile devices
-            if (typeof window !== 'undefined' && window.innerWidth < 768) {
-              if (window.umami) {
-                umami.track('mobile-view', { type: 'pageview' });
-              }
-            }
-            
-            // Track touch events
-            if (typeof window !== 'undefined' && 'ontouchstart' in window) {
-              document.addEventListener('touchstart', function() {
+            document.addEventListener('DOMContentLoaded', function() {
+              // Ensure Umami is loaded
+              const waitForUmami = setInterval(function() {
                 if (window.umami) {
-                  umami.track('touch-event', { type: 'touchstart' });
+                  clearInterval(waitForUmami);
+                  console.log('Umami initialized successfully');
+                  
+                  // Track initial page view
+                  umami.trackView();
+                  
+                  // Track device type
+                  const deviceType = window.innerWidth < 768 ? 'mobile' : 
+                                    window.innerWidth < 1024 ? 'tablet' : 'desktop';
+                  umami.track('device-type', { type: deviceType });
+                  
+                  // Track route changes for SPA navigation
+                  const handleRouteChange = () => {
+                    umami.trackView();
+                    console.log('Route change tracked');
+                  };
+                  
+                  // Attach to click events for navigation tracking
+                  document.addEventListener('click', function(e) {
+                    const link = e.target.closest('a');
+                    if (link && link.getAttribute('href') && link.getAttribute('href').startsWith('/')) {
+                      // Internal navigation - will be captured by route change
+                      setTimeout(handleRouteChange, 500);
+                    }
+                  });
                 }
-              }, { once: true });
-            }
+              }, 500); // Check every 500ms
+              
+              // Fallback - if Umami doesn't load after 10 seconds, stop checking
+              setTimeout(() => clearInterval(waitForUmami), 10000);
+            });
           `}
         </Script>
       </body>

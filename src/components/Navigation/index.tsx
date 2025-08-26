@@ -9,6 +9,7 @@ import { IMAGE_URL } from "@/utils/image_url";
 import { LocalActiveType, routes } from "@/utils/routes";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import "@/components/LanguageSelector/styles.css";
+import { trackEvent, EventCategory } from "@/utils/analytics";
 
 export const Navigation = ({
   section,
@@ -42,6 +43,13 @@ export const Navigation = ({
   
   // Function to navigate to homepage of current language
   const navigateToHome = () => {
+    // Track logo click navigation
+    trackEvent('logo_click', EventCategory.NAVIGATION, {
+      from: typeof window !== 'undefined' ? window.location.pathname : '',
+      to: `/${localActive}${routes[safeLanguage].home}`,
+      locale: localActive
+    });
+    
     router.push(`/${localActive}${routes[safeLanguage].home}`);
   };
 
@@ -87,7 +95,16 @@ export const Navigation = ({
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                setNavOpen(!navOpen);
+                const newNavState = !navOpen;
+                
+                // Track menu toggle
+                trackEvent('menu_toggle', EventCategory.USER_INTERACTION, {
+                  action: newNavState ? 'open' : 'close',
+                  page: typeof window !== 'undefined' ? window.location.pathname : '',
+                  locale: localActive
+                });
+                
+                setNavOpen(newNavState);
               }}
               onTouchStart={(e) => {
                 e.preventDefault();
@@ -163,18 +180,30 @@ export const Navigation = ({
                 <Link
                   href={`/${localActive}${routes[safeLanguage].home}`}
                   className="navigation__item inline-block"
+                  onClick={() => trackEvent('nav_link_click', EventCategory.NAVIGATION, {
+                    link: 'home',
+                    locale: localActive
+                  })}
                 >
                   <span className="navigation__link">{t("Home")}</span>
                 </Link>
                 <Link
                   href={`/${localActive}${routes[safeLanguage]['legal-notices']}`}
                   className="navigation__item inline-block"
+                  onClick={() => trackEvent('nav_link_click', EventCategory.NAVIGATION, {
+                    link: 'legal-notices',
+                    locale: localActive
+                  })}
                 >
                   <span className="navigation__link">{t("Legal_Notices")}</span>
                 </Link>
                 <Link
                   href={`/${localActive}${routes[safeLanguage].cookies}`}
                   className="navigation__item inline-block"
+                  onClick={() => trackEvent('nav_link_click', EventCategory.NAVIGATION, {
+                    link: 'cookies',
+                    locale: localActive
+                  })}
                 >
                   <span className="navigation__link">
                     {t("Cookies_Policy")}
@@ -183,6 +212,10 @@ export const Navigation = ({
                 <Link
                   href={`/${localActive}${routes[safeLanguage].privacy}`}
                   className="navigation__item inline-block"
+                  onClick={() => trackEvent('nav_link_click', EventCategory.NAVIGATION, {
+                    link: 'privacy',
+                    locale: localActive
+                  })}
                 >
                   <span className="navigation__link">
                     {t("Privacy_Policy")}

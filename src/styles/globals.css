@@ -5,6 +5,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Mobile-specific image scaling */
+@media (max-width: 767px) {
+  img[src*="/assets/third-section-fat/effects-on-health-fats.webp"],
+  img[src*="/assets/third-section-fat/fat-types-saturated-fats.webp"],
+  img[src*="/assets/third-section-microbiome/fermented-foods.webp"],
+  img[src*="/assets/third-section-microbiome/fiber-rich-foods.webp"],
+  img[src*="/assets/third-section-sugar/managing-sugar-intake.webp"],
+  img[src*="/assets/third-section-sugar/types-of-natural-added-sugar.webp"],
+  img[src*="/assets/third-section-nutrition/dietary-patterns-comparative-analysis.webp"],
+  img[src*="/assets/third-section-nutrition/mineral-synergies-and-bioavailability.webp"] {
+    transform: scale(1.25);
+    transform-origin: center;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
 /* Warning Message Styles */
 .alert {
   display: flex;

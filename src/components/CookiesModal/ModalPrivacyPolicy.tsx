@@ -44,15 +44,15 @@ export default function ModalPrivacyPolicy({ locale, onClose, onNavigateToCookie
 
   return (
     <div className="relative h-full overflow-y-auto">
-      {/* Close Cross Icon - Exact implementation from PrivacyPolicyClient */}
+      {/* Close Cross Icon - Matches the implementation in CookiesModal */}
       <button
         onClick={onClose}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="fixed rounded-full border-none text-white cursor-pointer flex items-center justify-center z-[9999] transition-all duration-200"
+        className="sticky rounded-full border-none text-white cursor-pointer flex items-center justify-center z-[10000] transition-all duration-200"
         style={{
           top: '20px',
-          right: '20px',
+          left: 'calc(100% - 64px)', // 44px width + 20px margin
           width: '44px',
           height: '44px',
           fontSize: '24px',
@@ -61,7 +61,9 @@ export default function ModalPrivacyPolicy({ locale, onClose, onNavigateToCookie
           boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          float: 'right',
+          marginBottom: '-44px' // Negative margin to not affect layout
         }}
         aria-label="Close modal"
       >

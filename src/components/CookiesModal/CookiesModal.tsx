@@ -286,11 +286,37 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
       )}
       
       {currentView === 'privacy' && (
-        <ModalPrivacyPolicy 
-          locale={getLocale()}
-          onClose={returnToMainModal}
-          onNavigateToCookies={showCookiePolicy}
-        />
+        <>
+          <button
+            onClick={returnToMainModal}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="sticky rounded-full border-none text-white cursor-pointer flex items-center justify-center z-[10000] transition-all duration-200"
+            style={{
+              top: '20px',
+              left: 'calc(100% - 64px)', // 44px width + 20px margin
+              width: '44px',
+              height: '44px',
+              fontSize: '24px',
+              background: isHovered ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.7)',
+              transform: isHovered ? 'scale(1.1)' : 'scale(1)',
+              boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              float: 'right',
+              marginBottom: '-44px' // Negative margin to not affect layout
+            }}
+            aria-label="Close modal"
+          >
+            <IoMdClose />
+          </button>
+          <ModalPrivacyPolicy 
+            locale={getLocale()}
+            onClose={returnToMainModal}
+            onNavigateToCookies={showCookiePolicy}
+          />
+        </>
       )}
       
       {currentView === 'main' && step === 1 && (

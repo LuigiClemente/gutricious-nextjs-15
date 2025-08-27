@@ -55,7 +55,7 @@ function convertMdxToJson() {
           const articleJson = {
             id: articleDir, // Using directory name as ID
             title: data.title || articleDir,
-            date: data.date || '2024-04-30',
+            date: data.date || '2025-04-30',
             slug: createSlug(articleDir),
             summary: data.summary || 'Legal terms and conditions.',
             content: content

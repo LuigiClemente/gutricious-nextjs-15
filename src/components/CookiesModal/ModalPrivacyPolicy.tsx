@@ -44,6 +44,12 @@ export default function ModalPrivacyPolicy({ locale, onClose, onNavigateToCookie
 
   return (
     <div className="relative h-full overflow-y-auto">
+      {/* 
+        Note: Mobile view close button positioning - Currently working correctly on desktop but needs adjustment for mobile view.
+        On mobile, the close button should be positioned relative to the viewport, not the content.
+        Current implementation uses sticky positioning which works well on desktop but may need adjustments for mobile.
+        Consider using fixed positioning for mobile breakpoints or adjusting the z-index and positioning context.
+      */}
       {/* Close Cross Icon - Matches the implementation in CookiesModal */}
       <button
         onClick={onClose}

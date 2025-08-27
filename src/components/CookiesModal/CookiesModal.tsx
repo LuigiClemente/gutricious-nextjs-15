@@ -249,6 +249,11 @@ const [cookies, setCookies] = useState(preferenceData.map(cookie => ({
       shouldCloseOnOverlayClick={false}
       shouldCloseOnEsc={false}
     >
+      {/* Note: Mobile view close button positioning - Currently working correctly on desktop but needs adjustment for mobile view.
+           On mobile, the close button should be positioned relative to the viewport, not the content.
+           Consider using fixed positioning for mobile breakpoints or adjusting the z-index and positioning context.
+           Current implementation uses sticky positioning which works well on desktop but may need adjustments for mobile.
+      */}
       {/* Close button for cookie policy view - using sticky positioning */}
       {currentView === 'cookies' && (
         <button

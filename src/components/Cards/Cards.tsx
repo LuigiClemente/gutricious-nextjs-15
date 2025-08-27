@@ -181,7 +181,7 @@ const Cards = ({ cards, selectCard, executeScroll }: any) => {
                 </div>
                 <div className="flex flex-row-reverse w-[27.25vw]  2xl:w-[140px] h-[7vw] 2xl:h-[4.8rem] items-center font-bold pr-1 sm:pl-4 sm:pr-2 rounded-full text-base bg-text-grey  text-white !pl-1  ">
                   <div className="w-full text-[2.75vw]  flex items-center justify-center xl:text-base 2xl:text-2xl">
-                    {t("Targeted")}
+                    {t("Methylation")}
                   </div>
                 </div>
               </div>
